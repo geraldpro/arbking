@@ -15,7 +15,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+         'email', 'password', 'first_name', 'last_name', 'phone_number','role_id', 'confirmed', 'confirmation_code',
+		 'currency_type', 'profile_pic'
     ];
 
     /**
@@ -26,4 +27,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function account()
+    {
+        return $this->hasOne('App\MainAccount', 'user_id');
+    } 
+    public function bank()
+    {
+        return $this->hasOne('App\BankAccount', 'user_id');
+    } 
+    public function role()
+    {
+        return $this->belongsTo('App\Role', 'role_id');
+    }
+    public function stakes(){
+        return $this->hasMany('App\Stake', 'user_id');
+    }
 }
