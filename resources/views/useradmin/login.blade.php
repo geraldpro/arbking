@@ -10,7 +10,8 @@
 					
 				</section>
 					<div class="box">			
-					  <form method="post" action="#">
+					  <form method="post" action="{{ route('login') }}">
+						{{ csrf_field() }}
 							<section style="text-align:center;margin-bottom:20px;color:#6495ED;font-weight:400;">LOGIN TO ARBKING</section>							
 							<div class="row uniform 50% {{ ($errors->has('email')) ? 'has-error' : ''}}">
 								<div class="12u 12u(mobilep) ">
