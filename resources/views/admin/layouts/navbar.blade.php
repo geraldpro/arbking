@@ -1,6 +1,15 @@
 <!-- Navbar-->
-<header class="app-header"><a class="app-header__logo" href="{{url('admin/dashboard')}}"><img src="/img/Arbking_Logo.png"></a>
-      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+<header class="app-header">
+
+    <a class="app-header__logo" href=app-sidebar__toggle"{{url('admin/dashboard')}}"><img src="/img/Arbking_Logo.png"></a>
+      
+    <!-- Sidebar toggle button-->
+    <a class="" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
         <li class="app-search">
@@ -40,4 +49,5 @@
           </ul>
         </li>
       </ul>
+    </div>
     </header>

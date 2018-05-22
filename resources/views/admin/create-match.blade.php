@@ -32,8 +32,8 @@
                 </div>
                 <div class="form-group">
                   <label class="control-label">Kick off</label>
-                  <input class="form-control" type="email" placeholder="Enter Kick off">
-                </div>
+                  <input class="form-control" id="demoDate" type="text" placeholder="Select Date">
+                  </div>
                 <div class="form-group">
                   <label class="control-label">Selected Market</label>
                   <input class="form-control" type="email" placeholder="Enter Selected Market">
@@ -46,7 +46,7 @@
               </form>
             </div>
             <div class="tile-footer">
-              <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Submit</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+              <button class="btn btn-success" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Submit</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
           <div class="tile">
             <h3 class="tile-title">Card Title</h3>
             <div class="tile-body">Hey there, I am a very simple card. I am good at containing small bits of information. I am quite convenient because I require little markup to use effectively.</div>
-            <div class="tile-footer"><a class="btn btn-primary" href="#">Link</a></div>
+            <div class="tile-footer"><a class="btn btn-success" href="#">Link</a></div>
           </div>
         </div>
         <div class="clearix"></div>
@@ -67,9 +67,31 @@
     <script src="js/main.js"></script>
     <!-- The javascript plugin to display page loading on top-->
     <script src="js/plugins/pace.min.js"></script>
+    <!-- Date picker-->
+    <script type="text/javascript" src="js/plugins/bootstrap-datepicker.min.js"></script>
+
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/chart.js"></script>
     <script type="text/javascript">
+
+     $('#sl').click(function(){
+      	$('#tl').loadingBtn();
+      	$('#tb').loadingBtn({ text : "Signing In"});
+      });
+      
+      $('#el').click(function(){
+      	$('#tl').loadingBtnComplete();
+      	$('#tb').loadingBtnComplete({ html : "Sign In"});
+      });
+      
+      $('#demoDate').datepicker({
+      	format: "dd/mm/yyyy",
+      	autoclose: true,
+      	todayHighlight: true
+      });
+      
+      $('#demoSelect').select2();
+      
       var data = {
       	labels: ["January", "February", "March", "April", "May"],
       	datasets: [

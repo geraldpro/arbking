@@ -19,7 +19,7 @@ Route::get('register','adminDashboardController@register')->name('register');
 
 
 /**** Admin Dashboard routes******/
-Route::get('admin/dashboard','adminDashboardController@dashboard')->name('dashboard');
+    Route::get('admin/dashboard','adminDashboardController@dashboard')->name('dashboard');
     Route::get('admin/create-match','adminDashboardController@creatmatch')->name('create-match');
     Route::get('admin/edit-match','adminDashboardController@edit_match')->name('edit-match');
 
@@ -31,6 +31,17 @@ Route::get('admin/dashboard','adminDashboardController@dashboard')->name('dashbo
     Route::get('admin/view-matches','adminDashboardController@view_matches')->name('view-matches');
     Route::get('admin/user-fund-deposit','adminDashboardController@fund_deposit')->name('user-fund-deposit');
 
+/**** User Dashboard routes******/
+    Route::get('user/dashboard','userDashboardController@dashboard')->name('dashboard');
+    Route::get('user/profile','userDashboardController@profile')->name('profile');
+    Route::get('user/fund-my-account','userDashboardController@fund_account')->name('fund-my-account');
+    Route::get('user/earning','userDashboardController@earning')->name('earning');
+    Route::get('user/finance','userDashboardController@finance')->name('finance');
+    Route::get('user/trade-history','userDashboardController@trade_history')->name('trade-history');
+    Route::get('user/request-payout','userDashboardController@request_payout')->name('request-payout');
 
-    
+
+
+
+  
     

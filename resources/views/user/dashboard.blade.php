@@ -1,39 +1,42 @@
-@extends('admin.layouts.master')
+@extends('user.layouts.master')
 @section('body')
 
   <body class="app sidebar-mini rtl">
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-dashboard"></i> Match Statistics</h1>
+          <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
         </div>
-        
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item">
+             <a class="btn btn-success" id="demoNotify" href="{{url('user/trade')}}">Start Trading</a>
+          </li>
+        </ul>
       </div>
       <div class="row">
         <div class="col-md-4">
           <div class="tile text-center">
-              <h4 class="text-center">Next Day Match</h4>
+              <h4 class="text-center">Trade Volume</h4>
             <div class="tile-body">
               <p class="text-danger">8</p>
-              <a class="btn btn-success" id="demoNotify" href="{{url('admin/create-match')}}">Create Match</a>
+              <a class="btn btn-success" id="demoNotify" href="{{url('user/trade')}}">Start Trading</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="tile text-center">
-              <h4 class="title">Active Matches Played</h4>
+              <h4 class="title">Statistics</h4>
             <div class="tile-body">
-              <p class="text-danger">4</p>
-              <a class="btn btn-success" id="demoNotify" href="{{url('admin/confirm-match')}}">Confirm Match</a>
+              <p>Next Deposit Moneyshield Percentage:<span class="text-danger"> 60%</span></p>
+              <a class="btn btn-success" id="demoNotify" href="{{url('user/fund-my-account')}}">Get Deposit</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="tile text-center">
-              <h4 class="title">Pending Matches</h4>
+              <h4 class="title">Trade</h4>
             <div class="tile-body">
-              <p class="text-danger">0</p>
-              <a class="btn btn-success" id="demoNotify" href="#">Sample Notification</a>
+              <p class="text-danger">Current Balance: NGN0</p>
             </div>
           </div>
         </div>
