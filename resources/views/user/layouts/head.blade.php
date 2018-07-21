@@ -1,16 +1,11 @@
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <!-- Twitter meta-->
-    <meta property="twitter:card" content="">
-    <meta property="twitter:site" content="@arbking">
-    <meta property="twitter:creator" content="@arbking">
-    <!-- Open Graph Meta-->
-    <meta property="og:type" content="">
-    <meta property="og:site_name" content="">
-    <meta property="og:title" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta property="og:description" content="">
+    <meta name="author" content="">
+    <link rel="icon"  href="img/Arbking_fav.png">
+
+    
     <title>Arbking - The best matchedbetting website</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

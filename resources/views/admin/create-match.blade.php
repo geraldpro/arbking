@@ -33,7 +33,7 @@
                 <div class="form-group">
                   <label class="control-label">Kick off</label>
                   <input class="form-control" id="demoDate" type="text" placeholder="Select Date">
-                  </div>
+                </div>
                 <div class="form-group">
                   <label class="control-label">Selected Market</label>
                   <input class="form-control" type="email" placeholder="Enter Selected Market">
@@ -138,23 +138,7 @@
       	}
       ]
       
-      var ctxl = $("#lineChartDemo").get(0).getContext("2d");
-      var lineChart = new Chart(ctxl).Line(data);
       
-      var ctxb = $("#barChartDemo").get(0).getContext("2d");
-      var barChart = new Chart(ctxb).Bar(data);
-      
-      var ctxr = $("#radarChartDemo").get(0).getContext("2d");
-      var radarChart = new Chart(ctxr).Radar(data);
-      
-      var ctxpo = $("#polarChartDemo").get(0).getContext("2d");
-      var polarChart = new Chart(ctxpo).PolarArea(pdata);
-      
-      var ctxp = $("#pieChartDemo").get(0).getContext("2d");
-      var pieChart = new Chart(ctxp).Pie(pdata);
-      
-      var ctxd = $("#doughnutChartDemo").get(0).getContext("2d");
-      var doughnutChart = new Chart(ctxd).Doughnut(pdata);
     </script>
     
   </body>

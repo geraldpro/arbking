@@ -39,6 +39,11 @@ Route::get('register','adminDashboardController@register')->name('register');
     Route::get('user/finance','userDashboardController@finance')->name('finance');
     Route::get('user/trade-history','userDashboardController@trade_history')->name('trade-history');
     Route::get('user/request-payout','userDashboardController@request_payout')->name('request-payout');
+    Route::get('user/bonus-calculator','userDashboardController@bonus_calculator')->name('bonus-calculator');
+    Route::get('user/my-verified-earning','userDashboardController@verified_earning')->name('my-verified-earning');
+    Route::get('user/livepool-status','userDashboardController@livepool')->name('livepool');
+    Route::get('user/auto-arbitrage','userDashboardController@arbitrage')->name('arbitrage');
+
 
 
 

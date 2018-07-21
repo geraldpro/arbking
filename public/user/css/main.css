@@ -5286,9 +5286,9 @@ tbody.collapse.show {
 
 .list-group-item.active {
   z-index: 2;
-  color: #FFF;
-  background-color: #009688;
-  border-color: #009688;
+  color: #009688;
+  background-color:#eeeeee;
+  border-color: #dee2e6;
 }
 
 .list-group-flush .list-group-item {
@@ -10172,11 +10172,14 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   vertical-align: middle;
-  background-color: #eeeeee;
+  background-color: #28a745;
   border: solid #cccccc;
-  border-width: 1px 0;
+  border-width: 2px 0;
+  border-color: #28a745;
   margin-left: -5px;
+  border-radius: 3px;
   margin-right: -5px;
+  color: #ffffff;
 }
 
 .datepicker.dropdown-menu {
@@ -13137,7 +13140,7 @@ be a descendant of the grid when it is being dragged.
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #009688;
+  background-color: #212529;
   z-index: 1030;
   padding-right: 15px;
 }
@@ -13741,6 +13744,7 @@ be a descendant of the grid when it is being dragged.
 .tile {
   position: relative;
   background: #ffffff;
+  color: #fff;
   border-radius: 3px;
   padding: 20px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -14735,7 +14739,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .user .user-tabs .nav-link.active {
-  border-left-color: #009688;
+  border-left-color: #28a745;
   border-bottom: 0;
 }
 

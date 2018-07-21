@@ -1,136 +1,99 @@
 @extends('user.layouts.master')
 @section('body')
 
-
-<body class="app sidebar-mini rtl">
-
-  
-    <main class="app-content">
-      <div class="row user">
-        <div class="col-md-12">
-          <div class="profile">
-            <div class="info"><img class="user-img" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg">
-              <h4>John Doe</h4>
-              <p>FrontEnd Developer</p>
-            </div>
-            <div class="cover-image"></div>
-          </div>
+  <body class="app sidebar-mini rtl">
+  <main class="app-content">
+      <div class="app-title">
+        <div class="div">
+          <h1><i class="fa fa-user-circle-o"></i>My Profile</h1>
         </div>
-        <div class="col-md-3">
-          <div class="tile p-0">
-            <ul class="nav flex-column nav-tabs user-tabs">
-              <li class="nav-item"><a class="nav-link active" href="#user-settings" data-toggle="tab">Settings</a></li>
-              <li class="nav-item"><a class="nav-link" href="#user-timeline" data-toggle="tab">Bank Details</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="tab-content">
-            <div class="tab-pane" id="user-timeline">
-
-              <div class="timeline-post">
-              <h4 class="line-head">Bank Details</h4>
-
-              <form>
-                  
-                  <div class="row">
-                    <div class="col-md-8 mb-4">
-                      <label>Choose Bank for Payment</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Account Name</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Account Number</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Account Type</label>
-                      <div class="form-group">
-                      <select class="form-control" id="exampleSelect1">
-                        <option>Savings</option>
-                        <option>Current</option>
-                        
-                      </select>
-                    </div>                   
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Swift Code</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Bank Country</label>
-                      <div class="form-group">
-                      <select class="form-control" id="exampleSelect1">
-                        <option>Country</option>
-                        <option>Nigeria</option>
-                        
-                      </select>
-                    </div>                   
-                    </div>
-                  </div>
-                  <div class="row mb-10">
-                    <div class="col-md-12">
-                      <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i> Save</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="tab-pane active" id="user-settings">
-              <div class="tile user-settings">
-                <h4 class="line-head">Profile Settings</h4>
-                <form>
-                  <div class="row mb-4">
-                    <div class="col-md-4">
-                      <label>First Name</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="col-md-4">
-                      <label>Last Name</label>
-                      <input class="form-control" type="text">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-8 mb-4">
-                      <label>Email</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Mobile No</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Office Phone</label>
-                      <input class="form-control" type="text">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-md-8 mb-4">
-                      <label>Home Phone</label>
-                      <input class="form-control" type="text">
-                    </div>
-                  </div>
-                  <div class="row mb-10">
-                    <div class="col-md-12">
-                      <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i> Save</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><a href="#">Profile</a></li>
+        </ul>
       </div>
-    </main>
+     
+     
+  <!-- Navs-->
+  <div class="tile mb-4">
+    
+    <div class="row">
+  <div class="col-lg-8">
+    <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#profile">Basic</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#uploadphoto">Upload Photo</a>
+              </li>
+          </ul>
+        </div>
+      <div class="card-body">
+          <div class="alert alert-light border-secondary shadow" role="alert">
+          <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade active show" id="profile">
+            <form class="row">
+            <div class="form-group col-md-6">
+              <label for="firstname">Firstname</label>
+              <input type="test" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastname">Lastname</label>
+              <input type="text" class="form-control">
+            </div>
+          </form>
+          <form class="row">
+            <div class="form-group col-md-6">
+              <label for="firstname">Phone Number</label>
+              <input type="test" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastname">Gender</label>
+              <input type="text" class="form-control">
+            </div>
+          </form>
+          <form class="row">
+            <div class="form-group col-md-6">
+              <label for="firstname">Country</label>
+              <input type="test" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastname">Date of Birth</label>
+              <input type="text" class="form-control">
+            </div>
+          </form>
+         <button class="btn btn-success" type="button">Submit</button>
+
+          </div> 
+          <div class="tab-pane fade" id="uploadphoto">
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Choose a picture to Upload</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+              </div>
+              <button class="btn btn-success" type="button">Submit</button>
+
+            </form>
+
+     </div>
+    </div>
+    </div>
+  </div>
+</div>  
+</div>
+<div class="col-lg-4">
+            <div class="list-group">
+              <div class="list-group-item list-group-item-action active">Manage Account</div>
+              <a href="#" class="list-group-item list-group-item-action">Change Password</a>
+              <a href="#" class="list-group-item list-group-item-action">Settings</a>
+            </div>
+          </div>
+  </div>
+  
+ </div>   
+</main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -139,18 +102,55 @@
     <!-- The javascript plugin to display page loading on top-->
     <script src="js/plugins/pace.min.js"></script>
     <!-- Page specific javascripts-->
-    <!-- Google analytics script-->
+    <script type="text/javascript" src="js/plugins/chart.js"></script>
     <script type="text/javascript">
-      if(document.location.hostname == 'pratikborsadiya.in') {
-      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      	ga('create', 'UA-72504830-1', 'auto');
-      	ga('send', 'pageview');
-      }
+      var data = {
+      	labels: ["January", "February", "March", "April", "May"],
+      	datasets: [
+      		{
+      			label: "My First dataset",
+      			fillColor: "rgba(220,220,220,0.2)",
+      			strokeColor: "rgba(220,220,220,1)",
+      			pointColor: "rgba(220,220,220,1)",
+      			pointStrokeColor: "#fff",
+      			pointHighlightFill: "#fff",
+      			pointHighlightStroke: "rgba(220,220,220,1)",
+      			data: [65, 59, 80, 81, 56]
+      		},
+      		{
+      			label: "My Second dataset",
+      			fillColor: "rgba(151,187,205,0.2)",
+      			strokeColor: "rgba(151,187,205,1)",
+      			pointColor: "rgba(151,187,205,1)",
+      			pointStrokeColor: "#fff",
+      			pointHighlightFill: "#fff",
+      			pointHighlightStroke: "rgba(151,187,205,1)",
+      			data: [28, 48, 40, 19, 86]
+      		}
+      	]
+      };
+      var pdata = [
+      	{
+      		value: 300,
+      		color: "#46BFBD",
+      		highlight: "#5AD3D1",
+      		label: "Complete"
+      	},
+      	{
+      		value: 50,
+      		color:"#F7464A",
+      		highlight: "#FF5A5E",
+      		label: "In-Progress"
+      	}
+      ]
+      
+      var ctxl = $("#lineChartDemo").get(0).getContext("2d");
+      var lineChart = new Chart(ctxl).Line(data);
+      
+      var ctxp = $("#pieChartDemo").get(0).getContext("2d");
+      var pieChart = new Chart(ctxp).Pie(pdata);
     </script>
+    
   </body>
-     
 
-@stop
+  @stop

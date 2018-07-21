@@ -68,4 +68,33 @@ public function fund_deposit(){
 
 }
 
+//Get user Bonus Calculator
+public function bonus_calculator(){
+
+  return view('user.bonus-calculator');
+
+}
+
+//Get user verified earning
+public function verified_earning(){
+  
+  return view('user.my-verified-earning');
+}
+
+//Get user trade history
+public function trade_history(){
+  
+  return view('user.trade-history');
+}
+//Get user live pool status
+public function livepool(){
+
+  return view('user.livepool-status');
+}
+
+//Get user Auto arbitrage
+public function arbitrage(){
+  
+  return view('user.auto-arbitrage');
+}
 }
