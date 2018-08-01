@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('phone_number')->nullable();
             $table->string('email', 100)->unique();
             $table->string('password', 100);
-			$table->string('currency_type')->nullable();
+            $table->integer('account_type_id')->unsigned()->nullable();
+            $table->foreign('account_type_id')->references('id')->on('account_types');
 			$table->string('profile_pic')->nullable();
             $table->integer('role_id')->unsigned();
             $table->foreign('role_id')->references('id')->on('roles');

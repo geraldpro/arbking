@@ -57,4 +57,12 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
+
+    protected function schedule(Schedule $schedule) {
+        // If IPN is enable set the schedule for ->daily()
+        // And if IPN is disable set schedule for ->everyMinute()
+         $schedule->command('coinpayment:transaction-check')
+            ->daily();
+
+    }
 }

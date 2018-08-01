@@ -8,7 +8,8 @@ class Withdrawal extends Model
 {
     //
     protected $fillable = [
-         'admin_id', 'amount','status', 'user_id',
+         'time_created', 'status', 'status_text', 'coin', 'amount', 'withdrawal_fee', 
+         'wallet_address', 'user_id', 'withdrawal_id'
     ];
     public function user()
     {

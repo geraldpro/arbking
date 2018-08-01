@@ -34,6 +34,7 @@
             <div class="tile-body">
               <p>0</p>
               <a class="btn btn-success" id="demoNotify" href="#">Sample Notification</a>
+              <a href="{{ $link_transaction }}" target="_blank">Pay Now</a>
             </div>
           </div>
         </div>
