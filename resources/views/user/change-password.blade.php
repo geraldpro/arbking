@@ -5,11 +5,11 @@
   <main class="app-content">
       <div class="app-title">
         <div class="div">
-          <h1><i class="fa fa-user-circle-o"></i>My Profile</h1>
+          <h1><i class="fa fa-user-circle-o"></i>Change Password</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">Profile</a></li>
+          <li class="breadcrumb-item"><a href="#">Change Password</a></li>
         </ul>
       </div>
      
@@ -23,11 +23,8 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#profile">Basic</a>
+                <a class="nav-link active" data-toggle="tab" href="#profile">Change Password</a>
             </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#uploadphoto">Financial Details</a>
-              </li>
           </ul>
         </div>
       <div class="card-body">
@@ -35,55 +32,21 @@
           <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade active show" id="profile">
             <form class="row">
-            <div class="form-group col-md-6">
-              <label for="firstname">Firstname</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
+            <div class="form-group col-md-12">
+              <label for="oldpassword">Current Password</label>
+              <input type="password" class="form-control">
             </div>
-            <div class="form-group col-md-6">
-              <label for="lastname">Lastname</label>
-              <input type="text" class="form-control">
+            <div class="form-group col-md-12">
+              <label for="lastname">New Password</label>
+              <input type="newpassword" class="form-control">
             </div>
-          </form>
-          <form class="row">
-            <div class="form-group col-md-6">
-              <label for="firstname">Phone Number</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="gender">Gender</label>
-              <select class="form-control" id="exampleSelect1">
-                      <option>Select Gender</option>
-                      <option>Male</option>
-                      <option>Female</option>
-                      
-                </select>
-              </div>
-          </form>
-          <form class="row">
-            <div class="form-group col-md-6">
-              <label for="country">Country</label>
-              <input type="text" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="date of birth">Date of Birth</label>
-              <input class="form-control" id="demoDate" type="text" placeholder="Select date of birth">
+            <div class="form-group col-md-12">
+              <label for="lastname">Confirm Password</label>
+              <input type="newpassword" class="form-control">
             </div>
           </form>
-         <button class="btn btn-success" type="button">Submit</button>
+         <button class="btn btn-success" type="button">Change Password</button>
         </div> 
-          <div class="tab-pane fade" id="uploadphoto">
-            <form class="row">
-            <div class="form-group col-md-6">
-              <label for="crypto Name">Crypto Name</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="wallet address">Wallet Address</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
-            </div>
-            </form>
-              <button class="btn btn-success" type="button">Submit</button>
-     </div>
     </div>
     </div>
   </div>
@@ -98,6 +61,7 @@
             </div>
           </div>
   </div> 
+  
 </div>   
 
 </main>

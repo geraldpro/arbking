@@ -36,13 +36,17 @@ Route::get('register','adminDashboardController@register')->name('register');
     Route::get('user/profile','userDashboardController@profile')->name('profile');
     Route::get('user/fund-my-account','userDashboardController@fund_account')->name('fund-my-account');
     Route::get('user/earning','userDashboardController@earning')->name('earning');
-    Route::get('user/finance','userDashboardController@finance')->name('finance');
+    Route::get('user/change-password','userDashboardController@passwordreset')->name('passwordreset');
     Route::get('user/trade-history','userDashboardController@trade_history')->name('trade-history');
     Route::get('user/request-payout','userDashboardController@request_payout')->name('request-payout');
     Route::get('user/bonus-calculator','userDashboardController@bonus_calculator')->name('bonus-calculator');
     Route::get('user/my-verified-earning','userDashboardController@verified_earning')->name('my-verified-earning');
     Route::get('user/livepool-status','userDashboardController@livepool')->name('livepool');
     Route::get('user/auto-arbitrage','userDashboardController@arbitrage')->name('arbitrage');
+    Route::get('user/upload-photo','userDashboardController@upload_pic')->name('upload_pic');
+    Route::get('user/update-financial-details','userDashboardController@update_cryptodetails')->name('updatecrypto');
+
+
 
 
 

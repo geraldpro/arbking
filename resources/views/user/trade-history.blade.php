@@ -34,21 +34,21 @@
           <div class="row">
         <div class="col-md-4">
           <div class="tile bg-success">
-              <h4>Total matches Played</h4>
+              <h4>Total matches Played:</h4>
             <div class="tile-body">
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="tile bg-info">
-              <h4 class="title">Vetted Matches</h4>
+              <h4 class="title">Vetted Matches:</h4>
             <div class="tile-body">
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="tile bg-warning">
-              <h4 class="title">Successful Matches</h4>
+              <h4 class="title">Successful Matches:</h4>
             <div class="tile-body">
             </div>
           </div>

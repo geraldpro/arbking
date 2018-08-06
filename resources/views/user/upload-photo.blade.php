@@ -23,66 +23,24 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#profile">Basic</a>
+                <a class="nav-link active" data-toggle="tab" href="#profile">Upload Photo</a>
             </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#uploadphoto">Financial Details</a>
-              </li>
+             
           </ul>
         </div>
       <div class="card-body">
           <div class="alert alert-light border-secondary shadow" role="alert">
-          <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade active show" id="profile">
-            <form class="row">
-            <div class="form-group col-md-6">
-              <label for="firstname">Firstname</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="lastname">Lastname</label>
-              <input type="text" class="form-control">
-            </div>
-          </form>
-          <form class="row">
-            <div class="form-group col-md-6">
-              <label for="firstname">Phone Number</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="gender">Gender</label>
-              <select class="form-control" id="exampleSelect1">
-                      <option>Select Gender</option>
-                      <option>Male</option>
-                      <option>Female</option>
-                      
-                </select>
+          <div class="tab-content" id="myTabContent"> 
+          <div class="tab-pane fade active show" id="uploadphoto">
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Choose a picture to Upload</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
               </div>
-          </form>
-          <form class="row">
-            <div class="form-group col-md-6">
-              <label for="country">Country</label>
-              <input type="text" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="date of birth">Date of Birth</label>
-              <input class="form-control" id="demoDate" type="text" placeholder="Select date of birth">
-            </div>
-          </form>
-         <button class="btn btn-success" type="button">Submit</button>
-        </div> 
-          <div class="tab-pane fade" id="uploadphoto">
-            <form class="row">
-            <div class="form-group col-md-6">
-              <label for="crypto Name">Crypto Name</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="wallet address">Wallet Address</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
-            </div>
-            </form>
               <button class="btn btn-success" type="button">Submit</button>
+
+            </form>
+
      </div>
     </div>
     </div>
