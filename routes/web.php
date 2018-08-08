@@ -45,7 +45,7 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('user/my-verified-earning','userDashboardController@verified_earning')->name('my-verified-earning');
     Route::get('user/livepool-status','userDashboardController@livepool')->name('livepool');
     Route::get('user/auto-arbitrage','userDashboardController@arbitrage')->name('arbitrage');
-
+    Route::post('user/initiate_payment', 'PaymentController@initiatePayment')->name('initiatePayment');
 
 
 
