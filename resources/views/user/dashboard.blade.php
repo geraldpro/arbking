@@ -11,9 +11,7 @@
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
           <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
         </ul>
-      </div>
-     
-     
+      </div>   
   <!-- Navs-->
   <div class="tile mb-4">
     <div class="row">
@@ -32,7 +30,7 @@
               <h5>Trade Volume</h5>
             <div class="tile-body">
              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-warning">Start Trading</a>
+              <a href="#" class="btn btn-success">Start Trading</a>
             </div>
           </div>
         </div>
@@ -49,34 +47,39 @@
           <div class="tile bg-dark">
               <h5 class="title">Trade Balance</h5>
             <div class="tile-body">
+            <p class="card-text">Available Balance: <span class="text-danger">$200</span></p>
+            <a href="#" class="btn btn-success">Start Trading</a>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4">
-          <div class="tile bg-light">
-              <h5>Trade Volume</h5>
+          <div class="tile bg-dark">
+              <h5>Live Pool Status</h5>
             <div class="tile-body">
              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-warning">Start Trading</a>
+              <a href="{{url('user/livepool-status')}}" class="btn btn-success">View Live pool </a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="tile bg-light">
-              <h5 class="title" style="color:#000";>Trade Statistics</h5>
+          <div class="tile bg-dark">
+              <h5 class="title">Auto Arbitrage</h5>
             <div class="tile-body">
             <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
-              <a href="#" class="btn btn-success">Get Deposit</a>
+              <a href="{{url('user/auto-arbitrage')}}" class="btn btn-success">View Auto Arbitrage</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="tile bg-light">
-              <h5 class="title">Trade Balance</h5>
+          <div class="tile bg-dark">
+              <h5 class="title">Profile</h5>
             <div class="tile-body">
-            </div>
+             <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
+             <a href="{{url('user/profile')}}" class="btn btn-success">View Profile</a>
+
+             </div>
           </div>
         </div>
       </div>

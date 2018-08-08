@@ -19,10 +19,10 @@ public function profile(){
 
 }
 
-//Get finance
-public function finance(){
+//Get change password
+public function passwordreset(){
 
-  return view('user.finance');
+  return view('user.change-password');
 
 }
 
@@ -30,6 +30,13 @@ public function finance(){
 public function fund(){
 
   return view('admin.fundwithdrawal-request');
+
+}
+
+//Get upload photo
+public function upload_pic(){
+
+  return view('user.upload-photo');
 
 }
 
@@ -96,9 +103,14 @@ public function livepool(){
   return view('user.livepool-status');
 }
 
+//Get user crypto wallet update
+public function update_cryptodetails(){
+
+  return view('user.update-financial-details');
+}
 //Get user Auto arbitrage
 public function arbitrage(){
-  
   return view('user.auto-arbitrage');
 }
+
 }
