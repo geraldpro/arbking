@@ -34,55 +34,68 @@
           <div class="alert alert-light border-secondary shadow" role="alert">
           <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade active show" id="profile">
-            <form class="row">
-            <div class="form-group col-md-6">
+            <!-- <form class="row"> -->
+            <!-- <div class="form-group col-md-6">
               <label for="firstname">Firstname</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
+              <input type="test" class="form-control" aria-describedby="emailHelp" value="{{Auth::user()->first_name}}">
             </div>
             <div class="form-group col-md-6">
               <label for="lastname">Lastname</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" value="{{Auth::user()->last_name}}"> -->
+            <!-- </div>
+          </form> -->
+          <form class="row" method="post" action="{{url('user/profile/update')}}">
+          <div class="form-group col-md-6">
+              <label for="firstname">Firstname</label>
+              <input type="text" name='first_name' class="form-control" aria-describedby="emailHelp" value="{{Auth::user()->first_name}}">
             </div>
-          </form>
-          <form class="row">
+            <div class="form-group col-md-6">
+              <label for="lastname">Lastname</label>
+              <input type="text" name="last_name" class="form-control" value="{{Auth::user()->last_name}}">
+              </div>
             <div class="form-group col-md-6">
               <label for="firstname">Phone Number</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
+              <input type="test" name="phone_number" class="form-control" aria-describedby="emailHelp" value="{{Auth::user()->phone_number}}">
             </div>
             <div class="form-group col-md-6">
               <label for="gender">Gender</label>
-              <select class="form-control" id="exampleSelect1">
-                      <option>Select Gender</option>
+              <select class="form-control" name="gender" id="exampleSelect1">
+                      <option value="none">Select Gender</option>
                       <option>Male</option>
-                      <option>Female</option>
-                      
+                      <option>Female</option>         
                 </select>
               </div>
-          </form>
-          <form class="row">
+          <!-- </form>
+          <form class="row"> -->
             <div class="form-group col-md-6">
               <label for="country">Country</label>
-              <input type="text" class="form-control" aria-describedby="emailHelp">
+              <input type="text" name="country" class="form-control" aria-describedby="emailHelp">
             </div>
             <div class="form-group col-md-6">
               <label for="date of birth">Date of Birth</label>
-              <input class="form-control" id="demoDate" type="text" placeholder="Select date of birth">
+              <input class="form-control" name="dob" id="demoDate" type="text" placeholder="Select date of birth">
+            </div>
+            <div class="form-group col-md-6">
+            {{ csrf_field() }}
+            <button class="btn btn-success" type="submit">Submit</button>
             </div>
           </form>
-         <button class="btn btn-success" type="button">Submit</button>
         </div> 
           <div class="tab-pane fade" id="uploadphoto">
-            <form class="row">
+            <form class="row" method="post" action="{{url('user/profile/update')}}">
             <div class="form-group col-md-6">
               <label for="crypto Name">Crypto Name</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
+              <input  type="text" class="form-control" aria-describedby="emailHelp" value="{{Auth::user()->accountType->name}}"  readonly>
             </div>
             <div class="form-group col-md-6">
               <label for="wallet address">Wallet Address</label>
-              <input type="test" class="form-control" aria-describedby="emailHelp">
+              <input type="text" name="wallet_address" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group col-md-6">
+            {{ csrf_field() }}
+            <button class="btn btn-success" type="submit">Submit</button>
             </div>
             </form>
-              <button class="btn btn-success" type="button">Submit</button>
      </div>
     </div>
     </div>
@@ -94,7 +107,7 @@
               <div class="list-group-item list-group-item-action active">Manage Account</div>
               <a href="{{url('user/upload-photo')}}" class="list-group-item list-group-item-action">Upload Photo</a>
               <a href="{{url('user/change-password')}}" class="list-group-item list-group-item-action">Change Password</a>
-              <a href="accountsettings" class="list-group-item list-group-item-action">Update Financial details</a>
+              <a href="{{url('user/profile')}}" class="list-group-item list-group-item-action">Update Profile</a>
             </div>
           </div>
   </div> 

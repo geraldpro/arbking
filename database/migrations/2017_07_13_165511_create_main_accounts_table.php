@@ -19,12 +19,12 @@ class CreateMainAccountsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('account_type_id')->unsigned();
             $table->foreign('account_type_id')->references('id')->on('account_types');
-            $table->decimal('deposited_amount', 20, 2);
-            $table->decimal('shield_amount', 20, 2);
-            $table->decimal('total_amount', 20, 2);
-            $table->decimal('threshold_amount', 20, 2);
-            $table->decimal('staked_amount', 20, 2)->defaullt(0);
-            $table->decimal('withdrawable_amount', 20, 2)->default(0);
+            $table->decimal('deposited_amount', 20, 8);
+            $table->decimal('shield_amount', 20, 8);
+            $table->decimal('total_amount', 20, 8);
+            $table->decimal('threshold_amount', 20, 8);
+            $table->decimal('staked_amount', 20, 8)->defaullt(0);
+            $table->decimal('withdrawable_amount', 20, 8)->default(0);
             $table->tinyInteger('account_status');
             $table->timestamps();
         });

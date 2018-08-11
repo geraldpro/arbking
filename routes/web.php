@@ -50,6 +50,13 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('user/update-financial-details','userDashboardController@update_cryptodetails')->name('updatecrypto');
 
 
+    //User Profile routes
+    Route::get('user/profile', 'UserDashboardController@profile');
+    Route::post('user/profile/update', 'ProfileController@updateProfile')->name('updateProfile');
+    Route::post('user/profile/password/update', 'ProfileController@updatePassword')->name('updatePassword');
+    Route::post('user/profile/picture/update', 'ProfileController@changePicture')->name('changePicture');
+
+
 
 
 
