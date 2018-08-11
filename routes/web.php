@@ -34,20 +34,20 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('admin/user-fund-deposit','adminDashboardController@fund_deposit')->name('user-fund-deposit');
 
 /**** User Dashboard routes******/
-    Route::get('user/dashboard','userDashboardController@dashboard')->name('dashboard');
-    Route::get('user/profile','userDashboardController@profile')->name('profile');
-    Route::get('user/fund-my-account','userDashboardController@fund_account')->name('fund-my-account');
-    Route::get('user/earning','userDashboardController@earning')->name('earning');
-    Route::get('user/change-password','userDashboardController@passwordreset')->name('passwordreset');
-    Route::get('user/trade-history','userDashboardController@trade_history')->name('trade-history');
-    Route::get('user/request-payout','userDashboardController@request_payout')->name('request-payout');
-    Route::get('user/bonus-calculator','userDashboardController@bonus_calculator')->name('bonus-calculator');
-    Route::get('user/my-verified-earning','userDashboardController@verified_earning')->name('my-verified-earning');
-    Route::get('user/livepool-status','userDashboardController@livepool')->name('livepool');
-    Route::get('user/auto-arbitrage','userDashboardController@arbitrage')->name('arbitrage');
+    Route::get('user/dashboard','UserDashboardController@dashboard')->name('dashboard');
+    Route::get('user/profile','UserDashboardController@profile')->name('profile');
+    Route::get('user/fund-my-account','UserDashboardController@fund_account')->name('fund-my-account');
+    Route::get('user/earning','UserDashboardController@earning')->name('earning');
+    Route::get('user/change-password','UserDashboardController@passwordreset')->name('passwordreset');
+    Route::get('user/trade-history','UserDashboardController@trade_history')->name('trade-history');
+    Route::get('user/request-payout','UserDashboardController@request_payout')->name('request-payout');
+    Route::get('user/bonus-calculator','UserDashboardController@bonus_calculator')->name('bonus-calculator');
+    Route::get('user/my-verified-earning','UserDashboardController@verified_earning')->name('my-verified-earning');
+    Route::get('user/livepool-status','UserDashboardController@livepool')->name('livepool');
+    Route::get('user/auto-arbitrage','UserDashboardController@arbitrage')->name('arbitrage');
     Route::post('user/initiate_payment', 'PaymentController@initiatePayment')->name('initiatePayment');
-    Route::get('user/upload-photo','userDashboardController@upload_pic')->name('upload_pic');
-    Route::get('user/update-financial-details','userDashboardController@update_cryptodetails')->name('updatecrypto');
+    Route::get('user/upload-photo','UserDashboardController@upload_pic')->name('upload_pic');
+    Route::get('user/update-financial-details','UserDashboardController@update_cryptodetails')->name('updatecrypto');
 
 
     //User Profile routes
