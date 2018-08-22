@@ -45,7 +45,7 @@
               <input type="newpassword" class="form-control">
             </div>
           </form>
-         <button class="btn btn-success" type="button">Change Password</button>
+         <button class="btn btn-info" type="button">Change Password</button>
         </div> 
     </div>
     </div>

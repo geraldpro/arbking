@@ -69,7 +69,7 @@
               <input class="form-control" id="demoDate" type="text" placeholder="Select date of birth">
             </div>
           </form>
-         <button class="btn btn-success" type="button">Submit</button>
+         <button class="btn btn-info" type="button">Submit</button>
         </div> 
           <div class="tab-pane fade" id="uploadphoto">
             <form class="row">
@@ -82,7 +82,7 @@
               <input type="test" class="form-control" aria-describedby="emailHelp">
             </div>
             </form>
-              <button class="btn btn-success" type="button">Submit</button>
+              <button class="btn btn-info" type="button">Submit</button>
      </div>
     </div>
     </div>
