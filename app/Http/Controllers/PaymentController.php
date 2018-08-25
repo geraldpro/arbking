@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 Use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use CoinPayment;
+use Illuminate\Support\Facades\Validator;
 
 class PaymentController extends Controller{
     
@@ -15,6 +16,14 @@ class PaymentController extends Controller{
         return $payload;
     }
     public function initiatePayment(Request $request){
+        $rules = array(
+            'amount' => 'required|numeric|min:10',
+        );
+
+        $validate = Validator::make($request->all(), $rules);
+        if ($validate->fails()) {
+            return redirect()->back()->withErrors($validate)->withInput();
+        } else {
         $trx['amountTotal'] = $request->amount; // USD
         $trx['note'] = 'Note for your transaction';
         $trx['items'][0] = [
@@ -27,7 +36,7 @@ class PaymentController extends Controller{
       $link_transaction = CoinPayment::url_payload($trx);
         // return view('admin.dashboard')->with('link_transaction', $link_transaction);
         return redirect()->to($link_transaction);
-      
+         }
       }
     public function processPayment($payload){
         $account = MainAccount::where('user_id', '=', Auth::user()->id)->first();

@@ -27,26 +27,34 @@
             </li>
           </ul>
         </div>
-       
-     <div class="card-body">
+        @if (Session::has('success'))
+        <div class="card-body">
        <div class="col-lg-12" style="padding: 0px;">
           <div class="bs-component">
             <div class="alert alert-dismissible alert-success">
               <button class="close" type="button" data-dismiss="alert">×</button>
-              <strong>Well done!</strong> You successfully read
-              <a class="alert-link" href="#">this important alert message</a>.
+              <strong>{{ Session::get('success') }}</strong>
+              <!-- <a class="alert-link" href="#">this important alert message</a>. -->
             </div>
           </div>
         </div>
-        <div class="col-lg-12" style="padding: 0px;">
+								<!-- <div class="">
+									<div class="alert alert-success text-center"> {{ Session::get('success') }}</div>
+								</div> -->
+							@elseif (Session::has('fail'))
+								<!-- <div class="">
+									<div class="alert alert-danger text-center"> {{ Session::get('fail') }}</div>
+								</div> -->
+                <div class="col-lg-12" style="padding: 0px;">
                <div class="bs-component">
                     <div class="alert alert-dismissible alert-danger">
                          <button class="close" type="button" data-dismiss="alert">×</button>
-                           <strong>Oh snap!</strong>
-                                 <a class="alert-link" href="#">Change a few things up</a> and try submitting again.
+                           <strong> {{ Session::get('fail') }}</strong>
+                                 <!-- <a class="alert-link" href="#">Change a few things up</a> and try submitting again. -->
                     </div>
             </div>
         </div>
+							@endif
           <div class="alert alert-light border-secondary shadow" role="alert">
                 <div class="tab-content" id="myTabContent">
                      <div class="tab-pane fade active show" id="profile">
@@ -55,6 +63,9 @@
                                          <div class="form-group col-md-6">
                                                 <label for="firstname">Amount (usd)</label>
                                                        <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
+                                                       @if ($errors->has('amount'))
+									                                          <span style="color: palevioletred;">{{ $errors->first('amount') }}</span>
+								                                        @endif
                                                                 <br>
                                                                       <button class="btn btn-success" type="submit">Submit</button>
                                           </div>
