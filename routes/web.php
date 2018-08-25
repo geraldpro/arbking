@@ -23,6 +23,7 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
 /**** Admin Dashboard routes******/
     Route::get('admin/dashboard','adminDashboardController@dashboard')->name('dashboard');
     Route::get('admin/create-match','adminDashboardController@creatmatch')->name('create-match');
+    Route::post('admin/creatematch','AdminStakeController@createMatch')->name('createMatch');
     Route::get('admin/edit-match','adminDashboardController@edit_match')->name('edit-match');
 
     Route::get('admin/confirm-match','adminDashboardController@confirm_match')->name('confirm-match');
