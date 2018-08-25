@@ -5,11 +5,11 @@
   <main class="app-content">
       <div class="app-title">
         <div class="div">
-          <h1><i class="fa fa-laptop"></i> Dashboard</h1>
+          <h1><i class="fa fa-laptop"></i> Live Pool Status</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="#">Live Pool Status</a></li>
         </ul>
       </div>
      
@@ -22,26 +22,28 @@
                <div class="card">
                    <div class="card-header">
                       <ul class="nav nav-tabs card-header-tabs">
-                         <li class="nav-item"><a class="nav-link active" href="#">Dashboard</a></li>
+                         <li class="nav-item"><a class="nav-link active" href="#">Live Pool Status</a></li>
                       </ul>
                     </div>
                   <div class="card-body">
                 <div class="alert alert-light border-secondary shadow" role="alert">
       <div class="row">
         <div class="col-md-4">
-          <div class="tile bg-success">
-              <h5>Current Pool</h5>
+          <div class="tile bg-info">
+              <h4>Current Pool : $500</h4>
+            <br>
             <div class="tile-body">
-             <h4>$500</h4>
-              <a href="#" class="btn btn-warning">Start Trading</a>
+              <a href="#" class="btn" style="background-color:#fff;";>Join Pool Now</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="tile bg-success">
-              <h5>Pool Cap</h5>
+          <div class="tile bg-info">
+              <h4>Pool Cap: $2000</h4>
+              <br>
+              <br>
+              
             <div class="tile-body">
-             <p style="font-size:14px;">$2000</p>
             </div>
           </div>
         </div>

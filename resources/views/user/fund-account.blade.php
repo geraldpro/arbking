@@ -5,11 +5,11 @@
   <main class="app-content">
       <div class="app-title">
         <div class="div">
-          <h1><i class="fa fa-user-circle-o"></i>Fund My Account</h1>
+            <h1><i class="fa fa-user-circle-o"></i>Fund My Account</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">Profile</a></li>
+              <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+              <li class="breadcrumb-item"><a href="#">Profile</a></li>
         </ul>
       </div>
      
@@ -25,26 +25,41 @@
               <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#profile">Basic</a>
             </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#uploadphoto">Upload Photo</a>
-              </li> -->
           </ul>
         </div>
-      <div class="card-body">
-          <div class="alert alert-light border-secondary shadow" role="alert">
-          <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade active show" id="profile">
-            <form class="row" method="post" action="{{ route('initiatePayment') }}">
-            {{ csrf_field() }}
-            <div class="form-group col-md-6">
-              <label for="firstname">Amount (usd)</label>
-              <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
-              <br>
-              <button class="btn btn-success" type="submit">Submit</button>
+       
+     <div class="card-body">
+       <div class="col-lg-12" style="padding: 0px;">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-success">
+              <button class="close" type="button" data-dismiss="alert">×</button>
+              <strong>Well done!</strong> You successfully read
+              <a class="alert-link" href="#">this important alert message</a>.
             </div>
-          </form>
-
-          </div> 
+          </div>
+        </div>
+        <div class="col-lg-12" style="padding: 0px;">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                           <strong>Oh snap!</strong>
+                                 <a class="alert-link" href="#">Change a few things up</a> and try submitting again.
+                    </div>
+            </div>
+        </div>
+          <div class="alert alert-light border-secondary shadow" role="alert">
+                <div class="tab-content" id="myTabContent">
+                     <div class="tab-pane fade active show" id="profile">
+                            <form class="row" method="post" action="{{ route('initiatePayment') }}">
+                                 {{ csrf_field() }}
+                                         <div class="form-group col-md-6">
+                                                <label for="firstname">Amount (usd)</label>
+                                                       <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
+                                                                <br>
+                                                                      <button class="btn btn-success" type="submit">Submit</button>
+                                          </div>
+                                  </form>
+                              </div> 
           <div class="tab-pane fade" id="uploadphoto">
             <!-- <form>
                 <div class="form-group">

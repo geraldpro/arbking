@@ -37,7 +37,7 @@
                   <label for="exampleFormControlFile1">Choose a picture to Upload</label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
               </div>
-              <button class="btn btn-success" type="button">Submit</button>
+              <button class="btn btn-info" type="button">Submit</button>
 
             </form>
 
