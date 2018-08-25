@@ -31,9 +31,14 @@
                   <input class="form-control" type="text" placeholder="Enter Away Team">
                 </div>
                 <div class="form-group">
-                  <label class="control-label">Kick off</label>
-                  <input class="form-control" id="demoDate" type="text" placeholder="Select Date">
+                <label class="control-label">Kick off date & time</label>
+                   <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
                 </div>
+            </div>
                 <div class="form-group">
                   <label class="control-label">Selected Market</label>
                   <input class="form-control" type="email" placeholder="Enter Selected Market">
@@ -50,16 +55,13 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="tile">
-            <h3 class="tile-title">Card Title</h3>
-            <div class="tile-body">Hey there, I am a very simple card. I am good at containing small bits of information. I am quite convenient because I require little markup to use effectively.</div>
-            <div class="tile-footer"><a class="btn btn-success" href="#">Link</a></div>
-          </div>
-        </div>
-        <div class="clearix"></div>
+        
       </div>
     </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -72,74 +74,11 @@
 
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/chart.js"></script>
-    <script type="text/javascript">
-
-     $('#sl').click(function(){
-      	$('#tl').loadingBtn();
-      	$('#tb').loadingBtn({ text : "Signing In"});
-      });
-      
-      $('#el').click(function(){
-      	$('#tl').loadingBtnComplete();
-      	$('#tb').loadingBtnComplete({ html : "Sign In"});
-      });
-      
-      $('#demoDate').datepicker({
-      	format: "dd/mm/yyyy",
-      	autoclose: true,
-      	todayHighlight: true
-      });
-      
-      $('#demoSelect').select2();
-      
-      var data = {
-      	labels: ["January", "February", "March", "April", "May"],
-      	datasets: [
-      		{
-      			label: "My First dataset",
-      			fillColor: "rgba(220,220,220,0.2)",
-      			strokeColor: "rgba(220,220,220,1)",
-      			pointColor: "rgba(220,220,220,1)",
-      			pointStrokeColor: "#fff",
-      			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(220,220,220,1)",
-      			data: [65, 59, 80, 81, 56]
-      		},
-      		{
-      			label: "My Second dataset",
-      			fillColor: "rgba(151,187,205,0.2)",
-      			strokeColor: "rgba(151,187,205,1)",
-      			pointColor: "rgba(151,187,205,1)",
-      			pointStrokeColor: "#fff",
-      			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(151,187,205,1)",
-      			data: [28, 48, 40, 19, 86]
-      		}
-      	]
-      };
-      var pdata = [
-      	{
-      		value: 300,
-      		color:"#F7464A",
-      		highlight: "#FF5A5E",
-      		label: "Red"
-      	},
-      	{
-      		value: 50,
-      		color: "#46BFBD",
-      		highlight: "#5AD3D1",
-      		label: "Green"
-      	},
-      	{
-      		value: 100,
-      		color: "#FDB45C",
-      		highlight: "#FFC870",
-      		label: "Yellow"
-      	}
-      ]
-      
-      
-    </script>
+       <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker('mm/dd/yyyy hh-mm');
+            });
+        </script>
     
   </body>
 </html>
