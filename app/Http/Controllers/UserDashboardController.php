@@ -75,6 +75,10 @@ public function fund_deposit(){
 
 }
 
+public function fund_account(){
+
+  return view('user.fund-account');
+}
 //Get user Bonus Calculator
 public function bonus_calculator(){
 

@@ -52,7 +52,7 @@
               <div class="list-group-item list-group-item-action active">Manage Account</div>
               <a href="{{url('user/upload-photo')}}" class="list-group-item list-group-item-action">Upload Photo</a>
               <a href="{{url('user/change-password')}}" class="list-group-item list-group-item-action">Change Password</a>
-              <a href="accountsettings" class="list-group-item list-group-item-action">Update Financial details</a>
+              <a href="{{url('user/profile')}}" class="list-group-item list-group-item-action">Update Profile</a>
             </div>
           </div>
   </div> 

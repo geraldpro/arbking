@@ -39,7 +39,7 @@
               <h5 class="title">Trade Statistics</h5>
             <div class="tile-body">
             <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
-              <a href="#" class="btn btn-success">Get Deposit</a>
+              <a href="{{url('user/fund-my-account')}}" class="btn btn-success">Get Deposit</a>
             </div>
           </div>
         </div>

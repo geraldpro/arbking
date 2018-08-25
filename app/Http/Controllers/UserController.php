@@ -45,6 +45,7 @@ public function logout()
     public function postSignup(Request $request)
     {
         //$state =  (int)Input::get('state');
+        // dd($request->all());
         $rules = array(
             'email' => 'required|unique:users|min:4',
             'password' => 'required|min:6',
@@ -63,14 +64,16 @@ public function logout()
             $data['password'] = Hash::make($request->get('password'));
             $data['role_id'] = Config::get('constants.roles.user');
             $user = new User();
+            // dd($data);
             $user->fill($data);
             if ($user->save()) {
                 Mail::to($request->get('email'))->send(new ConfirmAccount($user));
                 // return Redirect::route('getSignup')->with('success', 'you registered successfully please check your email for your account activation mail');
-                return redirect()->route('login')->withSucess('You have registered successfully');
+                return redirect()->route('login')->with('success', 'You have registered successfully');
             } else {
+                console.log('cool');
             //     return Redirect::route('getSignup')->with('fail', 'an error occurred while creating your profile');
-                return  redirect()->back()->withErrors('An error occured while trying to sign you up')->withInput();
+                return  redirect()->back()->with('fail', 'An error occured while trying to sign you up')->withInput();
             }
         }
     }
@@ -159,7 +162,6 @@ public function logout()
 			'password' => 'required|min:6',
 		));
 		if ($validate->fails()) {
-            dd('cool');
 			return back()->withErrors($validate)->withInput();
 		} else {
 			$auth = Auth::attempt(array(
@@ -170,7 +172,6 @@ public function logout()
 				return redirect()->intended('user/dashboard')->with('success', 'You have successfully logged in');
 			}
 			else{
-                dd('cool2');
 				return back()->with('fail', 'invalid username or password')->withInput();
 			}
 		}

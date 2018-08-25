@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Hexters\CoinPayment\Entities\CoinPaymentuserRelation;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, CoinPaymentuserRelation;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +17,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
          'email', 'password', 'first_name', 'last_name', 'phone_number','role_id', 'confirmed', 'confirmation_code',
-		 'currency_type', 'profile_pic'
+		 'account_type_id', 'profile_pic', 'wallet_address', 'dob', 'country', 'gender'
     ];
 
     /**
@@ -41,5 +42,9 @@ class User extends Authenticatable
     }
     public function stakes(){
         return $this->hasMany('App\Stake', 'user_id');
+    }
+    public function accountType()
+    {
+        return $this->belongsTo('App\AccountType', 'account_type_id');
     }
 }

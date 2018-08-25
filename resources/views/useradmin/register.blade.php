@@ -6,7 +6,16 @@
 				<section id="main" class="container 50%">
 					<header>
 	          <h2></h2>
-	        </header>
+			</header>
+				@if (Session::has('success'))
+				<div class="">
+					<div class="alert alert-success text-center"> {{ Session::get('success') }}</div>
+				</div>
+				@elseif (Session::has('fail'))
+					<div class="">
+						<div class="alert alert-danger text-center"> {{ Session::get('fail') }}</div>
+					</div>
+				@endif
 					<div class="box">
 					  <form method="post" action="{{ route('register') }}">
 						{{ csrf_field() }}
@@ -14,10 +23,10 @@
 							<div class="text-center"><strong style="text-align:center;font-size:24px;">Register on Arbking</strong></div>
 
 								</div>
-							<div class="row uniform 50% {{ ($errors->has('first_name')) ? 'has-error' : ''}}"">
+							<div class="row uniform 50% {{ ($errors->has('first_name')) ? 'has-error' : ''}}">
 
 								<div class="12u 12u(mobilep)">
-									<input type="text" name="fname" id="fname" value="" placeholder="Firstname" />
+									<input type="text" name="first_name" id="fname" value="" placeholder="Firstname" />
 								</div>
 								@if ($errors->has('first_name'))
 									<span style="color: palevioletred;">{{ $errors->first('first_name') }}</span>
@@ -26,7 +35,7 @@
 							<div class="row uniform 50% {{ ($errors->has('last_name')) ? 'has-error' : ''}}">
 
 								<div class="12u 12u(mobilep)">
-									<input type="text" name="lname" id="lname" value="" placeholder="Lastname" />
+									<input type="text" name="last_name" id="lname" value="" placeholder="Lastname" />
 								</div>
 								@if ($errors->has('last_name'))
                     				<span style="color: palevioletred;">{{ $errors->first('last_name') }}</span>
@@ -47,6 +56,14 @@
 								</div>
 								@if ($errors->has('password'))
                     				<span style="color: palevioletred;">{{ $errors->first('password') }}</span>
+                				@endif
+							</div>
+							<div class="row uniform 50% {{ ($errors->has('confirm_password')) ? 'has-error' : ''}}">
+								<div class="12u">
+									<input type="password" name="confirm_password" id="subject" value="" placeholder="Confirm Password" />
+								</div>
+								@if ($errors->has('password'))
+                    				<span style="color: palevioletred;">{{ $errors->first('confirm_password') }}</span>
                 				@endif
 							</div>
 

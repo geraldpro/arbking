@@ -15,12 +15,18 @@ class CreateWithdrawalsTable extends Migration
     {
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('amount', 10, 2);
+            $table->integer('user_id');
+            $table->string('withdrawal_id');
+            $table->string('wallet_address');
+            $table->string('coin', 10);
+            $table->string('status_text')->default("pending");
             $table->integer('status')->default(0);
-            $table->integer('admin_id')->unsigned()->nullable();
-            $table->foreign('admin_id')->references('id')->on('users');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->datetime('time_created')->nullable();
+            $table->datetime('confirmation_at')->nullable();
+            $table->double('amount', 20, 8);
+            $table->double('withrawal_fee', 20, 8);
+            $table->boolean('is_resolved')->default(0);
+            $table->text('payload')->nullabe();
             $table->timestamps();
         });
     }

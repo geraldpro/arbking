@@ -48,7 +48,7 @@
               <h5 class="title">Trade Statistics</h5>
             <div class="tile-body">
             <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
-              <a href="#" class="btn btn-success">Get Deposit</a>
+              <a href="{{url('fund_my_account')}}" class="btn btn-success">Get Deposit</a>
             </div>
           </div>
         </div>
@@ -56,6 +56,9 @@
           <div class="tile bg-warning">
               <h5 class="title">Trade Balance</h5>
             <div class="tile-body">
+              <p>0</p>
+              <a class="btn btn-success" id="demoNotify" href="#">Sample Notification</a>
+              <!-- <a href="{{ $link_transaction }}" target="_blank">Pay Now</a> -->
             </div>
           </div>
         </div>

@@ -2,13 +2,23 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use CoinPayment;
 
 class adminDashboardController extends Controller{
 
 //Get dashboard index
 public function dashboard(){
-
-  return view('admin.dashboard');
+  $trx['amountTotal'] = 0.5; // USD
+  $trx['note'] = 'Note for your transaction';
+  $trx['items'][0] = [
+    'descriptionItem' => 'Arb king deposite',
+    'priceItem' => 0.5, // USD
+    'qtyItem' => 1,
+    'subtotalItem' => 0.5 // USD
+];
+// $coin = new CoinPaymentClass();
+$link_transaction = CoinPayment::url_payload($trx);
+  return view('admin.dashboard')->with('link_transaction', $link_transaction);
 
 }
 
