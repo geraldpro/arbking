@@ -14,6 +14,34 @@
       </div>
       <div class="row">
         <div class="col-md-6">
+        @if (Session::has('success'))
+        <div class="card-body">
+       <div class="col-lg-12" style="padding: 0px;">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-success">
+              <button class="close" type="button" data-dismiss="alert">×</button>
+              <strong>{{ Session::get('success') }}</strong>
+              <!-- <a class="alert-link" href="#">this important alert message</a>. -->
+            </div>
+          </div>
+        </div>
+								<!-- <div class="">
+									<div class="alert alert-success text-center"> {{ Session::get('success') }}</div>
+								</div> -->
+							@elseif (Session::has('fail'))
+								<!-- <div class="">
+									<div class="alert alert-danger text-center"> {{ Session::get('fail') }}</div>
+								</div> -->
+                <div class="col-lg-12" style="padding: 0px;">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                           <strong> {{ Session::get('fail') }}</strong>
+                                 <!-- <a class="alert-link" href="#">Change a few things up</a> and try submitting again. -->
+                    </div>
+            </div>
+        </div>
+							@endif
           <div class="tile">
             <h3 class="tile-title">Create New Match</h3>
             <div class="tile-body">
@@ -39,14 +67,19 @@
 									<span style="color: palevioletred;">{{ $errors->first('away_team') }}</span>
 								@endif
                 </div>
-                <div class="form-group {{ ($errors->has('kickoff')) ? 'has-error' : ''}}">
-                  <label class="control-label">Kick off</label>
-                  <input class="form-control" name="kickoff"  type="datetime-local"  placeholder="Select Date">
-                  @if ($errors->has('kickoff'))
+                <div class="form-group  {{ ($errors->has('kickoff')) ? 'has-error' : ''}}">
+                <label class="control-label">Kick off date & time</label>
+                   <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+                @if ($errors->has('kickoff'))
 									<span style="color: palevioletred;">{{ $errors->first('kickoff') }}</span>
 								@endif
-                </div>
-                <div class="form-group {{ ($errors->has('selected_market')) ? 'has-error' : ''}}">
+            </div>
+                <div class="form-group  {{ ($errors->has('selected_market')) ? 'has-error' : ''}}">
                   <label class="control-label">Selected Market</label>
                   <input class="form-control" name="selected_market" type="text" placeholder="Enter Selected Market">
                   @if ($errors->has('selected_market'))
@@ -68,16 +101,13 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="tile">
-            <h3 class="tile-title">Card Title</h3>
-            <div class="tile-body">Hey there, I am a very simple card. I am good at containing small bits of information. I am quite convenient because I require little markup to use effectively.</div>
-            <div class="tile-footer"><a class="btn btn-success" href="#">Link</a></div>
-          </div>
-        </div>
-        <div class="clearix"></div>
+        
       </div>
     </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -90,74 +120,11 @@
 
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/chart.js"></script>
-    <script type="text/javascript">
-
-     $('#sl').click(function(){
-      	$('#tl').loadingBtn();
-      	$('#tb').loadingBtn({ text : "Signing In"});
-      });
-      
-      $('#el').click(function(){
-      	$('#tl').loadingBtnComplete();
-      	$('#tb').loadingBtnComplete({ html : "Sign In"});
-      });
-      
-      $('#demoDate').datepicker({
-      	format: "dd/mm/yyyy",
-      	autoclose: true,
-      	todayHighlight: true
-      });
-      
-      $('#demoSelect').select2();
-      
-      var data = {
-      	labels: ["January", "February", "March", "April", "May"],
-      	datasets: [
-      		{
-      			label: "My First dataset",
-      			fillColor: "rgba(220,220,220,0.2)",
-      			strokeColor: "rgba(220,220,220,1)",
-      			pointColor: "rgba(220,220,220,1)",
-      			pointStrokeColor: "#fff",
-      			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(220,220,220,1)",
-      			data: [65, 59, 80, 81, 56]
-      		},
-      		{
-      			label: "My Second dataset",
-      			fillColor: "rgba(151,187,205,0.2)",
-      			strokeColor: "rgba(151,187,205,1)",
-      			pointColor: "rgba(151,187,205,1)",
-      			pointStrokeColor: "#fff",
-      			pointHighlightFill: "#fff",
-      			pointHighlightStroke: "rgba(151,187,205,1)",
-      			data: [28, 48, 40, 19, 86]
-      		}
-      	]
-      };
-      var pdata = [
-      	{
-      		value: 300,
-      		color:"#F7464A",
-      		highlight: "#FF5A5E",
-      		label: "Red"
-      	},
-      	{
-      		value: 50,
-      		color: "#46BFBD",
-      		highlight: "#5AD3D1",
-      		label: "Green"
-      	},
-      	{
-      		value: 100,
-      		color: "#FDB45C",
-      		highlight: "#FFC870",
-      		label: "Yellow"
-      	}
-      ]
-      
-      
-    </script>
+       <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker('mm/dd/yyyy hh-mm');
+            });
+        </script>
     
   </body>
 </html>
