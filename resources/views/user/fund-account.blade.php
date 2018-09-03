@@ -23,7 +23,10 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#profile">Basic</a>
+                <a class="nav-link active" data-toggle="tab" href="#profile">Fund my account</a>
+            </li>
+            <li  class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#pending_payment">Pending Payment</a>
             </li>
           </ul>
         </div>
@@ -60,16 +63,26 @@
                                           </div>
                                   </form>
                               </div> 
-          <div class="tab-pane fade" id="uploadphoto">
-            <!-- <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">Choose a picture to Upload</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-              </div>
-              <button class="btn btn-success" type="button">Submit</button>
-
-            </form>
-        </div> -->
+                            <div class="tab-pane fade" id="pending_payment">
+                                <form class="row" method="post" action="{{url('user/profile/update')}}">
+                                    <div class="form-group col-md-4">
+                                      <label for="crypto Name">Wallet ID</label>
+                                          <input  type="text" class="form-control" aria-describedby="emailHelp">
+                                    </div>
+                                  <div class="form-group col-md-4">
+                                      <label for="wallet address">Amount</label>
+                                        <input type="text" name="wallet_address" class="form-control" aria-describedby="emailHelp">
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                      <label for="wallet address">Date</label>
+                                        <input type="text" name="wallet_address" class="form-control" aria-describedby="emailHelp">
+                                  </div>
+                                    <div class="form-group col-md-6">
+                                          {{ csrf_field() }}
+                                      <button class="btn btn-info" type="submit">Confirm Payment</button>
+                                    </div>
+                              </form>
+                      </div>
     </div>
     </div>
   </div>

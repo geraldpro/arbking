@@ -113,4 +113,9 @@ public function arbitrage(){
   return view('user.auto-arbitrage');
 }
 
+//Get user trading interface
+public function trade(){
+  return view('user.trade');
+}
+
 }

@@ -41,6 +41,7 @@
                    <div class="form-group col-md-6">
                        <label for="lastname">Lastname</label>
                           <input type="text" name="last_name" class="form-control" value="{{Auth::user() ? Auth::user()->last_name : ''}}">
+                        </div>
                             <div class="form-group col-md-6">
                                <label for="firstname">Phone Number</label>
                                   <input type="test" name="phone_number" class="form-control" aria-describedby="emailHelp" value="{{Auth::user() ? Auth::user()->phone_number :  '' }}">

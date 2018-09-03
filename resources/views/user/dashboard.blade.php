@@ -24,64 +24,49 @@
                     </div>
                   <div class="card-body">
                 <div class="alert alert-light border-secondary shadow" role="alert">
+                <div class="row">
+                    <div class="col-md-6">
+                      <div class="tile bg-dark">
+                          <h5 class="title">MATCH-BET TRADING</h5>
+                        <div class="tile-body">
+                        <p class="card-text">Lay with us - back with your favorite bookie. Lock in profit.</p>
+                        <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+                            data-content="Lay with us - back with your favorite bookie. Lock in profit." data-original-title="Match-bet trading">Learn more</button>                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="tile bg-dark">
+                          <h5>SHIELD BONUS CALCULATOR</h5>
+                        <div class="tile-body">
+                        <p class="card-text">Shield bonus turnover calculator.</p>
+                           <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+                            data-content="Shield bonus turnover calculator." data-original-title="Shield bonus calculator">Learn more</button>
+                        </div>
+                      </div>
+                    </div>
+                 </div>
       <div class="row">
-        <div class="col-md-4">
+      <div class="col-md-6">
           <div class="tile bg-dark">
-              <h5>Trade Volume</h5>
+              <h5 class="title">AUTO ARBITRAGE</h5>
             <div class="tile-body">
-             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-success">Start Trading</a>
+            <p class="card-text">Sports exchange inplay arbitrage (For Individual matchbook.com account owners.)</p>
+            <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+              data-content="Sports exchange inplay arbitrage (For Individual matchbook.com account owners.)" data-original-title="Auto arbitrage">Learn more</button>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="tile bg-dark">
-              <h5 class="title">Trade Statistics</h5>
+              <h5 class="title">COMMUNITY TRADING POOL</h5>
             <div class="tile-body">
-            <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
-              <a href="{{url('user/fund-my-account')}}" class="btn btn-success">Get Deposit</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="tile bg-dark">
-              <h5 class="title">Trade Balance</h5>
-            <div class="tile-body">
-            <p class="card-text">Available Balance: <span class="text-danger">$200</span></p>
-            <a href="#" class="btn btn-success">Start Trading</a>
+            <p class="card-text">Arbitrage trading for users that couldn't meet the T&C for individual matchbook.com account.</p>
+            <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+              data-content="Arbitrage trading for users that couldn't meet the T&C for individual matchbook.com account" data-original-title="Community trading pool">Learn more</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="tile bg-dark">
-              <h5>Live Pool Status</h5>
-            <div class="tile-body">
-             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="{{url('user/livepool-status')}}" class="btn btn-success">View Live pool </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="tile bg-dark">
-              <h5 class="title">Auto Arbitrage</h5>
-            <div class="tile-body">
-            <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
-              <a href="{{url('user/auto-arbitrage')}}" class="btn btn-success">View Auto Arbitrage</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="tile bg-dark">
-              <h5 class="title">Profile</h5>
-            <div class="tile-body">
-             <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
-             <a href="{{url('user/profile')}}" class="btn btn-success">View Profile</a>
-
-             </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -95,7 +80,13 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+  <script src="js/plugins/pace.min.js"></script>
+<!-- Page specific javascripts-->
+<script>
+    $('.tile-body [data-toggle="popover"]').popover();
+</script>
 
-  </body>
+</body>
 
   @stop
