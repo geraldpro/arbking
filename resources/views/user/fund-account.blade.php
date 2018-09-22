@@ -18,7 +18,7 @@
   <div class="tile mb-4">
     
     <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
@@ -75,24 +75,45 @@
                                   </form>
                               </div> 
                             <div class="tab-pane fade" id="pending_payment">
-                                <form class="row" method="post" action="{{url('user/profile/update')}}">
-                                    <div class="form-group col-md-4">
-                                      <label for="crypto Name">Wallet ID</label>
-                                          <input  type="text" class="form-control" aria-describedby="emailHelp">
-                                    </div>
-                                  <div class="form-group col-md-4">
-                                      <label for="wallet address">Amount</label>
-                                        <input type="text" name="wallet_address" class="form-control" aria-describedby="emailHelp">
-                                  </div>
-                                  <div class="form-group col-md-4">
-                                      <label for="wallet address">Date</label>
-                                        <input type="text" name="wallet_address" class="form-control" aria-describedby="emailHelp">
-                                  </div>
-                                    <div class="form-group col-md-6">
-                                          {{ csrf_field() }}
-                                      <button class="btn btn-info" type="submit">Confirm Payment</button>
-                                    </div>
-                              </form>
+                            <div class="row">
+          <div class="col-md-12">
+          <div class="alert alert-light">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Wallet ID</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th>Activity</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>23445267dgh</td>
+                  <td>$3,600.00</td>
+                  <th>May 1st, 2018</th>
+                  <th> <button class="btn btn-success" type="button">Confirm Payment</button></th>
+
+                </tr>
+                <tr>
+                  <td>23445267dgh</td>
+                  <td>$3,600.00</td>
+                  <th>May 1st, 2018</th>
+                  <th> <button class="btn btn-success" type="button">Confirm Payment</button></th>
+
+                </tr>
+                <tr>
+                  <td>23445267dgh</td>
+                  <td>$3,600.00</td>
+                  <th>May 1st, 2018</th>
+                  <th> <button class="btn btn-success" type="button">Confirm Payment</button></th>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
                       </div>
     </div>
     </div>

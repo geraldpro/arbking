@@ -26,20 +26,20 @@
                 <div class="alert alert-light border-secondary shadow" role="alert">
                 <div class="row">
                     <div class="col-md-6">
-                      <div class="tile bg-dark">
+                      <div class="tile bg-info">
                           <h5 class="title">MATCH-BET TRADING</h5>
                         <div class="tile-body">
                         <p class="card-text">Lay with us - back with your favorite bookie. Lock in profit.</p>
-                        <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+                        <button class="btn" style="background-color:#fff;" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
                             data-content="Lay with us - back with your favorite bookie. Lock in profit." data-original-title="Match-bet trading">Learn more</button>                        </div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <div class="tile bg-dark">
+                      <div class="tile bg-info">
                           <h5>SHIELD BONUS CALCULATOR</h5>
                         <div class="tile-body">
                         <p class="card-text">Shield bonus turnover calculator.</p>
-                           <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+                           <button class="btn" style="background-color:#fff; type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
                             data-content="Shield bonus turnover calculator." data-original-title="Shield bonus calculator">Learn more</button>
                         </div>
                       </div>
@@ -47,21 +47,21 @@
                  </div>
       <div class="row">
       <div class="col-md-6">
-          <div class="tile bg-dark">
+          <div class="tile bg-info">
               <h5 class="title">AUTO ARBITRAGE</h5>
             <div class="tile-body">
             <p class="card-text">Sports exchange inplay arbitrage (For Individual matchbook.com account owners.)</p>
-            <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+            <button class="btn" style="background-color:#fff; type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
               data-content="Sports exchange inplay arbitrage (For Individual matchbook.com account owners.)" data-original-title="Auto arbitrage">Learn more</button>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="tile bg-dark">
+          <div class="tile bg-info">
               <h5 class="title">COMMUNITY TRADING POOL</h5>
             <div class="tile-body">
             <p class="card-text">Arbitrage trading for users that couldn't meet the T&C for individual matchbook.com account.</p>
-            <button class="btn btn-secondary btn-success" type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
+            <button class="btn" style="background-color:#fff; type="button" title="" data-container="body" data-toggle="popover" data-placement="top"
               data-content="Arbitrage trading for users that couldn't meet the T&C for individual matchbook.com account" data-original-title="Community trading pool">Learn more</button>
             </div>
           </div>
