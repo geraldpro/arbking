@@ -49,6 +49,8 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::post('user/initiate_payment', 'PaymentController@initiatePayment')->name('initiatePayment');
     Route::get('user/upload-photo','UserDashboardController@upload_pic')->name('upload_pic');
     Route::get('user/update-financial-details','UserDashboardController@update_cryptodetails')->name('updatecrypto');
+    Route::get('user/trade','UserDashboardController@trade')->name('trade');
+
 
 
     //User Profile routes
