@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Hexters\CoinPayment\Entities\cointpayment_log_trx;
+
 
 class userDashboardController extends Controller{
 
@@ -76,8 +78,8 @@ public function fund_deposit(){
 }
 
 public function fund_account(){
-
-  return view('user.fund-account');
+  $transactions = cointpayment_log_trx::where('status', 0 )->get();
+  return view('user.fund-account')->with(compact('transactions'));
 }
 //Get user Bonus Calculator
 public function bonus_calculator(){
