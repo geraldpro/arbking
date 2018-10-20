@@ -16,6 +16,28 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
+          @if (Session::has('success'))
+        <div class="card-body">
+       <div class="col-lg-12" style="padding: 0px;">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-success">
+              <button class="close" type="button" data-dismiss="alert">×</button>
+              <strong>{{ Session::get('success') }}</strong>
+              <!-- <a class="alert-link" href="#">this important alert message</a>. -->
+            </div>
+          </div>
+        </div>
+				@elseif (Session::has('fail'))
+                <div class="col-lg-12" style="padding: 0px;">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                           <strong> {{ Session::get('fail') }}</strong>
+                                 <!-- <a class="alert-link" href="#">Change a few things up</a> and try submitting again. -->
+                    </div>
+            </div>
+        </div>
+			@endif
             <h3 class="tile-title">Match Confirmation</h3>
             <table class="table table-bordered">
               <thead>
@@ -29,38 +51,20 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Manchester United fc</td>
-                  <td>Chelsea fc</td>
-                  <td>12/7/18</td>
-                  <td><button class="btn btn-success" type="button">Won</button>
-                    <button class="btn btn-warning" type="button">Lost</button>
-                    <button class="btn btn-danger" type="button">Cancelled</button>
-                  </td>
-
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>12/7/18</td>
-                  <td><button class="btn btn-success" type="button">Won</button>
-                    <button class="btn btn-warning" type="button">Lost</button>
-                    <button class="btn btn-danger" type="button">Cancelled</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>12/7/18</td>
-                  <td><button class="btn btn-success" type="button">Won</button>
-                    <button class="btn btn-warning" type="button">Lost</button>
-                    <button class="btn btn-danger" type="button">Cancelled</button>
-                  </td>
-
-                </tr>
+              <?php $index = 1 ?>
+                                  @foreach($matches as $match)
+                                      <tr>
+                                          <td>{{$index}}</td>
+                                          <td>{{$match->home_team}}</td>
+                                          <td>{{$match->away_team}}</td>
+                                          <td>{{$match->kickoff ? $match->kickoff->toDateString() : 'next year'}}</td>
+                                          <td><a href="{{url('admin/resolve/won/' .$match->id)}}"><button type="button" class="btn btn-success ">Won</button></a>
+                                              <a href="{{url('admin/resolve/lost/' .$match->id)}}"><button type="button" class="btn btn-warning">Lost</button></a>
+                                              <a href="{{url('admin/resolve/cancelled/' .$match->id)}}"><button type="button" class="btn btn-danger">Cancelled</button></a>
+                                          </td>
+                                      </tr>
+                                      <?php $index++ ?>
+                                  @endforeach
               </tbody>
             </table>
           </div>

@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Hexters\CoinPayment\Entities\cointpayment_log_trx;
+use App\Stake;
+use Auth;
+use Config;
 
 
 class userDashboardController extends Controller{
@@ -90,8 +93,8 @@ public function bonus_calculator(){
 
 //Get user verified earning
 public function verified_earning(){
-  
-  return view('user.my-verified-earning');
+  $earnings = Stake::where('user_id', '=', Auth::user()->id)->where('status', '=', Config::get('constants.stake_status.won'))->get();
+  return view('user.my-verified-earning')->with(compact('earnings'));
 }
 
 //Get user trade history

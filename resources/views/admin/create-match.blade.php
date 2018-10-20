@@ -25,13 +25,7 @@
             </div>
           </div>
         </div>
-								<!-- <div class="">
-									<div class="alert alert-success text-center"> {{ Session::get('success') }}</div>
-								</div> -->
-							@elseif (Session::has('fail'))
-								<!-- <div class="">
-									<div class="alert alert-danger text-center"> {{ Session::get('fail') }}</div>
-								</div> -->
+				@elseif (Session::has('fail'))
                 <div class="col-lg-12" style="padding: 0px;">
                <div class="bs-component">
                     <div class="alert alert-dismissible alert-danger">
@@ -41,7 +35,7 @@
                     </div>
             </div>
         </div>
-							@endif
+			@endif
           <div class="tile">
             <h3 class="tile-title">Create New Match</h3>
             <div class="tile-body">
@@ -70,7 +64,7 @@
                 <div class="form-group  {{ ($errors->has('kickoff')) ? 'has-error' : ''}}">
                 <label class="control-label">Kick off date & time</label>
                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                    <input type="text" class="form-control datetimepicker-input" name="kickoff" data-target="#datetimepicker1"/>
                     <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                         <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                     </div>

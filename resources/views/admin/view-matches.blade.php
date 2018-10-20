@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('body')
-
+<?php $index = 0 ?>
   <body class="app sidebar-mini rtl">
     <main class="app-content">
       <div class="app-title">
@@ -28,15 +28,16 @@
                 </tr>
               </thead>
               <tbody>
+              @foreach($matches as $match)
                 <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td><a class="btn btn-success" id="demoNotify" href="{{url('admin/edit-match')}}">Edit Match</a></td>
-
+                  <td>{{$index++}}</td>
+                  <td>{{$match->home_team}}</td>
+                  <td>{{$match->away_team}}</td>
+                  <td>{{$match->kickoff ? $match->kickoff->toDateString() : 'next year'}}</td>
+                  <td><a class="btn btn-success" id="demoNotify" href="{{url('admin/edit-match/' . $match->id)}}">Edit Match</a></td>
                 </tr>
-                <tr>
+                @endforeach
+                <!-- <tr>
                   <td>2</td>
                   <td>Jacob</td>
                   <td>Thornton</td>
@@ -51,7 +52,7 @@
                   <td>@twitter</td>
                   <td><a class="btn btn-success" id="demoNotify" href="{{url('admin/edit-match')}}">Edit Match</a></td>
 
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
