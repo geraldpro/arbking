@@ -5,7 +5,7 @@
   <main class="app-content">
       <div class="app-title">
         <div class="div">
-            <h1><i class="fa fa-user-circle-o"></i>Fund My Account</h1>
+            <h1><i class="fa fa-fund-circle-o"></i> Request Fund Withdrawal</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
               <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -15,16 +15,16 @@
      
      
   <!-- Navs-->
-  <div class="tile mb-4">
-    
-    <div class="row">
+
+<div class="tile mb-4">
+<div class="row">
   <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#profile">Fund my account</a>
-            </li>
+               </li>
             <li  class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#pending_payment">Pending Payment</a>
             </li>

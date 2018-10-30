@@ -13,7 +13,6 @@
         </ul>
       </div>   
   <!-- Navs-->
-  <div class="tile mb-4">
     <div class="row">
       <div class="col-lg-12 mb-3">
                <div class="card">
@@ -44,7 +43,6 @@
                         </div>
                       </div>
                     </div>
-                 </div>
       <div class="row">
       <div class="col-md-6">
           <div class="tile bg-info">

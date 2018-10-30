@@ -8,15 +8,15 @@
               <h1><i class=""></i> Trade</h1>
          </div>
           <ul class="app-breadcrumb breadcrumb">
-              <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-              <li class="breadcrumb-item"><a href="#">Trade</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{url('user/dashboard')}}">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="#">Trade</a></li>
         </ul>
       </div>
      
      
   <!-- Navs-->
-<div class="tile mb-4">    
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-lg-8">
     <div class="card">
         <div class="card-header">
@@ -27,6 +27,13 @@
           </ul>
         </div>
       <div class="card-body">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-info">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                                 <div class="alert-link" style="text-align:center;">You have been matched with Manchester United vs Chelsea Fc
+                                  with our lay selection being home win with an odd of 2.25. The game will kick off soon. </div>
+                          </div>
+                  </div>
           <div class="alert alert-light border-secondary shadow" role="alert">
              <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade active show" id="trade">
@@ -76,7 +83,6 @@
 </div>  
 </div>
 </div> 
-</div>   
 
 </main>
     <!-- Essential javascripts for application to work-->
