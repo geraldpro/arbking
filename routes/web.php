@@ -23,7 +23,8 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
 /**** Admin Dashboard routes******/
     Route::get('admin/dashboard','adminDashboardController@dashboard')->name('dashboard');
     Route::get('admin/create-match','adminDashboardController@creatmatch')->name('create-match');
-    Route::get('admin/edit-match','adminDashboardController@edit_match')->name('edit-match');
+    Route::post('admin/creatematch','AdminStakeController@createMatch')->name('createMatch');
+    Route::get('admin/edit-match/{id}','adminDashboardController@edit_match')->name('edit-match');
 
     Route::get('admin/confirm-match','adminDashboardController@confirm_match')->name('confirm-match');
     Route::get('admin/fundwithdrawal-request','adminDashboardController@fundwithdrawalrequest')->name('fundwithdrawal-request');
@@ -32,6 +33,10 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('admin/user-activities','adminDashboardController@user_activities')->name('user-activities');
     Route::get('admin/view-matches','adminDashboardController@view_matches')->name('view-matches');
     Route::get('admin/user-fund-deposit','adminDashboardController@fund_deposit')->name('user-fund-deposit');
+    Route::post('admin/editmatch','AdminStakeController@editMatch')->name('editMatch');
+    Route::get('admin/resolve/won/{id}','AdminStakeController@resolveWon');
+    Route::get('admin/resolve/lost/{id}','AdminStakeController@resolveLost');
+    Route::get('admin/resolve/cancelled/{id}','AdminStakeController@resolveCancelled');
 
 /**** User Dashboard routes******/
     Route::get('user/dashboard','UserDashboardController@dashboard')->name('dashboard');
@@ -48,8 +53,18 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::post('user/initiate_payment', 'PaymentController@initiatePayment')->name('initiatePayment');
     Route::get('user/upload-photo','UserDashboardController@upload_pic')->name('upload_pic');
     Route::get('user/update-financial-details','UserDashboardController@update_cryptodetails')->name('updatecrypto');
+<<<<<<< HEAD
     Route::get('user/trade','UserDashboardController@trade')->name('trade');
     Route::get('user/fund-withdrawal','UserDashboardController@fund_withdrawal')->name('fund-withdrawal');
+=======
+    // Route::get('user/trade','UserDashboardController@trade')->name('trade');
+
+    // trade routes
+    Route::get('user/trade','StakeController@trade')->name('trade');
+    Route::get('user/resolve/{lay}/{back}/{total}', 'StakeController@resolveStake'); 
+    Route::post('user/stake', 'StakeController@addStake')->name('addStake');
+
+>>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
 
 
     //User Profile routes

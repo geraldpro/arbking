@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-class AddStatusToTransaction extends Migration
+use Carbon\Carbon;
+
+class AddRefreshTimeToAccountTypes extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +14,8 @@ class AddStatusToTransaction extends Migration
      */
     public function up()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->tinyInteger('status')->default(0);
+        Schema::table('account_types', function (Blueprint $table) {
+            $table->timestamp('refresh_time')->default(Carbon::now());
         });
     }
 
@@ -24,8 +26,6 @@ class AddStatusToTransaction extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->tinyInteger('status');
-        });
+        //
     }
 }

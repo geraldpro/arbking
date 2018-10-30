@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use CoinPayment;
+use App\Match;
 
 class adminDashboardController extends Controller{
 
@@ -31,8 +32,8 @@ public function creatmatch(){
 
 //Get confirm match
 public function confirm_match(){
-
-  return view('admin.confirm-match');
+  $matches = Match::where('resolved', '=', '0')->get();
+  return view('admin.confirm-match')->with(compact('matches'));
 
 }
 
@@ -59,16 +60,15 @@ public function user_activities(){
 
 //Get view matches
 public function view_matches(){
-
-  return view('admin.view-matches');
+  $matches = Match::where('resolved', '=', '0')->get();
+  return view('admin.view-matches')->with(compact('matches'));
 
 }
 
 //Get edit matches
-public function edit_match(){
-
-  return view('admin.edit-match');
-
+public function edit_match($id){
+  $match = Match::find($id);
+  return view('admin.edit-match')->with(compact('match'));
 }
 
 //Get user fund deposit

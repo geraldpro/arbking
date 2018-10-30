@@ -92,4 +92,8 @@ return [
 		'transfer' => 3,
 		'card'   => 0,
 	],	
+	'coin_trx_status' => [
+		'0' => 'pending',
+		'1' => 'confirmed',
+	],	
 ];
