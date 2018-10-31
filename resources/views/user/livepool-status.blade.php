@@ -15,7 +15,6 @@
      
      
   <!-- Navs-->
-  <div class="tile mb-4">
     
     <div class="row">
       <div class="col-lg-12 mb-3">
@@ -54,7 +53,6 @@
   </div>
 </div>  
 </div>
-  </div>
  </div>   
 </main>
     <!-- Essential javascripts for application to work-->

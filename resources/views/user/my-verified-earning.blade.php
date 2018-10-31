@@ -5,19 +5,18 @@
 <main class="app-content">
       <div class="app-title">
         <div class="div">
-          <h1><i class="fa fa-laptop"></i> My Verified Earning</h1>
+          <h1>Payouts</h1>
           
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="#">My Verified Earning</a></li>
+        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{url('user/dashboard')}}">Dashboard</a></li>
+          <li class="breadcrumb-item">Payouts</li>
         </ul>
       </div>
      
      
       <!-- Navs-->
-      <div class="tile mb-4">
-        
         <div class="row">
                 <div class="col-lg-12 mb-3">
                   <div class="card-mb-4">
@@ -56,23 +55,31 @@
         </div>
       </div>
     </div>
-    <h5 class="section-title text-muted mb-2"> Earnings </h5>
+    <h5 class="section-title text-muted mb-2"> Payouts </h5>
     <form class="row">
-            <div class="form-group col-md-10">
+          <div class="form-group col-md-8">
               <div class="input-group input-daterange">
               <div class="input-group-addon">Start from</div>
-
                 <input type="text" class="form-control" value="2012-04-05">
                 <div class="input-group-addon">to</div>
                 <input type="text" class="form-control" value="2012-04-19">
               </div>
             </div>
-            <div class="form-group col-md-2">
-            <div class="input-group">
-                <button class="btn btn-success" type="button">Search Record</button>
+            <div class=" form-group col-md-4">
+                   <a href="#" class="btn btn-outline-secondary"> Search Record </a>
+                    <button type="button" data-toggle="modal" class="btn btn-success"> Request Payout </button>
+               
+               </div>
+               <div class="col-md-12">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-info">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                                 <div class="alert-link" style="text-align:center;">Empty</div>
+                          </div>
+                  </div>
               </div>
-            </div>
           </form>
+              
         <div class="row">
           <div class="col-md-12">
           <div class="alert alert-light border-secondary shadow">
@@ -87,19 +94,25 @@
               <tbody>
               @foreach($earnings as $earning)
                 <tr>
+<<<<<<< HEAD
+                  <td>January 1st, 2018</td>
+                  <td>$3,600.00</td>
+                  <th>Paid</th>
+=======
                   <td>{{ $earning->updated_at->toDateString() }}</td>
                   <td>{{ $earning->stake_amount }} USD</td>
                   <th>{{Config::get('constants.stake_text.' . $earning->status)}}</th>
+>>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
                 </tr>
                 @endforeach
                 <!-- <tr>
                   <td>May 1st, 2018</td>
-                  <td>₦7,600.00</td>
+                  <td>$7,600.00</td>
                   <th>Pending</th>
                 </tr>
                 <tr>
                   <td>June 1st, 2018</td>
-                  <td>₦7,600.00</td>
+                  <td>$7,600.00</td>
                   <th>Pending</th>
                 </tr> -->
               </tbody>
@@ -110,7 +123,6 @@
   </div>
 </div>  
 </div>
-  </div>
  </div>   
 </main>
     <!-- Essential javascripts for application to work-->

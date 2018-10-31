@@ -54,6 +54,10 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::post('user/create_withdrawal', 'PaymentController@create_withdrawal')->name('create_withdrawal');
     Route::get('user/upload-photo','UserDashboardController@upload_pic')->name('upload_pic');
     Route::get('user/update-financial-details','UserDashboardController@update_cryptodetails')->name('updatecrypto');
+<<<<<<< HEAD
+    Route::get('user/trade','UserDashboardController@trade')->name('trade');
+    Route::get('user/fund-withdrawal','UserDashboardController@fund_withdrawal')->name('fund-withdrawal');
+=======
     // Route::get('user/trade','UserDashboardController@trade')->name('trade');
 
     // trade routes
@@ -61,6 +65,7 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('user/resolve/{lay}/{back}/{total}', 'StakeController@resolveStake'); 
     Route::post('user/stake', 'StakeController@addStake')->name('addStake');
 
+>>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
 
 
     //User Profile routes
