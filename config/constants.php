@@ -74,9 +74,10 @@ return [
 		'5' => 'cancelled',
 	],
 	'withdrawal_text' => [
-		'0' => 'pending',
-		'1' => 'paid',
-		'2'   => 'cancelled',
+		'0' => 'awaiting email confirmation',
+		'1' => 'in progress',
+		'-1' => 'cancelled',
+		'2' => 'completed'
 	],
 	'confirmation_text' => [
 		'0' => 'pending',
@@ -95,5 +96,5 @@ return [
 	'coin_trx_status' => [
 		'0' => 'pending',
 		'1' => 'confirmed',
-	],	
+	]
 ];

@@ -99,11 +99,10 @@ class StakeController extends Controller{
         $lay = $request->get('lay');
         $yield = $amount * $lay;
         $liability = $yield - $amount;
-        if(count($account) < 1){
+        if(!$account){
           return  redirect()->route('fund-my-account')->with('fail','you need to fund your account before you can place bets')->withInput();
         }
         // $rate = 
-        
         if($account && $account->total_amount/$rate < $liability || $liability < 1){
           return  redirect()->back()->with('fail','you do not have enough money to make the trade or you staked less than 50 naira. please adjust your value and retry.')->withInput();
         }
@@ -123,6 +122,7 @@ class StakeController extends Controller{
         //   $account->auxiliary->update();
         // }
         // else{
+          // dd($liability * $rate, $yield * rate)
         $account->total_amount -= $liability  *  $rate ; 
         $account->staked_amount += $liability  *  $rate;
         if($account->status == 'active'){

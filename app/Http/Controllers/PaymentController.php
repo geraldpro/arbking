@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 Use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use CoinPayment;
+use App\Withdrawal;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Config;
 
 class PaymentController extends Controller{
     
@@ -84,5 +88,61 @@ class PaymentController extends Controller{
             }
         }
     }
+    public function create_withdrawal(Request $req){
+
+        $validate = Validator::make($req->all(), array(
+			'amount' => 'required|numeric',
+			'payment_method' => 'required|min:3|max:3'
+		));
+		if ($validate->fails()) {
+			return response()->json($validate);
+		} else {
+  
+        $params = [
+          'amount' => $req->amount,
+          'currency' =>  $req->payment_method,
+          'address' => $req->address
+        ];
+        // $params = [
+        //     'id' => $req->id
+        //   ];  
+        $withdraw = CoinPayment::api_call('create_withdrawal', $params);
+        // $withdraw = CoinPayment::api_call('get_withdrawal_info', $params);
+        // dd($withdraw);
+        $user = Auth::user();
+        $withdrawal = new Withdrawal();
+        $withdrawal->user_id = $user->id;
+        $withdrawal->withdrawal_id = $withdraw['result']['id'];
+        $withdrawal->wallet_address = $req->address;
+        $withdrawal->coin = $req->payment_method;
+        $withdrawal->status = $withdraw['result']['status'];
+        $withdrawal->status_text =  Config::get('constants.withdrawal_status.' .  $withdraw['result']['status']) ;
+        $withdrawal->time_created = Carbon::now();
+        $withdrawal->amount =  (float) $withdraw['result']['amount'];
+        $withdrawal->withrawal_fee = 0.00;
+        $withdrawal->payload = '[]';
+        if ($withdrawal->save()) {
+            return  redirect()->back()->with('success', 'withdrawal successful check your withdrawal history and wallet for confirmation')->withInput();
+        }
+        else {
+            return  redirect()->back()->with('fail', 'An error occured while trying to process withdrawal');
+        }
+       }
+     }
+     public function get_withdrawals(Request $req){
+        $user = Auth::user();
+        $withdrawal = Withdrawal::where('user_id' , '=', $user->id)->orWhere('status' , '=', 1)->orWhere('status' , '=', 0)->first();
+         $params = [
+            'id' => $withdrawal->id
+          ];  
+        $withdraw = CoinPayment::api_call('get_withdrawal_info', $params);
+        // dd($withdraw);
+        // $withdrawal = new Withdrawal();
+        $withdrawal->status = $withdraw['result']['status'];
+        $withdrawal->status_text =  Config::get('constants.withdrawal_status.' .  $withdraw['result']['status']) ;
+        $withdrawal->update();
+        $withdrawals = Withdrawal::where('user_id', '=',  $user->id)->get();
+            return view('user.withdrawal')->with(compact('withdrawals'));
+     }
 
 }

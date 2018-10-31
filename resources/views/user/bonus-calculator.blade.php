@@ -32,7 +32,7 @@
           <div class="tile bg-success">
               <h5>Amount Deposited</h5>
             <div class="tile-body">
-             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+             <p class="card-text">{{Auth::user()->account ? Auth::user()->account->deposited_amount . ' ' .Auth::user()->accountType->short_name :  'account inactive, please deposit to activate'}}</p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <div class="tile bg-info">
               <h5 class="title">Bonus Rewarded</h5>
             <div class="tile-body">
-            <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
+            <p class="card-text">{{Auth::user()->account ? Auth::user()->account->shield_amount . ' ' .Auth::user()->accountType->short_name :  'account inactive, please deposit to activate your'}} <span class="text-danger">50% bonus</span></p>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@
           <div class="tile bg-warning">
               <h5 class="title">Balance Remaining After Trade</h5>
             <div class="tile-body">
-            <p class="card-text">Next Deposit Moneyshield Percentage: <span class="text-danger">60%</span></p>
+            <p class="card-text">{{Auth::user()->account ? Auth::user()->account->total_amount . ' ' .Auth::user()->accountType->short_name :  'account inactive, please deposit to activate'}}</p>
             </div>
           </div>
         </div>

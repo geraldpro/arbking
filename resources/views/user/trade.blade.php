@@ -171,12 +171,20 @@
 
 </main>
     <!-- Essential javascripts for application to work-->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> -->
     <!-- The javascript plugin to display page loading on top-->
-    <script src="js/plugins/pace.min.js"></script>
+    {{ Html::script("js/jquery.min.js") }}
+    {{ Html::script("js/bootstrap.js")}}
+  {{ Html::script("js/login-register.js")}}
+  {{ Html::script("js/jquery.dropotron.min.js") }}
+  {{ Html::script("js/jquery.scrollgress.min.js") }}
+  {{ Html::script("js/skel.min.js") }}
+  {{ Html::script("js/util.js") }}
+  {{ Html::script("js/main.js") }}
+    <!-- <script src="js/plugins/pace.min.js"></script> -->
     <script>
 	var filled = false;
 	var g_url;
