@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
-=======
 use Hexters\CoinPayment\Entities\cointpayment_log_trx;
 use App\Stake;
 use Auth;
 use Config;
 
 
->>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
 class userDashboardController extends Controller{
 
 //Get dashboard index
@@ -65,12 +62,8 @@ public function fund_deposit(){
 
 //Get user fund account page
 public function fund_account(){
-<<<<<<< HEAD
-  return view('user.fund-my-account');
-=======
   $transactions = cointpayment_log_trx::where('status', 0 )->get();
-  return view('user.fund-account')->with(compact('transactions'));
->>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
+  return view('user.fund-my-account')->with(compact('transactions'));
 }
 
 //Get user Bonus Calculator
@@ -80,12 +73,8 @@ public function bonus_calculator(){
 
 //Get user verified earning
 public function verified_earning(){
-<<<<<<< HEAD
-  return view('user.my-verified-earning');
-=======
   $earnings = Stake::where('user_id', '=', Auth::user()->id)->where('status', '=', Config::get('constants.stake_status.won'))->get();
   return view('user.my-verified-earning')->with(compact('earnings'));
->>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
 }
 
 //Get user trade history
