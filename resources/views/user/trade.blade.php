@@ -31,15 +31,6 @@
           </ul>
         </div>
       <div class="card-body">
-<<<<<<< HEAD
-               <div class="bs-component">
-                    <div class="alert alert-dismissible alert-info">
-                         <button class="close" type="button" data-dismiss="alert">×</button>
-                                 <div class="alert-link" style="text-align:center;">You have been matched with Manchester United vs Chelsea Fc
-                                  with our lay selection being home win with an odd of 2.25. The game will kick off soon. </div>
-                          </div>
-                  </div>
-=======
       @if (Session::has('success'))
         <div class="card-body">
        <div class="col-lg-12" style="padding: 0px;">
@@ -61,12 +52,17 @@
         </div>
 			@endif
       @if(isset($match))
-          <ol class="breadcrumb">
+          <!-- <ol class="breadcrumb">
             <li>
                 <a><b>You have been matched with {{$match->home_team}} vs {{$match->away_team}} with our lay selection being {{$match->selected_market}} with an odd of {{$match->selected_odd}} the game will be played on {{$match->kickoff->toDateString()}} by {{$match->kickoff->toTimeString()}} (Be sure to enter the bookie back bet first to prevent changes in the odds. If odds change recalculate)</b></a>
             </li>
-          </ol>
->>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
+          </ol> -->
+          <div class="bs-component">
+                    <div class="alert alert-dismissible alert-info">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                                 <div class="alert-link" style="text-align:center;">You have been matched with {{$match->home_team}} vs {{$match->away_team}} with our lay selection being {{$match->selected_market}} with an odd of {{$match->selected_odd}} the game will be played on {{$match->kickoff->toDateString()}} by {{$match->kickoff->toTimeString()}} (Be sure to enter the bookie back bet first to prevent changes in the odds. If odds change recalculate) </div>
+                          </div>
+                  </div>
           <div class="alert alert-light border-secondary shadow" role="alert">
              <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade active show" id="trade">
@@ -180,12 +176,20 @@
 
 </main>
     <!-- Essential javascripts for application to work-->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> -->
     <!-- The javascript plugin to display page loading on top-->
-    <script src="js/plugins/pace.min.js"></script>
+    {{ Html::script("js/jquery.min.js") }}
+    {{ Html::script("js/bootstrap.js")}}
+  {{ Html::script("js/login-register.js")}}
+  {{ Html::script("js/jquery.dropotron.min.js") }}
+  {{ Html::script("js/jquery.scrollgress.min.js") }}
+  {{ Html::script("js/skel.min.js") }}
+  {{ Html::script("js/util.js") }}
+  {{ Html::script("js/main.js") }}
+    <!-- <script src="js/plugins/pace.min.js"></script> -->
     <script>
 	var filled = false;
 	var g_url;

@@ -11,6 +11,9 @@ use Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
+use Hexters\CoinPayment\Http\Controllers\CoinPaymentController;
+use \Illuminate\Support\Facades\Route;
 
 
 class AdminStakeController extends Controller{
@@ -62,15 +65,22 @@ class AdminStakeController extends Controller{
   }
   public function resolveWon($id){
     $match = Match::find($id);
+    $req = Request::create('coinpayment/ajax/rates/1', 'GET');
+    $rates = json_decode(Route::dispatch($req)->getContent());
+    // dd($rates->coins_accept);
+    $rate = Auth::user()->accountType->rate;
     foreach($match->stakes as $stake){
       if($stake->status == Config::get('constants.stake_status.staked')){
         $stake->status = Config::get('constants.stake_status.won');
         $stake->update();
         $account = MainAccount::where('user_id', '=', $stake->user_id)->first();
         if($account && $account->id){
-        $account->total_amount = $account->total_amount + $stake->yield_amount;
-        if($account->staked_amount >= $account->threshold_amount){
-          $account->withdrawable_amount = $account->total_amount;         
+        $account->total_amount = $account->total_amount + ($stake->yield_amount 
+        * $rate);
+        Log::info('account total now: '  .  ($account->total_amount)  .
+        $account->total_amount   . ' added: ' . ($stake->yield_amount * $rate));
+        if(($account->staked_amount * $rate) >= ($account->threshold_amount * $rate)){
+          $account->withdrawable_amount = $account->total_amount * $rate;         
           $account->account_status = Config::get('constants.account_status.active');
           $account->update();
       }
@@ -88,13 +98,17 @@ class AdminStakeController extends Controller{
   }
   public function resolveLost($id){
     $match = Match::find($id);
+    $req = Request::create('coinpayment/ajax/rates/1', 'GET');
+    $rates = json_decode(Route::dispatch($req)->getContent());
+    // dd($rates->coins_accept);
+    $rate = Auth::user()->accountType->rate;
     foreach($match->stakes as $stake){
       if($stake->status == Config::get('constants.stake_status.staked')){
         $stake->status = Config::get('constants.stake_status.lost');
         $stake->update();
         $account = MainAccount::where('user_id', '=', $stake->user_id)->first();
    
-        if($account->staked_amount >= $account->threshold_amount){
+        if(($account->staked_amount * $rate) >= ($account->threshold_amount * $rate)){
           $account->withdrawable_amount = $account->total_amount;         
           $account->account_status = Config::get('constants.account_status.active');
           $account->save();
@@ -113,13 +127,17 @@ class AdminStakeController extends Controller{
   public function resolveCancelled($id){
     
     $match = Match::find($id);
+    $req = Request::create('coinpayment/ajax/rates/1', 'GET');
+    $rates = json_decode(Route::dispatch($req)->getContent());
+    // dd($rates->coins_accept);
+    $rate = Auth::user()->accountType->rate;
     foreach($match->stakes as $stake){
       if($stake->status == Config::get('constants.stake_status.staked')){
         $stake->status = Config::get('constants.stake_status.cancelled');
         $stake->update();
         if($stake->user->account){
-        $stake->user->account->total_amount += $stake->liability_amount;
-        $stake->user->account->staked_amount -= $stake->liability_amount;
+        $stake->user->account->total_amount += $stake->liability_amount * $rate;
+        $stake->user->account->staked_amount -= $stake->liability_amount * $rate;
         $stake->user->account->total_amount->save();
         }
       }

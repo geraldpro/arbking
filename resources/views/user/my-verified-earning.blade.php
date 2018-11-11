@@ -94,15 +94,9 @@
               <tbody>
               @foreach($earnings as $earning)
                 <tr>
-<<<<<<< HEAD
-                  <td>January 1st, 2018</td>
-                  <td>$3,600.00</td>
-                  <th>Paid</th>
-=======
                   <td>{{ $earning->updated_at->toDateString() }}</td>
                   <td>{{ $earning->stake_amount }} USD</td>
                   <th>{{Config::get('constants.stake_text.' . $earning->status)}}</th>
->>>>>>> 71291b1ac4f09278615bc913b7cba7c92b1440bd
                 </tr>
                 @endforeach
                 <!-- <tr>
