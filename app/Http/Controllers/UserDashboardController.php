@@ -94,7 +94,8 @@ public function update_cryptodetails(){
 
 //Get user Auto arbitrage
 public function arbitrage(){
-  return view('user.auto-arbitrage');
+  $account = Auth::user()->mainAccount;
+  return view('user.auto-arbitrage')->with(compact());
 }
 
 //Get user trading interface
