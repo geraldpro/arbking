@@ -64,7 +64,6 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::post('user/stake', 'StakeController@addStake')->name('addStake');
 
 
-
     //User Profile routes
     Route::get('user/profile', 'UserDashboardController@profile');
     Route::post('user/profile/update', 'ProfileController@updateProfile')->name('updateProfile');

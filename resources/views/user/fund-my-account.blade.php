@@ -56,11 +56,23 @@
                      <div class="tab-pane fade active show" id="profile">
                             <form class="row" method="post" action="{{ route('initiatePayment') }}">
                                  {{ csrf_field() }}
-                                         <div class="form-group col-md-6">
+                                         <div class="form-group col-md-4">
+                                         <h4>Choose wallet to fund</h4>
+                                              <div class="form-check">
+                                                <label class="form-check-label">
+                                                  <input class="form-check-input" id="optionsRadios1" type="radio" data-toggle="tooltip" data-placement="left" title="" data-original-title="Lay our selections with us and back them up with your favorite bookie by yourself. " name="optionsRadios" value="option1" checked="">Match-bet wallet
+                                                </label>
+                                              </div>
+                                              <div class="form-check">
+                                                <label class="form-check-label">
+                                                  <input class="form-check-input" id="optionsRadios1" type="radio" data-toggle="tooltip" data-placement="left" title="" data-original-title="Invest in our betting exchange auto Arbitrage and earn daily returns. "  name="optionsRadios" value="option1" checked="">Auto Arbitrage
+                                                </label>
+                                              </div>
+                                              <br>
                                                 <label for="firstname">Amount (usd)</label>
                                                        <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
                                                                 <br>
-                                                                      <button class="btn btn-success" type="submit">Submit</button>
+                                                                      <button class="btn btn-success" type="submit">Fund my account</button>
                                           </div>
                                   </form>
                               </div> 
@@ -127,8 +139,7 @@
             </div>
           </div>
   </div> -->
-  
- </div>   
+  </div>   
 </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -139,6 +150,10 @@
     <script src="js/plugins/pace.min.js"></script>
     <!-- Page specific javascripts-->
     <script type="text/javascript" src="js/plugins/chart.js"></script>
+    <script>
+      $('.bs-component [data-toggle="popover"]').popover();
+      $('.bs-component [data-toggle="tooltip"]').tooltip();
+  </script>
     <script type="text/javascript">
       var data = {
       	labels: ["January", "February", "March", "April", "May"],
