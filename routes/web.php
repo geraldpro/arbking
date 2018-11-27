@@ -27,6 +27,7 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('admin/edit-match/{id}','adminDashboardController@edit_match')->name('edit-match');
 
     Route::get('admin/confirm-match','adminDashboardController@confirm_match')->name('confirm-match');
+    Route::get('admin/user-profits','adminDashboardController@user_profits')->name('user-profits');
     Route::get('admin/fundwithdrawal-request','adminDashboardController@fundwithdrawalrequest')->name('fundwithdrawal-request');
 	Route::get('admin/pending-junior-request','adminDashboardController@junior_request')->name('pending-junior-request');
     Route::get('admin/pending-user-request','adminDashboardController@user_request')->name('pending-user-request');
@@ -37,6 +38,7 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('admin/resolve/won/{id}','AdminStakeController@resolveWon');
     Route::get('admin/resolve/lost/{id}','AdminStakeController@resolveLost');
     Route::get('admin/resolve/cancelled/{id}','AdminStakeController@resolveCancelled');
+
 
 /**** User Dashboard routes******/
     Route::get('user/dashboard','UserDashboardController@dashboard')->name('dashboard');

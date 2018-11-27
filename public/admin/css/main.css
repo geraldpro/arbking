@@ -13174,7 +13174,7 @@ be a descendant of the grid when it is being dragged.
             flex: 0 0 auto;
     display: block;
     width: 230px;
-    background-color: #28a745;
+    background-color: #ffc107;
   }
 }
 
@@ -14005,6 +14005,12 @@ be a descendant of the grid when it is being dragged.
 
 .toggle-flip input[type="checkbox"] {
   display: none;
+}
+
+.hero-heading {
+    margin: 0;
+    line-height: 1.2;
+    font-size: 3rem;
 }
 
 .toggle-flip input[type="checkbox"] + .flip-indecator {
