@@ -78,4 +78,10 @@ public function fund_deposit(){
 
 }
 
+//Get user profits
+public function user_profits(){
+
+  return view('admin.user-profits');
+
+}
 }

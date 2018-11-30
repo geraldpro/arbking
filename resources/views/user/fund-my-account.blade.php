@@ -5,7 +5,7 @@
   <main class="app-content">
       <div class="app-title">
         <div class="div">
-            <h1><i class="fa fa-user-circle-o"></i>Fund My Account</h1>
+            <h1><i class="fa fa-user-"></i> Fund My Account</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
               <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -69,7 +69,7 @@
                                                 </label>
                                               </div>
                                               <br>
-                                                <label for="firstname">Amount (usd)</label>
+                                                <label for="firstname">Amount (USD)</label>
                                                        <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
                                                                 <br>
                                                                       <button class="btn btn-success" type="submit">Fund my account</button>
