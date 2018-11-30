@@ -32,6 +32,10 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\MainAccount', 'user_id');
     } 
+    public function arbitrage()
+    {
+        return $this->hasOne('App\MainArbitrage', 'user_id');
+    } 
     public function bank()
     {
         return $this->hasOne('App\BankAccount', 'user_id');
@@ -46,5 +50,8 @@ class User extends Authenticatable
     public function accountType()
     {
         return $this->belongsTo('App\AccountType', 'account_type_id');
+    }
+    public function withdrawals(){
+        return $this->hasMany('App\Withdrawal', 'user_id');
     }
 }

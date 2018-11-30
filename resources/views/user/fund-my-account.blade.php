@@ -60,12 +60,12 @@
                                          <h4>Choose wallet to fund</h4>
                                               <div class="form-check">
                                                 <label class="form-check-label">
-                                                  <input class="form-check-input" id="optionsRadios1" type="radio" data-toggle="tooltip" data-placement="left" title="" data-original-title="Lay our selections with us and back them up with your favorite bookie by yourself. " name="optionsRadios" value="option1" checked="">Match-bet wallet
+                                                  <input class="form-check-input" id="mode" type="radio" data-toggle="tooltip" data-placement="left" title="" data-original-title="Lay our selections with us and back them up with your favorite bookie by yourself. " name="mode" value="main" checked="">Match-bet wallet
                                                 </label>
                                               </div>
                                               <div class="form-check">
                                                 <label class="form-check-label">
-                                                  <input class="form-check-input" id="optionsRadios1" type="radio" data-toggle="tooltip" data-placement="left" title="" data-original-title="Invest in our betting exchange auto Arbitrage and earn daily returns. "  name="optionsRadios" value="option1" checked="">Auto Arbitrage
+                                                  <input class="form-check-input" id="mode" type="radio" data-toggle="tooltip" data-placement="left" title="" data-original-title="Invest in our betting exchange auto Arbitrage and earn daily returns. "  name="mode" value="arbitrage" checked="">Auto Arbitrage
                                                 </label>
                                               </div>
                                               <br>
