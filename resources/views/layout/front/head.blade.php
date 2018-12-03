@@ -1,19 +1,23 @@
 <!--    Header starts     -->
 <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon"  href="img/Arbking_fav.png">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Arbking | Matchedbetting </title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-   
-    {{ Html::style("css/bootstrap.css")}}
-    {{ Html::style("css/gaia.css")}}
-    
-    <!--     Fonts and icons     -->
-    <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    {{ Html::style("public/css/fonts/pe-icon-7-stroke.css")}}
-</head>
-<!--   Header Ends     -->
+		<meta charset="utf8">
+		<title>Arbking Sports</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        {{ Html::style("css/style.css")}}
+		<link rel="stylesheet" href="fonts/fonts.googleapis.com">
+		<link rel="shortcut icon" href="lstatic/img/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga')
+			
+			ga('create', 'UA-60542529-1', 'auto', {'allowLinker': true})
+			ga('require', 'linker');
+			ga('linker:autoLink', ['', '']);
+			ga('send', 'pageview')	
+		</script>
+	</head>
+    <!--   Header Ends     -->

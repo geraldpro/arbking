@@ -5,7 +5,7 @@
   <main class="app-content">
       <div class="app-title">
         <div class="div">
-          <h1><i class="fa fa-shield"></i> Bonus Calculator</h1>
+          <h1> Bonus Calculator</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -15,7 +15,7 @@
      
      
   <!-- Navs-->
-  <div class="tile mb-4">
+  
     
     <div class="row">
       <div class="col-lg-12 mb-3">
@@ -54,7 +54,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </div>  
 </div>
   </div>

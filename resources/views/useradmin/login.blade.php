@@ -6,16 +6,16 @@
 <!-- Main -->
 				<section id="main" class="container 50%">
 				<section style="text-align:center;margin-bottom:50px;">
-					<h1><a href="{{url('/')}}"><img src="#" alt="" /></a></h1>
+					<h1 id="logo"><a href="{{url('/')}}"><img src="/img/dashboard_logo.png" alt="Logo" /></a></h1>
 					
 				</section>
 					<div class="box">			
 					  <form method="post" action="{{ route('login') }}">
 						{{ csrf_field() }}
-							<section style="text-align:center;margin-bottom:20px;color:#6495ED;font-weight:400;">LOGIN TO ARBKING</section>							
+							<h3 style="text-align:center;margin-bottom:30px;color:#17a2b8;">Log in to your account</h3>							
 							<div class="row uniform 50% {{ ($errors->has('email')) ? 'has-error' : ''}}">
 								<div class="12u 12u(mobilep) ">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
+									<input type="email" name="email" id="email" value="" placeholder="Email address" />
 								</div>
 								@if ($errors->has('email'))
                     				<span style="color: palevioletred;">{{ $errors->first('email') }}</span>
@@ -32,7 +32,7 @@
 						  <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input type="submit" btn btn-info value="Login to your account" class="fit" style="background-color:#FF8C00;color:#fff;"/>
+									<input type="submit" btn btn-info value="Log in " class="fit" style="background-color:#17a2b8;color:#fff;"/>
 								</div>
 							</div>
 							<section style="text-align:center;margin-top:30px;"><strong>New to ArbKing? </strong> <a href="{{url('register')}}">Sign Up</a></section>
