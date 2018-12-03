@@ -14,7 +14,7 @@ class AddModeToWithdrawalsTable extends Migration
     public function up()
     {
         Schema::table('withdrawals', function (Blueprint $table) {
-            $table->string('mode', 20);
+            $table->string('mode', 20)->nullable();
         });
     }
 
