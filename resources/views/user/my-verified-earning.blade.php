@@ -34,21 +34,21 @@
                                <div class="row">
         <div class="col-md-4">
           <div class="tile bg-info">
-              <h4 class="title">Verified Earnings :</h4>
+              <h4 class="title">Verified earnings :</h4>
             <div class="tile-body">
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="tile bg-success">
-              <h4 class="title">Paid Earnings :</h4>
+              <h4 class="title">Auto arbitrage earnings :</h4>
             <div class="tile-body">
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="tile bg-warning">
-              <h4 class="title" style="color:#000";>Pending Earnings :</h4>
+              <h4 class="title" style="color:#000";>Pending earnings :</h4>
             <div class="tile-body">
             </div>
           </div>
@@ -99,16 +99,7 @@
                   <th>{{Config::get('constants.stake_text.' . $earning->status)}}</th>
                 </tr>
                 @endforeach
-                <!-- <tr>
-                  <td>May 1st, 2018</td>
-                  <td>$7,600.00</td>
-                  <th>Pending</th>
-                </tr>
-                <tr>
-                  <td>June 1st, 2018</td>
-                  <td>$7,600.00</td>
-                  <th>Pending</th>
-                </tr> -->
+                
               </tbody>
             </table>
           </div>

@@ -1,370 +1,222 @@
 @extends('layout.front.master')
 @section('body')
-
 <body>
+		<nav class=" " colour="">
+					<div class="nav-wrapper"><a class="logo" href="/"><img src="img/logos/transparenttt-logo.png" alt="ARBKING logo"></a>
+						<ul>
+							<li><a href="#about">Matchbet</a></li>
+							<li><a href="#auto-arbitrage">Auto-Arbitrage</a></li>
+							<li><a href="#ui">About ArbKing</a></li>
+							<li><a href="#contact">contact us</a></li>
+							<li><a class="btn" href="{{url('register')}}" >Sign-up</a></li>
+							<li id="login-nav"><a class="btn" href="{{url('login')}}">Login</a>
+							</li>
+						</ul>
+					</div>
+				
+				</nav>
+			
+		<section id="hero">
+			<div id="numbers"></div>
+			<header>
+				<h1 style="font-family: Acumin Pro,sans-serif;">Matchbet with Arbking... Lock-in Profit</h1>
+				<h2>Place our A.I generated Lay bets, back the bets up   <br>with your favorite bookie and lock-in profit with our  <br> shield  bonus. That Simple!</h2>
+				<ul>
+					<li><a class="btn sign-up-now" href="#" >Sign Up Now</a></li>
+				</ul>
+			</header>
+		</section>
+		<section id="about">
+			<div class="wrapper" >
+				<h3><span class="blue">Matchbet</span></h3>
+				<p>
+					Arbking-Matchbet trader is an advanced A.I powered match-betting platform, developed with an inbuilt 'implied probability' matcher software that generates sporting trades based on probable occurrence and distributes the trades to users using a special algorithm that ensures a well balanced Stakes over odds risk hedge. Every users risk is perfectly hedged on the platform.
+				</p>
+				
+				
+				<div class="carousel">
+					<div class="carousel-btns">
+						<div class="carousel-btn prev"></div>
+						<div class="carousel-btn next"></div>
+					</div>
+					<ul>
+						<li>
+							<div class="img" style="background-image: url(img/icon/mitigated-risk-icon.png)" alt="mitigated-risk-icon.png"></div>
+							<div class="title">Mitigated Risk</div>
+							<div class="blurb">
+								<div>Mitigated Risk</div>
+							</div>
+						</li>
+						<li>
+							<div class="img" style="background-image: url(img/icon/steady-ROI-icons.png)" alt="steady-ROI-icons.png"></div>
+							<div class="title">Steady ROI</div>
+							<div class="blurb">
+								<div>Steady ROI</div>
+							</div>
+						</li>
+						<li>
+							<div class="img" style="background-image: url(img/icon/multicoin-support.png)" alt="multicoin-support.png"></div>
+							<div class="title">multi crypto coins supported</div>
+							<div class="blurb">
+								<div>
+									multi crypto coins supported
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img" style="background-image: url(img/icon/fast-withdrawal-icon.png)" alt="ARBKING is the fastest sports betting software of its kind"></div>
+							<div class="title">multi crypto coins supported</div>
+							<div class="blurb">
+								<div>Fast With Drawal Icon.</div>
+							</div>
+						</li>
+						<li>
+							<div class="img" style="background-image: url(img/icon/auto-matchbet-calculator-icon.png)" alt="auto-matchbet-calculator-icon.png"></div>
+							<div class="title">Auto Matchbet calculator</div>
+							<div class="blurb">
+								<div>Auto Matchbet calculator</div>
+							</div>
+						</li>
+						<li>
+							<div class="img" style="background-image: url(img/icon/global-community-icon.jpeg)" alt="global-community-icon.jpeg"></div>
+							<div class="title">Global community</div>
+							<div class="blurb">
+								<div>Global community</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section id="auto-arbitrage">
+			<h3><span class="blue">Auto-Arbitrage </span></h3>
+			<p>Arbking-Auto Arbitrage is an investment arm of Arbking. An A.I bot designed to trade on arbitrage opportunities on Exchange markets like Betfair. The bot seeks to back and lay odds that guarantees a no loss situation. Its designed to trade on low margin profits 24/7. Users will get  of 0.5% to 1% daily ROI in their arb wallets. Users here do not need to take any actions as Auto-arb bot trades on their behalf.</p>
+			<ul>
+				<li>
+					<div class="img" style="background-image: url(img/icon/High-yielding.png)" alt="High-yielding.png"></div>
+					<div class="title">High yielding</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/icon/auto-trader.png)" alt="auto-trader.png"></div>
+					<div class="title">Auto trader</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/icon/fast-withdrawal-icon.png)" alt="fast-withdrawal-icon.png"></div>
+					<div class="title">fast withdrawal</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/icon/customer-support.png)" alt="customer-support.png"></div>
+					<div class="title">24/7 support</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/icon/crypto-to-fiat.png)" alt="crypto-to-fiat-support.png"></div>
+					<div class="title">Crypto to Fiat support</div>
+				</li>
+			</ul>
+			
+		</section>
+		<section id="api" style="display: none;">
+			<h3>ARBKING<span class="blue"></span></h3>
+			<p>
+				Arbking Sports Fund Llc is Sports-trade tech company registered in Malta, designed with the average trader in mind. Here every trader has more than 96% chances of growing his/her funds in a risk mitigated match-betting and Auto Arbitrage style. Human emotions has no play in any of the trades. Strictly on machine calls. Arbking Sports Fund Llc has built a global community of thriving sports traders who by Arbking's Matchbet algorithm of risk hedging has helped each other maintain a robust ROI, staying a step ahead of the bookmakers
+			</p>
+			<ul>
+				<li>
+					<div class="img" style="background-image: url(img/api/reliability.png)" alt="Live price stream"></div>
+					<div class="title">Live price stream</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/api/free.png)" alt="Free Integration Period"></div>
+					<div class="title">Free Integration Period</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/api/integration.png)" alt="Simple Integration with 40+ bookies"></div>
+					<div class="title">Simple Integration with 40+ bookies</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/api/support.png)" alt="Expert Technical Support"></div>
+					<div class="title">Expert Technical Support</div>
+				</li>
+				<li>
+					<div class="img" style="background-image: url(img/api/documentation.png)" alt="Comprehensive Documentation"></div>
+					<div class="title">Comprehensive Documentation</div>
+				</li>
+			</ul>
+			<div class="btns"><a class="btn" href="#contact" target="_blank" data-message="I'm writing to you to request documentation for ARBKING API"><span>Request Documentation</span><img src="img/api/download.png" alt="Download API documentation"></a></div>
+		</section>
+		<section id="ui">
+			<div class="wrapper">
+				<h3><span class="blue">ABOUT ARBKING</span></h3>
+				<p>
+				Arbking Sports Fund Llc is Sports-trade tech company registered in Malta, designed with the average trader in mind. Here every trader has more than 96% chances of growing his/her funds in a risk mitigated match-betting and Auto Arbitrage style. Human emotions has no play in any of the trades. Strictly on machine calls. Arbking Sports Fund Llc has built a global community of thriving sports traders who by Arbking's Matchbet algorithm of risk hedging has helped each other maintain a robust ROI, staying a step ahead of the bookmakers.
+			</p>
+				<ul>
+					
+					<li>
+						<div class="img" style="background-image: url(img/ui/working-orders.png)" alt="Auto-placement once order prices match"></div>
+						<div class="blurb">Working Orders (auto-placement once order prices match)</div>
+					</li>
+					<li>
+						<div class="img" style="background-image: url(img/ui/cash-money.png)" alt="Multiple currencies"></div>
+						<div class="blurb oneline">Multiple currencies</div>
+					</li>
+					
+					<li>
+						<div class="img" style="background-image: url(img/ui/accounting.png)" alt="Comprehensive accounting software &amp; full audit history"></div>
+						<div class="blurb">Comprehensive accounting software &amp; full audit history</div>
+					</li>
+					
+				</ul>
+			</div>
+		</section>
+		
+		<section id="contact">
+			<div id="sides">
+			<h3>Contact<span class="blue">Us</span></h3>
+			<p>Drop us a line. We usually respond within 24 hours of receiving your email.</p>
+			<div class="no-error" id="contact-error"></div>
+			<div class="no-success" id="contact-success">Thanks for getting in touch. We have received your message and will be in contact with you soon.</div>
+			<div id="left">
+			<form>
+				<div class="row double">
+					<input name="name" placeholder="Name">
+					<input name="email" placeholder="Email" type="email">
+					<input name="language" value="en" type="hidden">
+				</div>
+				<div class="row">
+					<div name="how" placeholder="Your favorite Bookmaker (web address) ?" contenteditable></div>
+				</div>
+				
+				<div id="captcha-container"></div>
+				<div class="row">
+					<textarea class="messages" rows="50" cols="30" placeholder="Type your text"></textarea>
+				</div>
+				<input name="submit" type="submit" value="Submit">
+				
+			</form>
+			</div>
+			<div id="right">
+				<div class="right-div-contact-infor">
+				<br> <br>
+				<b>Arbking Sports funds.</b> <br> <br> <br>
+				<p>Chequers court, Triq Lorenzo  Gatt, Birkirkara, Malta, BKR4020.</p>
+				<p>Email Us @...  Hello@arbking.com , trade@arbking.com</p>
+				<p><strong>We are social</strong>  <br><br>
+					<span><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></span>
+					<span><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></span>
+					<span><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></span>
+					<span><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></span>
+					<span><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></span>
+					<span><a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a></span>
+					<span><a href="#"><i class="fa fa-reddit" aria-hidden="true"></i></a></span>
+				
+				</p>
+				</div>
+			</div>
+		</div> <!-- sides -->
+		</section>
+		
+	</body>
 
-    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
-        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
-        <div class="container">
-            <div class="navbar-header">
-                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar bar1"></span>
-                    <span class="icon-bar bar2"></span>
-                    <span class="icon-bar bar3"></span>
-                </button>
-                <a href="#" class="navbar-brand-logo" src="/assets/img/logo5v.png"></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right navbar-uppercase">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Why Arbking</a></li>
-                    
-                    <li class="dropdown">
-                        <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-share-alt"></i> Share
-                        </a>
-                        <ul class="dropdown-menu dropdown-danger">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook-square"></i> Facebook</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="btn btn-danger btn-fill">Join Now</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-    </nav>
-
-
-    <div class="section section-header">
-        <div class="parallax filter filter-color-red">
-            <div class="image"
-                style="background-image: url('assets/img/sportsbg.jpg')">
-            </div>
-            <div class="container">
-                <div class="content">
-                    <div class="title-area">
-                        <h1 class="title-modern">Arbking</h1>
-                        <h2>The Most Guarrenteed Way to Trade on Sports</h2>
-                        <div class="separator line-separator">♦</div>
-                    </div>
-
-                    <div class="button-get-started">
-                        <a href="http://www.creative-tim.com/product/gaia-bootstrap-template" class="btn btn-danger btn-fill btn-lg">
-                            Get Started
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="title-area">
-                    <h2>Our Services</h2>
-                    <div class="separator separator-danger">✻</div>
-                    <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-graph1"></i>
-                        </div>
-                        <h3>Sales</h3>
-                        <p class="description">We make our design perfect for you. Our adjustment turn our clothes into your clothes.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-note2"></i>
-                        </div>
-                        <h3>Content</h3>
-                        <p class="description">We create a persona regarding the multiple wardrobe accessories that we provide..</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-music"></i>
-                        </div>
-                        <h3>Music</h3>
-                        <p class="description">We like to present the world with our work, so we make sure we spread the word regarding our clothes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section section-our-team-freebie">
-        <div class="parallax filter filter-color-black">
-            <div class="image" style="background-image:url('assets/img/header-2.jpeg')">
-            </div>
-            <div class="container">
-                <div class="content">
-                    <div class="row">
-                        <div class="title-area">
-                            <h2>Who We Are</h2>
-                            <div class="separator separator-danger">✻</div>
-                            <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
-                        </div>
-                    </div>
-
-                    <div class="team">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="assets/img/faces/face_1.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Tina</h3>
-                                                    <p class="small-text">CEO / Co-Founder</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="assets/img/faces/face_4.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Andrew</h3>
-                                                    <p class="small-text">Product Designer</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card card-member">
-                                            <div class="content">
-                                                <div class="avatar avatar-danger">
-                                                    <img alt="..." class="img-circle" src="assets/img/faces/face_3.jpg"/>
-                                                </div>
-                                                <div class="description">
-                                                    <h3 class="title">Michelle</h3>
-                                                    <p class="small-text">Marketing Hacker</p>
-                                                    <p class="description">I miss the old Kanye I gotta say at that time I’d like to meet Kanye And I promise the power is in the people and I will use the power given by the people to bring everything I have back to the people.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section section-our-clients-freebie">
-        <div class="container">
-            <div class="title-area">
-                <h5 class="subtitle text-gray">Here are some</h5>
-                <h2>Clients Testimonials</h2>
-                <div class="separator separator-danger">∎</div>
-            </div>
-
-            <ul class="nav nav-text" role="tablist">
-                <li class="active">
-                    <a href="#testimonial1" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="assets/img/faces/face_5.jpg"/>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#testimonial2" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="assets/img/faces/face_6.jpg"/>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#testimonial3" role="tab" data-toggle="tab">
-                        <div class="image-clients">
-                            <img alt="..." class="img-circle" src="assets/img/faces/face_2.jpg"/>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-
-
-            <div class="tab-content">
-                <div class="tab-pane active" id="testimonial1">
-                    <p class="description">
-                        And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color... Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all!
-                    </p>
-                </div>
-                <div class="tab-pane" id="testimonial2">
-                    <p class="description">Green I even had the pink polo I thought I was Kanye I promise I will never let the people down. I want a better life for all! And I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. Now there is only one important color...
-                    </p>
-                </div>
-                <div class="tab-pane" id="testimonial3">
-                    <p class="description"> I used a period because contrary to popular belief I strongly dislike exclamation points! We no longer have to be scared of the truth feels good to be home In Roman times the artist would contemplate proportions and colors. The 'Gaia' team did a great work while we were collaborating. They provided a vision that was in deep connection with our needs and helped us achieve our goals.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="section section-small section-get-started">
-        <div class="parallax filter">
-            <div class="image"
-                style="background-image: url('assets/img/office-1.jpeg')">
-            </div>
-            <div class="container">
-                <div class="title-area">
-                    <h2 class="text-white">Do you want to work with us?</h2>
-                    <div class="separator line-separator">♦</div>
-                    <p class="description"> We are keen on creating a second skin for anyone with a sense of style! We design our clothes having our customers in mind and we never disappoint!</p>
-                </div>
-
-                <div class="button-get-started">
-                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <footer class="footer footer-big footer-color-black" data-color="black">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Company</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a></li>
-                                <li>
-                                    <a href="#">Find offers</a>
-                                </li>
-                                <li>
-                                    <a href="#">Discover Projects</a>
-                                </li>
-                                <li>
-                                    <a href="#">Our Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="#">About Us</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-3 col-md-offset-1 col-sm-3">
-                    <div class="info">
-                        <h5 class="title"> Help and Support</h5>
-                         <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">How it works</a>
-                                </li>
-                                <li>
-                                    <a href="#">Terms &amp; Conditions</a>
-                                </li>
-                                <li>
-                                    <a href="#">Company Policy</a>
-                                </li>
-                                <li>
-                                    <a href="#">Money Back</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Latest News</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is here, just give it a try and let us...
-                                        <hr class="hr-small">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> We've just been featured on <b> Awwwards Website</b>! Thank you everybody for...
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-offset-1 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Follow us on</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-facebook btn-simple">
-                                        <i class="fa fa-facebook-square"></i> Facebook
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-dribbble btn-simple">
-                                        <i class="fa fa-dribbble"></i> Dribbble
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-twitter btn-simple">
-                                        <i class="fa fa-twitter"></i> Twitter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-reddit btn-simple">
-                                        <i class="fa fa-google-plus-square"></i> Google+
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="copyright">
-                 © <script> document.write(new Date().getFullYear()) </script> 
-            </div>
-        </div>
-    </footer>
-
-</body>
 @stop

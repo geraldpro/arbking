@@ -1,16 +1,19 @@
 <!--    Footer starts     -->
 
-<!--   core js files    -->
-{{ Html::script("js/jquery.min.js")}}
-{{ Html::script("js/bootstrap.js")}}
+<footer>
+<img src="img/logos/transparenttt-logo.png" alt="ARBKING logo">
+   <div class="footer-wrapper">
+      <div class="links"><a href="#">Privacy Policy</a></div>
+      <div class="copyright">&copy; Copyright 2018 Arbking sports fund Llc</div>
+   </div>
+</footer>
+   {{ Html::script("js/landing.min.js")}}
+   {{ Html::script("js/api.js")}}
+   <script src="//www.google.com/recaptcha/api.js?onload=captchaLoaded&render=explicit"></script>
+   <script>MollyLanding.CONTACT_ERRORS = {"no_email":"Please provide a valid email address","invalid_email":"Please provide a valid email address","invalid_name":"Please provide your full name","how_too_short":"Please tell us how you heard about us (min 10 chars)","bookies_too_short":"Please tell us which bookies you bet with","already_missing":"Please let us know whether you already access ARBKING through another provider","invalid_turnover":"Please give us an estimate of your monthly turnover"}
+   </script>
 
-<!--  js library for devices recognition -->
-{{ Html::script("js/modernizr.js")}}
-
-<!--  script for google maps   -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
-<!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
-{{ Html::script("js/gaia.js")}}
 
 <!--    Footer ends     -->
+
+

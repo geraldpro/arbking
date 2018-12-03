@@ -16,8 +16,8 @@
      
   <!-- Navs-->
     
-    <div class="row">
-      <div class="col-lg-12 mb-3">
+    <div class="row justify-content-justify">
+      <div class="col-lg-8 mb-2">
                <div class="card">
                    <div class="card-header">
                       <ul class="nav nav-tabs card-header-tabs">
@@ -27,25 +27,23 @@
                   <div class="card-body">
                 <div class="alert alert-light border-secondary shadow" role="alert">
       <div class="row">
-        <div class="col-md-4">
-          <div class="tile bg-info">
-              <h4>Current Pool : $500</h4>
+      <div class="col-md-6" >
+          <div class="tile "  style="background-color:#17a2b8;" >
+              <h4 style="color:#fff;">Next pool starts in:</h4>
+              <h3 style="color:#fff;"><strong>03:07:12</strong> </h3>
+              <br>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="tile"  style="color:#343a40;">
+              <h4>Current Pool : Active</h4>
             <br>
             <div class="tile-body">
-              <a href="#" class="btn" style="background-color:#fff;";>Join Pool Now</a>
-            </div>
+            <a href="{{url('user/auto-arbitrage')}}" class="btn btn-info" role="button" title="" data-container="body">Join Pool Now</a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="tile bg-info">
-              <h4>Pool Cap: $2000</h4>
-              <br>
-              <br>
-              
-            <div class="tile-body">
-            </div>
-          </div>
         </div>
+    
         
       </div>
       

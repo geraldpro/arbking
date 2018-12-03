@@ -18,82 +18,52 @@
   <!-- Navs-->
     
     <div class="row justify-content-center">
-      <div class="col-lg-10 mb-3">
+      <div class="col-lg-12 mb-3">
         <div class="card">
             <div class="card-header">
               <ul class="nav nav-tabs card-header-tabs">
                   <li class="nav-item"><a class="nav-link active"  data-toggle="tab"  href="#auto_arbitrage">Automated Inplay Arbitrage</a></li>
-                  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#arbitrage_balance">Arbitrage Balance</a></li>
               </ul>
             </div>
             <div class="card-body">
                <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade active show" id="auto_arbitrage">
-                  <div class="faq-q">Join the next pool! Activate your Auto Inplay Arbitrage and earn 0.5% up to 1.4% daily. Let "Arbie2" the BOT do the rest.</div>
                     <div class="alert alert-light border-secondary shadow" role="alert">
                       <div class="row" style="margin-top: 10px;">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                 <input type="text" name="amount" class="form-control" aria-describedby="emailHelp" placeholder="Enter amount">
-                              </div>
-                        </div> 
-                      <div class="col-md-4"> <button class="btn btn-info" type="submit">Activate Now</button>
-                      <a href="{{url('user/fund-my-account')}}" class="btn btn-success">Fund account</a>
-                      </div>
+                      <div class="col-md-12">
+          <div class="alert alert-light border-secondary shadow">
+            <table class="table table-bordered" id="sampleTable">
+              <thead>
+                <tr>
+                  <th>Deposit Amount ($)</th>
+                  <th>Current Balance ($)</th>
+                  <th>Status</th>
+                  <th>Next Arbitrage starts</th>
+                  <th>Action1</th>
+                  <th>Action2</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <td>500</td>
+                <td>2000</td>
+                <td>Inactive</td>
+                <td>12/8/19</td>
+                <td><a class="btn btn-info" id="demoSwal" href="#">Withdraw</a> </td>
+                <td><a class="btn btn-info"  href="#">Activate</a> </td>
+
+
+              </tr>
+              </tbody>
+              </div>
+              </div>
                       </div>
                     </div>
                 </div>
 
-          <div class="tab-pane fade" id="arbitrage_balance">
-              <form class="row" method="post" action="#">
-                <div class="form-group col-md-6">
-                  <label for="main balance"><b>Main Balance</b></label>
-                      <input  type="text" class="form-control" aria-describedby="emailHelp" value="$10,000" readonly>
-                </div>
-
-                 <div class="form-group col-md-6">
-                     <label for="wallet address"><b>Withdrawable amount</b></label>
-                       <input type="text" name="wallet_address" class="form-control"   aria-describedby="emailHelp" value="$5,000" readonly>
-                 </div>
-                 <div class="form-group col-md-6">
-                     <label for="wallet address"><b>Last amount earned</b></label>
-                       <input type="text" name="wallet_address" class="form-control" aria-describedby="emailHelp" value="$500" readonly>
-                 </div>
-                   <div class="form-group col-md-6" style="margin-top:28px;">
-                        {{ csrf_field() }}
-                     <a class="btn btn-info" id="demoSwal" href="#" role="button">Withdraw earning</a>
-                   </div>
-             </form>
-             <form class="row" method="post" action="#">
-                <div class="form-group col-md-3">
-                    <div class="animated-checkbox">
-                       <label>
-                         <input type="checkbox"><span class="label-text">Active</span>
-                     </label>
-                  </div>
-                </div>
-                <div class="form-group col-md-3">
-                    <div class="animated-checkbox">
-                       <label>
-                         <input type="checkbox"><span class="label-text">Inactive</span>
-                     </label>
-                  </div>
-                </div>
-                <div class="form-group col-md-3">
-                    <div class="animated-checkbox">
-                       <label>
-                         <input type="checkbox"><span class="label-text">Pending</span>
-                     </label>
-                  </div>
-                </div>
-                 
-                <div class="form-group col-md-3">
-                <a class="btn btn-success" id="demoSwal" href="#" role="button">Activate</a>
-
-                </div>
-                   
-             </form>
-     </div>
+          
                 </div>
                 </div>  
                   </div>

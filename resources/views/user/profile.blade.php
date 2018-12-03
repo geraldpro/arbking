@@ -5,7 +5,7 @@
   <main class="app-content">
       <div class="app-title">
          <div class="div">
-              <h1><i class="fa fa-user-circle-o"></i>My Profile</h1>
+              <h1>My Profile</h1>
          </div>
           <ul class="app-breadcrumb breadcrumb">
               <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -66,7 +66,7 @@
             </div>
                <div class="form-group col-md-6">
                   {{ csrf_field() }}
-                 <button class="btn btn-success" type="submit">Submit</button>
+                 <button class="btn btn-info" type="submit">Submit</button>
             </div>
           </form>
         </div> 

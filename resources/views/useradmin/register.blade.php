@@ -20,7 +20,7 @@
 					  <form method="post" action="{{ route('register') }}">
 						{{ csrf_field() }}
 						<div class="row uniform 50%">
-							<div class="text-center"><strong style="text-align:center;font-size:24px;">Register on Arbking</strong></div>
+						<h3 style="text-align:center;margin-bottom:30px;color:#17a2b8;">Register on Arbking</h3>							
 
 								</div>
 							<div class="row uniform 50% {{ ($errors->has('first_name')) ? 'has-error' : ''}}">
@@ -69,7 +69,7 @@
 
 							<div class="row uniform 50%">
 								<div class="12u">
-									<input type="submit" btn btn-info value="Join Now" class="fit" style="background-color:#FF8C00;color:#fff;"/>
+									<input type="submit" btn btn-info value="CREATE FREE ACCOUNT" class="fit" style="background-color:#17a2b8;color:#fff;"/>
 								</div>
 							</div>
 						</form>

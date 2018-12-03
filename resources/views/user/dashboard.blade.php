@@ -8,7 +8,7 @@
           <h1> Dashboard</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"></li>
           <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
         </ul>
       </div>   
@@ -31,7 +31,7 @@
                           <h5 class="title" style="color:#343a40;">Matchbet Trading</h5>
                         <div class="tile-body" style="color:#343a40;">
                         <p class="card-text">Lay with us - back with your favorite bookie. Lock in profit.</p>
-                        <a href="{{url('user/trade')}}" class="btn btn-warning"  role="button" title="" data-container="body"  data-toggle="tooltip" data-placement="left"
+                        <a href="{{url('user/trade')}}" class="btn btn-info"  role="button" title="" data-container="body"  data-toggle="tooltip" data-placement="left"
                            data-original-title="For every deposit you earn a 50% bonus to shield you from potential trading risks. T&C applies.">Learn more</a>                        
                         </div>
                       </div>
@@ -42,7 +42,7 @@
                           <h5 class="title" style="color:#343a40;">Shield Bonus Calculator</h5>
                         <div class="tile-body" style="color:#343a40;">
                         <p class="card-text">Shield bonus turnover calculator.</p>
-                           <a href="{{url('user/bonus-calculator')}}" class="btn btn-warning" role="button" title="" data-container="body" data-toggle="tooltip" data-placement="right"
+                           <a href="{{url('user/bonus-calculator')}}" class="btn btn-info" role="button" title="" data-container="body" data-toggle="tooltip" data-placement="right"
                              data-original-title="Roll over requirement calculator display">Learn more</a>
                         </div>
                       </div>
@@ -55,7 +55,7 @@
                             <h5 class="title" style="color:#343a40;">Auto Arbitrage</h5>
                           <div class="tile-body" style="color:#343a40;">
                           <p class="card-text">Sports exchange inplay arbitrage </p>
-                          <a href="{{url('user/auto-arbitrage')}}" class="btn btn-warning" role="button" title="" data-container="body" data-toggle="tooltip"  data-placement="left"
+                          <a href="{{url('user/auto-arbitrage')}}" class="btn btn-info" role="button" title="" data-container="body" data-toggle="tooltip"  data-placement="left"
                             data-content="" data-original-title="Earn 0.5% to 1% daily for investing in Arbking's sports exchange inplay BOT trader. The market pool opens and closes every 24 hours.">Learn more</a>
                           </div>
                         </div>
@@ -66,7 +66,7 @@
                           <h5 class="title" style="color:#343a40;">Community Trading Pool</h5>
                         <div class="tile-body" style="color:#343a40;">
                         <p class="card-text">Arbitrage trading for users that couldn't meet the T&C .</p>
-                        <a href="{{url('user/livepool-status')}}" class="btn btn-warning" role="button" title="" data-container="body" data-toggle="tooltip" data-placement="right"
+                        <a href="{{url('user/livepool-status')}}" class="btn btn-info" role="button" title="" data-container="body" data-toggle="tooltip" data-placement="right"
                            data-original-title="Timer display for daily fund pool">Learn more</a>
                         </div>
                       </div>

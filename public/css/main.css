@@ -127,8 +127,8 @@ q {
 	quotes: none;
 }
 
-blockquote:before,F
-blockquote:after,
+blockquote:before,
+F blockquote:after,
 q:before,
 q:after {
 	content: '';
@@ -207,7 +207,7 @@ body {
 		width: 60em;
 	}
 
-	
+
 
 }
 
@@ -1977,14 +1977,14 @@ body {
 /* Basic */
 
 body {
-	background: #f5f5f5;
+	background: #17a2b8;
 }
 
 body,
 input,
 select,
 textarea {
-	color: #777;
+	color: #17a2b8;
 	font-family: "Source Sans Pro", sans-serif;
 	font-size: 16pt;
 	font-weight: 300;
@@ -1993,17 +1993,21 @@ textarea {
 }
 
 a {
+	text-decoration: none;
 	-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 	border-bottom: dotted 1px;
-	color: #e89980;
-	text-decoration: none;
+	color: #17a2b8;
+
+
 }
 
 a:hover {
 	border-bottom-color: transparent;
+	text-decoration: none;
+
 }
 
 strong,
@@ -2078,15 +2082,16 @@ sub {
 	position: relative;
 	top: 0.5em;
 }
+
 .hero-heading {
-    margin: 0;
-    line-height: 1.2;
-    font-size: 3rem;
+	margin: 0;
+	line-height: 1.2;
+	font-size: 3rem;
 }
 
 .faq-q {
-    font-size: 2.6em;
-    font-weight: 300;
+	font-size: 2.6em;
+	font-weight: 300;
 }
 
 sup {
@@ -2222,9 +2227,9 @@ textarea {
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
-	background: #f8f8f8;
+	background: #fff;
 	border-radius: 6px;
-	border: solid 1px #e5e5e5;
+	border: solid 1px #17a2b7;
 	color: inherit;
 	display: block;
 	outline: 0;
@@ -2246,8 +2251,14 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
-	border-color: #e89980;
-	box-shadow: 0 0 0 2px #e89980;
+	border-color: #17a2b8;
+	box-shadow: 0 0 0 0.3px #17a2b8;
+}
+
+#logo {
+	display: inline-block;
+	overflow: hidden;
+	background-repeat: repeat;
 }
 
 .select-wrapper {
