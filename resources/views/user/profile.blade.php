@@ -13,7 +13,26 @@
         </ul>
       </div>
      
-     
+      @if (Session::has('success'))
+        <div class="card-body">
+       <div class="col-lg-12" style="padding: 0px;">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-success">
+              <button class="close" type="button" data-dismiss="alert">×</button>
+              <strong>{{ Session::get('success') }}</strong>
+            </div>
+          </div>
+        </div>
+			@elseif (Session::has('fail'))
+                <div class="col-lg-12" style="padding: 0px;">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                           <strong> {{ Session::get('fail') }}</strong>
+                    </div>
+            </div>
+        </div>
+			@endif   
   <!-- Navs-->
 <div class="tile mb-4">    
 <div class="row">

@@ -1,8 +1,10 @@
  <!-- Sidebar menu-->
  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/img/avatar.png" alt="User Image"><div>
-      <p class="app-sidebar__user-name">John Doe</p>
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src=" {{Auth::user() && Auth::user()->profile_pic ? Auth::user()->profile_pic : 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg'}}" alt="User Image">
+        <div>
+          <p class="app-sidebar__user-name">{{Auth::user() ? Auth::user()->first_name  .  ' ' .  Auth::user()->last_name :  'John Doe'}}</p>
+          <!-- <p class="app-sidebar__user-designation">Trade Hector</p> -->
         </div>
       </div>
       <ul class="app-menu">

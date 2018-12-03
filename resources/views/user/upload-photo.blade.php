@@ -13,7 +13,26 @@
         </ul>
       </div>
      
-     
+        @if (Session::has('success'))
+        <div class="card-body">
+       <div class="col-lg-12" style="padding: 0px;">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-success">
+              <button class="close" type="button" data-dismiss="alert">×</button>
+              <strong>{{ Session::get('success') }}</strong>
+            </div>
+          </div>
+        </div>
+			@elseif (Session::has('fail'))
+                <div class="col-lg-12" style="padding: 0px;">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                           <strong> {{ Session::get('fail') }}</strong>
+                    </div>
+            </div>
+        </div>
+			@endif   
   <!-- Navs-->
 <div class="tile mb-4">
     
@@ -32,12 +51,16 @@
           <div class="alert alert-light border-secondary shadow" role="alert">
           <div class="tab-content" id="myTabContent"> 
           <div class="tab-pane fade active show" id="uploadphoto">
-            <form>
-                <div class="form-group">
+            <form method="post" action="{{URL::route('changePicture')}}" enctype="multipart/form-data">
+                <div class="form-group {{ ($errors->has('profile_image')) ? 'has-error' : ''}}">
                   <label for="exampleFormControlFile1">Choose a picture to Upload</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" class="form-control" name="profile_image" >
+                    @if ($errors->has('profile_image'))
+											<span style="color: palevioletred;">{{ $errors->first('profile_image') }}</span>
+										@endif
               </div>
-              <button class="btn btn-info" type="button">Submit</button>
+              {{ csrf_field() }}
+              <button class="btn btn-info" type="submit">Submit</button>
 
             </form>
 

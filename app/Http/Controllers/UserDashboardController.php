@@ -73,8 +73,15 @@ public function bonus_calculator(){
 
 //Get user verified earning
 public function verified_earning(){
+  $rate = Auth::user()->accountType->rate;
+  $verified_earning = Auth::user()->account->withdrawable_amount * $rate;
+  $payouts = Auth::user()->withdrawals;
+  $value = 0.00;
+  foreach($payouts as $payout) {
+      $value +=  round(($payout->amount * $rate), 2);
+  }
   $earnings = Stake::where('user_id', '=', Auth::user()->id)->where('status', '=', Config::get('constants.stake_status.won'))->get();
-  return view('user.my-verified-earning')->with(compact('earnings'));
+  return view('user.my-verified-earning')->with(compact('earnings'))->with(compact('verified_earning'))->with(compact('value'));
 }
 
 //Get user trade history
@@ -94,7 +101,8 @@ public function update_cryptodetails(){
 
 //Get user Auto arbitrage
 public function arbitrage(){
-  return view('user.auto-arbitrage');
+  $account = Auth::user()->arbitrage;
+  return view('user.auto-arbitrage')->with(compact('account'));
 }
 
 //Get user trading interface

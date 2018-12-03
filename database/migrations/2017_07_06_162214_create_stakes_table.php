@@ -20,7 +20,7 @@ class CreateStakesTable extends Migration
             $table->foreign('match_id')->references('id')->on('matches');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-			$table->string('status')->default(0);
+			$table->tinyInteger('status')->default(0);
 			$table->decimal('stake_amount', 10,2)->default(0);
 			$table->decimal('yield_amount', 10,2)->default(0);
 			$table->decimal('liability_amount', 10,2)->default(0);

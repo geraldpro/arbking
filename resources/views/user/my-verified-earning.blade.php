@@ -34,14 +34,14 @@
                                <div class="row">
         <div class="col-md-4">
           <div class="tile bg-info">
-              <h4 class="title">Verified earnings :</h4>
+              <h4 class="title">Verified Earnings : {{$verified_earning}}</h4>
             <div class="tile-body">
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="tile bg-success">
-              <h4 class="title">Auto arbitrage earnings :</h4>
+              <h4 class="title">Paid Earnings : {{$value}}</h4>
             <div class="tile-body">
             </div>
           </div>
@@ -70,14 +70,6 @@
                     <button type="button" data-toggle="modal" class="btn btn-success"> Request Payout </button>
                
                </div>
-               <div class="col-md-12">
-               <div class="bs-component">
-                    <div class="alert alert-dismissible alert-info">
-                         <button class="close" type="button" data-dismiss="alert">×</button>
-                                 <div class="alert-link" style="text-align:center;">Empty</div>
-                          </div>
-                  </div>
-              </div>
           </form>
               
         <div class="row">

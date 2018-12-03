@@ -20,6 +20,7 @@ class PaymentController extends Controller{
         return $payload;
     }
     public function initiatePayment(Request $request){
+        $request->session()->put($request->mode);
         $rules = array(
             'amount' => 'required|numeric|min:10',
         );
@@ -119,9 +120,21 @@ class PaymentController extends Controller{
         $withdrawal->status_text =  Config::get('constants.withdrawal_status.' .  $withdraw['result']['status']) ;
         $withdrawal->time_created = Carbon::now();
         $withdrawal->amount =  (float) $withdraw['result']['amount'];
+        $withdrawal->mode = $request->session()->get('mode') ?  $request->session()->get('mode') : 'main';
         $withdrawal->withrawal_fee = 0.00;
         $withdrawal->payload = '[]';
-        if ($withdrawal->save()) {
+        if ($request->session()->get('mode')){
+            $account = $user->arbitrage;
+            $account->balance -= $request->amount; 
+            $account->update();
+        }
+        else {
+            $account = $user->account;
+            $account->total_amount -= $request->amount; 
+            $account->update();
+        }
+        $request->session()->forget('mode');
+        if ($withdrawal->save() ) {
             return  redirect()->back()->with('success', 'withdrawal successful check your withdrawal history and wallet for confirmation')->withInput();
         }
         else {
