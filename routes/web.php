@@ -73,6 +73,10 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::post('user/profile/picture/update', 'ProfileController@changePicture')->name('changePicture');
 
 
+    //arbitrage routes
+    Route::get('user/arbitrage/activate/{id}','ArbitrageController@activateArbitrage');
+    Route::get('user/arbitrage/deactivate/{id}','ArbitrageController@deactivateArbitrage');
+
 
 
 

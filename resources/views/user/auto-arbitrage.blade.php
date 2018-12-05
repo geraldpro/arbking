@@ -26,6 +26,26 @@
               </ul>
             </div>
             <div class="card-body">
+            @if (Session::has('success'))
+        <div class="card-body">
+       <div class="col-lg-12" style="padding: 0px;">
+          <div class="bs-component">
+            <div class="alert alert-dismissible alert-success">
+              <button class="close" type="button" data-dismiss="alert">×</button>
+              <strong>{{ Session::get('success') }}</strong>
+            </div>
+          </div>
+        </div>
+			@elseif (Session::has('fail'))
+                <div class="col-lg-12" style="padding: 0px;">
+               <div class="bs-component">
+                    <div class="alert alert-dismissible alert-danger">
+                         <button class="close" type="button" data-dismiss="alert">×</button>
+                           <strong> {{ Session::get('fail') }}</strong>
+                    </div>
+            </div>
+        </div>
+			@endif
                <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade active show" id="auto_arbitrage">
                     <div class="alert alert-light border-secondary shadow" role="alert">
@@ -35,27 +55,40 @@
             <table class="table table-bordered" id="sampleTable">
               <thead>
                 <tr>
-                  <th>Deposit Amount ($)</th>
+                  <th>Last margin (%)</th>
                   <th>Current Balance ($)</th>
                   <th>Status</th>
                   <th>Next Arbitrage starts</th>
-                  <th>Action1</th>
-                  <th>Action2</th>
-
-
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
+              @if(isset($arbitrage))
                 <tr>
-                <td>500</td>
-                <td>2000</td>
-                <td>Inactive</td>
-                <td>12/8/19</td>
-                <td><a class="btn btn-info" id="demoSwal" href="#">Withdraw</a> </td>
-                <td><a class="btn btn-info"  href="#">Activate</a> </td>
-
-
+                <td>{{$arbitrage->margin}}% </td>
+                <td>${{round(($arbitrage->balance / $rate), 2)}}</td>
+                <td>{{Config::get('constants.arbitrage_status.' .  $arbitrage->status ) }}</td>
+                <td>{{$arbitrage->closure->toDateString()}}</td>
+                @if(isset($request))
+                <p  class="alert alert-danger">a request is pending, hence actions disabled</p>
+                @elseif(round(($arbitrage->balance / $rate), 2) < 10)
+                <td><a class="btn btn-info" id="demoSwal" href="#">Fund Arbitrage Wallet</a> </td>
+                
+                @elseif(Config::get('constants.arbitrage_status.' .  $arbitrage->status ) == 'inactive' )
+                <td><a class="btn btn-info" id="" href="{{url('user/arbitrage/activate/' .$arbitrage->id)}}">Activate</a> <a class="btn btn-info" id="demoSwal" href="{{url('user/fund-withdrawal')}}">Withdraw</a> </td>
+                @else
+                <td><a class="btn btn-info" id="demoSwal" href="{{url('user/arbitrage/deactivate/' .$arbitrage->id)}}">Deactivate</a> </td>
+                @endif
               </tr>
+              @else
+              <tr>
+                <td>NA</td>
+                <td>NA</td>
+                <td>Inactive</td>
+                <td>NA</td>
+                <td><a class="btn btn-info" id=""  href="/user/fund-my-account">Fund Abitrage Wallet</a> </td>
+              </tr>
+              @endif
               </tbody>
               </div>
               </div>

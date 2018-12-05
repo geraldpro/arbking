@@ -34,7 +34,7 @@ class User extends Authenticatable
     } 
     public function arbitrage()
     {
-        return $this->hasOne('App\MainArbitrage', 'user_id');
+        return $this->hasOne('App\Arbitrage', 'user_id');
     } 
     public function bank()
     {

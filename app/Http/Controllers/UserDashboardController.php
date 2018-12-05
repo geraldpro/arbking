@@ -6,6 +6,8 @@ use Hexters\CoinPayment\Entities\cointpayment_log_trx;
 use App\Stake;
 use Auth;
 use Config;
+use  App\Withdrawal;
+use App\ArbitrageRequest;
 
 
 class userDashboardController extends Controller{
@@ -101,8 +103,12 @@ public function update_cryptodetails(){
 
 //Get user Auto arbitrage
 public function arbitrage(){
-  $account = Auth::user()->arbitrage;
-  return view('user.auto-arbitrage')->with(compact('account'));
+  $rate = Auth::user()->accountType->rate;
+  $arbitrage = Auth::user()->arbitrage;
+  $request = ArbitrageRequest::where('arbitrage_id', $arbitrage->id)->where('status', Config::get('constants.arbitrage_request_text.status.pending' ) )->first();
+  // dd(Config::get('constants.arbitrage_status.' .  $arbitrage->status )); 
+  // dd($arbitrage->status);
+  return view('user.auto-arbitrage')->with(compact('arbitrage'))->with(compact('rate'))->with(compact('request'));
 }
 
 //Get user trading interface
@@ -112,7 +118,8 @@ public function trade(){
 
 //Get user withdrawal page
 public function fund_withdrawal(){
-  return view('user.fund-withdrawal');
+  $transactions =  Auth::user()->withdrawals;
+  return view('user.fund-withdrawal')->with(compact('transactions'));
 }
 
 }

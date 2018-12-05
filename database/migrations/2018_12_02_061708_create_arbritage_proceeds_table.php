@@ -15,8 +15,8 @@ class CreateArbritageProceedsTable extends Migration
     {
         Schema::create('arbitrage_proceeds', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('opening_balance', 20, 8);
-            $table->decimal('closing_balance', 20, 8);
+            $table->decimal('opening_balance', 8, 2);
+            $table->decimal('closing_balance', 8, 2);
             $table->integer('user_count');
             $table->timestamp('closing_time');
             $table->string('status');

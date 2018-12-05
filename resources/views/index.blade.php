@@ -65,7 +65,7 @@
 						</li>
 						<li>
 							<div class="img" style="background-image: url(img/icon/fast-withdrawal-icon.png)" alt="ARBKING is the fastest sports betting software of its kind"></div>
-							<div class="title">multi crypto coins supported</div>
+							<div class="title">Fast withdrawal</div>
 							<div class="blurb">
 								<div>Fast With Drawal Icon.</div>
 							</div>
@@ -103,7 +103,7 @@
 				</li>
 				<li>
 					<div class="img" style="background-image: url(img/icon/fast-withdrawal-icon.png)" alt="fast-withdrawal-icon.png"></div>
-					<div class="title">fast withdrawal</div>
+					<div class="title">Fast withdrawal</div>
 				</li>
 				<li>
 					<div class="img" style="background-image: url(img/icon/customer-support.png)" alt="customer-support.png"></div>
@@ -151,8 +151,7 @@
 				<p>
 				Arbking Sports Fund Llc is Sports-trade tech company registered in Malta, designed with the average trader in mind. Here every trader has more than 96% chances of growing his/her funds in a risk mitigated match-betting and Auto Arbitrage style. Human emotions has no play in any of the trades. Strictly on machine calls. Arbking Sports Fund Llc has built a global community of thriving sports traders who by Arbking's Matchbet algorithm of risk hedging has helped each other maintain a robust ROI, staying a step ahead of the bookmakers.
 			</p>
-				<ul>
-					
+				<ul>	
 					<li>
 						<div class="img" style="background-image: url(img/ui/working-orders.png)" alt="Auto-placement once order prices match"></div>
 						<div class="blurb">Working Orders (auto-placement once order prices match)</div>

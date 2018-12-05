@@ -117,11 +117,12 @@
      </div>
     </div>
     <div class="tab-pane fade" id="multiplematches">
+    <div>
+      <form>
     <div class="alert alert-light border" role="alert">
         <div class="form-group">
             <label for="exampleSelect1">Select no of matches</label>
             <select class="form-control" id="exampleSelect1">
-              <option>1</option>
               <option>2</option>
               <option>3</option>
               <option>4</option>
@@ -129,36 +130,41 @@
             </select>
           </div>
           </div>
-          <div class="alert alert-light border" role="alert">
+          <div class="alert alert-light border" role="alert" id="matchlist">
+            <h5>Selection1</h5>
           <div class="form-group {{ ($errors->has('league')) ? 'has-error' : ''}}">
               <label class="control-label">League</label>
                 <input class="form-control" name="league" type="text" placeholder="Enter League name">
-                  @if ($errors->has('league'))
-									<span style="color: palevioletred;">{{ $errors->first('league') }}</span>
-								@endif
           </div>
          <div class="form-group {{ ($errors->has('home_team')) ? 'has-error' : ''}}">
             <label class="control-label">Home Team</label>
             <input class="form-control" name="home_team" type="text" placeholder="Enter Home Team">
-            @if ($errors->has('home_team'))
-            <span style="color: palevioletred;">{{ $errors->first('home_team') }}</span>
-          @endif
           </div>
           <div class="form-group {{ ($errors->has('away_team')) ? 'has-error' : ''}}">
               <label class="control-label">Away Team</label>
-              <input class="form-control" name="away_team" type="text" placeholder="Enter Away Team">
-              @if ($errors->has('away_team'))
-              <span style="color: palevioletred;">{{ $errors->first('away_team') }}</span>
-								@endif
                 </div>
                 
                 <div class="form-group  {{ ($errors->has('selected_market')) ? 'has-error' : ''}}">
                   <label class="control-label">Selected Market</label>
                   <input class="form-control" name="selected_market" type="text" placeholder="Enter Selected Market">
-                  @if ($errors->has('selected_market'))
-									<span style="color: palevioletred;">{{ $errors->first('selected_market') }}</span>
-								@endif
                 </div>
+                <h5>Selection2</h5>
+                <div class="form-group {{ ($errors->has('league')) ? 'has-error' : ''}}">
+                    <label class="control-label">League</label>
+                      <input class="form-control" name="league" type="text" placeholder="Enter League name">
+                </div>
+               <div class="form-group {{ ($errors->has('home_team')) ? 'has-error' : ''}}">
+                  <label class="control-label">Home Team</label>
+                  <input class="form-control" name="home_team" type="text" placeholder="Enter Home Team">
+                </div>
+                <div class="form-group {{ ($errors->has('away_team')) ? 'has-error' : ''}}">
+                    <label class="control-label">Away Team</label>
+                      </div>
+                      
+                      <div class="form-group  {{ ($errors->has('selected_market')) ? 'has-error' : ''}}">
+                        <label class="control-label">Selected Market</label>
+                        <input class="form-control" name="selected_market" type="text" placeholder="Enter Selected Market">
+                      </div>
                 </div>
 
                 <div class="form-group  {{ ($errors->has('kickoff')) ? 'has-error' : ''}}">
@@ -181,9 +187,11 @@
 								@endif
                 </div>
                 <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
-                <div class="tile-footer">
+            <div class="tile-footer">
               <button class="btn btn-success" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Submit</button>&nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
             </div>
+          </form>
+          </div>
       </div>
     </div>  
 </main>
@@ -212,8 +220,13 @@
             $(function () {
                 $('#datetimepicker2').datetimepicker('mm/dd/yyyy hh-mm');
             });
+            window.onload = function() {
+              var selectedNumber = document.getElementById('selected_number').value;
+              console.log(selectedNumber, 'this');
+            };
+            var container = document.getElementById('matchlist');
+            // container.innerHtml += 
         </script>
-    
   </body>
 </html>
 

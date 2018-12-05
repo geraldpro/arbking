@@ -96,5 +96,41 @@ return [
 	'coin_trx_status' => [
 		'0' => 'pending',
 		'1' => 'confirmed',
-	]
-];
+	],
+	'arbitrage_status' => [
+		'0' => 'inactive',
+		'1' => 'active',
+	],
+	'arbitrage_status_text' => [
+		'inactive' => 0,
+		'active' => 1,
+	],
+	'arbitrage_request' => [
+		'type' => [
+			'0' => 'activate',
+			'1' => 'deactivate',
+		],
+		'status' => [
+			'0' => 'pending',
+			'1' => 'resolved',
+		]
+		],
+		'arbitrage_request_text' => [
+			'type' => [
+				'activate' => 0,
+				'deactivate' => 1,
+			],
+			'status' => [
+				'pending' =>  0,
+				'resolved' => 1,
+			]
+			],
+			'arbitrage_proceeds_status' => [
+				'0' => 'closed',
+				'1' => 'current',
+			],
+			'arbitrage_proceeds_status_text' => [
+				'closed' => 0,
+				'current' => 1,
+			],
+			];

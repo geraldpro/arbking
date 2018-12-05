@@ -83,24 +83,23 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Wallet ID</th>
+                  <th>Withdrawal ID</th>
+                  <th>Wallet Address</th>
                   <th>Amount</th>
                   <th>Date</th>
-                  <th>Activity</th>
-
                 </tr>
               </thead>
               <tbody>
+              @if(isset($transactions))
               @foreach($transactions as $transaction)
                 <tr>
-                  <td>{{$transaction->payment_id}}</td>
+                  <td>{{$transaction->withdrawal_id}}</td>
+                  <td>{{$transaction->wallet_address}}</td>
                   <td>{{$transaction->amount . ' ' . $transaction->coin}}</td>
-                  <td>{{$transaction->payment_created_at->toDateString()}}</td>
-                  <td> <button class="btn btn-success confirm-btn" type="button">Confirm Payment</button></td>
-                  <input type='hidden' value="{{$transaction->payment_id}}" id="payment-id">
-                  <input type='hidden' value="{{$transaction->id}}" id="transaction-id">
+                  <td>{{$transaction->payment_created_at ? $transaction->payment_created_at->toDateString() : 'not available'}}</td>
                 </tr>
               @endforeach
+              @endif
                 <!-- <tr>
                   <td>23445267dgh</td>
                   <td>$3,600.00</td>
