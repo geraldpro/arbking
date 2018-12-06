@@ -13,5 +13,9 @@ class Match extends Model
     {
         return $this->hasMany('App\Stake', 'match_id');
     }
+    public function groupMatch()
+    {
+        return $this->hasMany('App\GroupMatch', 'group_id');
+    } 
   protected $dates = array('kickoff');
 }

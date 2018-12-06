@@ -118,11 +118,11 @@
     </div>
     <div class="tab-pane fade" id="multiplematches">
     <div>
-      <form>
+      <form method="POST" action="{{ route('createGroupMatch') }}">
     <div class="alert alert-light border" role="alert">
         <div class="form-group">
             <label for="exampleSelect1">Select no of matches</label>
-            <select class="form-control" id="exampleSelect1">
+            <select class="form-control" name="selection-number" id="select-number">
               <option>2</option>
               <option>3</option>
               <option>4</option>
@@ -131,7 +131,7 @@
           </div>
           </div>
           <div class="alert alert-light border" role="alert" id="matchlist">
-            <h5>Selection1</h5>
+            <!-- <h5>Selection1</h5>
           <div class="form-group {{ ($errors->has('league')) ? 'has-error' : ''}}">
               <label class="control-label">League</label>
                 <input class="form-control" name="league" type="text" placeholder="Enter League name">
@@ -142,29 +142,13 @@
           </div>
           <div class="form-group {{ ($errors->has('away_team')) ? 'has-error' : ''}}">
               <label class="control-label">Away Team</label>
+                      <input class="form-control" name="away_team" type="text" placeholder="Enter Away Team">
                 </div>
                 
                 <div class="form-group  {{ ($errors->has('selected_market')) ? 'has-error' : ''}}">
                   <label class="control-label">Selected Market</label>
                   <input class="form-control" name="selected_market" type="text" placeholder="Enter Selected Market">
-                </div>
-                <h5>Selection2</h5>
-                <div class="form-group {{ ($errors->has('league')) ? 'has-error' : ''}}">
-                    <label class="control-label">League</label>
-                      <input class="form-control" name="league" type="text" placeholder="Enter League name">
-                </div>
-               <div class="form-group {{ ($errors->has('home_team')) ? 'has-error' : ''}}">
-                  <label class="control-label">Home Team</label>
-                  <input class="form-control" name="home_team" type="text" placeholder="Enter Home Team">
-                </div>
-                <div class="form-group {{ ($errors->has('away_team')) ? 'has-error' : ''}}">
-                    <label class="control-label">Away Team</label>
-                      </div>
-                      
-                      <div class="form-group  {{ ($errors->has('selected_market')) ? 'has-error' : ''}}">
-                        <label class="control-label">Selected Market</label>
-                        <input class="form-control" name="selected_market" type="text" placeholder="Enter Selected Market">
-                      </div>
+                </div>-->
                 </div>
 
                 <div class="form-group  {{ ($errors->has('kickoff')) ? 'has-error' : ''}}">
@@ -221,10 +205,37 @@
                 $('#datetimepicker2').datetimepicker('mm/dd/yyyy hh-mm');
             });
             window.onload = function() {
-              var selectedNumber = document.getElementById('selected_number').value;
-              console.log(selectedNumber, 'this');
-            };
-            var container = document.getElementById('matchlist');
+              var selectedNumber = document.getElementById('select-number').value;
+              var container = document.getElementById('matchlist');
+              var index = 0;
+                for(var i=0; i<selectedNumber; i++) {
+                  index = i + 1;
+                  var h1 =  "<h5>Selection" + index + "</h5> ";
+                  var league_name = "<div class=\"form-group\"><label class=\"control-label\">League</label><input class=\"form-control\" name=\"league" +  index + "\" type=\"text\" placeholder=\"Enter League name\"></div>";
+                  var home_team = "<div class=\"form-group\"><label class=\"control-label\">Home Team</label><input class=\"form-control\" name=\"home_team" +  index + "\"  type=\"text\" placeholder=\"Enter Home Team\"></div>";
+                  var away_team =  "<div class=\"form-group\"><label class=\"control-label\">Away Team</label><input class=\"form-control\" name=\"away_team" +  index + "\"  type=\"text\" placeholder=\"Enter  Away Team\"></div>";
+                  var selected_market =  "<div class=\"form-group\"><label class=\"control-label\">Selected Market</label><input class=\"form-control\" name=\"selected_market" +  index + "\"  type=\"text\" placeholder=\"Enter  Selected Market\"></div>";
+                  container.innerHTML +=  h1 + league_name + home_team + away_team +  selected_market;
+                }
+              document.getElementById('select-number').addEventListener('change', fillMatch);
+              };
+            function fillMatch(e) {
+                var val = e.target.value;
+                var container = document.getElementById('matchlist');
+                container.innerHTML = '';
+                var index = 0;
+                for(var i=0; i<val; i++) {
+                  index = i + 1;
+                  var h1 =  "<h5>Selection" + index + "</h5> ";
+                  var league_name = "<div class=\"form-group\"><label class=\"control-label\">League</label><input class=\"form-control\" name=\"league" +  index + "\" type=\"text\" placeholder=\"Enter League name\"></div>";
+                  var home_team = "<div class=\"form-group\"><label class=\"control-label\">Home Team</label><input class=\"form-control\" name=\"home_team" +  index + "\"  type=\"text\" placeholder=\"Enter Home Team\"></div>";
+                  var away_team =  "<div class=\"form-group\"><label class=\"control-label\">Away Team</label><input class=\"form-control\" name=\"away_team" +  index + "\"  type=\"text\" placeholder=\"Enter  Away Team\"></div>";
+                  var selected_market =  "<div class=\"form-group\"><label class=\"control-label\">Selected Market</label><input class=\"form-control\" name=\"selected_market" +  index + "\"  type=\"text\" placeholder=\"Enter  Selected Market\"></div>";
+                  container.innerHTML +=  h1 + league_name + home_team + away_team +  selected_market;
+                }
+            }
+
+            // var container = document.getElementById('matchlist');
             // container.innerHtml += 
         </script>
   </body>

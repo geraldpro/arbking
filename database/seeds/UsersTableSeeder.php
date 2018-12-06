@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
                'first_name' => 'Frank',
                'last_name' => 'Gerald',
                'phone_number' => '08167558013',
-               'email' => 'frankgerald88.com',
+               'email' => 'frankgerald88@gmail.com',
                'password' => Hash::make('gerald3040'),
                'role_id' => 1,
                'confirmed' => 1,

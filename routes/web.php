@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@Viewindex');
 
 /**** User Authentication routes******/
 Route::get('login','UserController@login')->name('login');
+Route::get('logout','UserController@logout')->name('logout');
 Route::post('login','UserController@postLogin')->name('postLogin');
 Route::get('register','UserController@register')->name('register');
 Route::post('register','UserController@postSignup')->name('postRegister');
@@ -24,6 +25,7 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('admin/dashboard','adminDashboardController@dashboard')->name('dashboard');
     Route::get('admin/create-match','adminDashboardController@creatmatch')->name('create-match');
     Route::post('admin/creatematch','AdminStakeController@createMatch')->name('createMatch');
+    Route::post('admin/create-group-match','AdminStakeController@createGroupMatch')->name('createGroupMatch');
     Route::get('admin/edit-match/{id}','adminDashboardController@edit_match')->name('edit-match');
 
     Route::get('admin/confirm-match','adminDashboardController@confirm_match')->name('confirm-match');

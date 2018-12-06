@@ -40,6 +40,41 @@ class AdminStakeController extends Controller{
           return  redirect()->back()->withFail('an error occured while trying to create a match')->withInput();   
     }
   }
+  public function createGroupMatch(Request $request){
+    // $rules = array(
+    //     'league' => 'required',
+    //     'home_team' => 'required',
+    //     'away_team' => 'required',
+    //     'kickoff' => 'required',
+    //     'selected_market' => 'required',
+    //     'selected_odd' => 'required',
+    // );
+    // $validate = Validator::make($request->all(), $rules);
+    // if ($validate->fails()) {
+    //     return redirect()->back()->withErrors($validate)->withInput();
+    // } else {
+      $data = $request->all();
+      // dd($data);
+      try {
+        $data['kickoff'] = new Carbon($request->get('kickoff'));
+        $match = new Match();
+        $match->fill($data);
+        $match->save();
+        $val = $data['selection-number'];
+        for($i=0; $i <$val; $i++) {
+          $match_group = new GroupMatch();
+          $match_group->match_id = $match->id;
+          $match_group->league = $data['league' . $i+1];
+          $match_group->home_team = $data['home_team' . $i+1];
+          $match_group->away_team = $data['away_team' . $i+1];
+          $match_group->selected_market = $data['selected_market' . $i+1];
+          $match_group->save();
+          return  redirect()->back()->withSuccess('You have successfully created a match');
+        }
+      } catch(Exception $e) {
+          return  redirect()->back()->withFail('an error occured while trying to create a match')->withInput();  
+        }
+  }
   public function editMatch(Request $request){
     $rules = array(
         'league' => 'required',
