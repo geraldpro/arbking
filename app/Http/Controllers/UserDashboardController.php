@@ -105,7 +105,7 @@ public function update_cryptodetails(){
 public function arbitrage(){
   $rate = Auth::user()->accountType->rate;
   $arbitrage = Auth::user()->arbitrage;
-  $request = ArbitrageRequest::where('arbitrage_id', $arbitrage->id)->where('status', Config::get('constants.arbitrage_request_text.status.pending' ) )->first();
+  $request = $arbitrage ? ArbitrageRequest::where('arbitrage_id', $arbitrage->id)->where('status', Config::get('constants.arbitrage_request_text.status.pending' ) )->first() : null;
   // dd(Config::get('constants.arbitrage_status.' .  $arbitrage->status )); 
   // dd($arbitrage->status);
   return view('user.auto-arbitrage')->with(compact('arbitrage'))->with(compact('rate'))->with(compact('request'));
