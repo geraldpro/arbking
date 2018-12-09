@@ -60,7 +60,17 @@
           <div class="bs-component">
                     <div class="alert alert-dismissible alert-info">
                          <button class="close" type="button" data-dismiss="alert">×</button>
+                                @if(!$match->mode || $match->mode == 'single')
                                  <div class="alert-link" style="text-align:center;">You have been matched with {{$match->home_team}} vs {{$match->away_team}} with our lay selection being {{$match->selected_market}} with an odd of {{$match->selected_odd}} the game will be played on {{$match->kickoff->toDateString()}} by {{$match->kickoff->toTimeString()}} (Be sure to enter the bookie back bet first to prevent changes in the odds. If odds change recalculate) </div>
+                                 @else
+                                 <div class="alert-link" style="text-align:center;">You have been matched with the following group matches:
+                                 <br>
+                                 @foreach($match->groupMatches as $group)
+                                  <span>{{$group->home_team}} vs {{$group->away_team}} with our lay selection being {{$group->selected_market}}</span> 
+                                  <br>
+                                  @endforeach
+                                  with total odd of {{$match->selected_odd}} the game deadline is {{$match->kickoff->toDateString()}} by {{$match->kickoff->toTimeString()}} (Be sure to enter the bookie back bet first to prevent changes in the odds. If odds change recalculate) </div>
+                                  @endif
                           </div>
                   </div>
           <div class="alert alert-light border-secondary shadow" role="alert">

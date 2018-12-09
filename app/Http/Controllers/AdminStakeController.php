@@ -6,6 +6,7 @@ use App\Match;
 use App\MainAccount;
 use App\AuxiliaryAccount;
 use App\Stake;
+use App\GroupMatch;
 use Illuminate\Support\Facades\Auth;
 use Config;
 use Illuminate\Http\Request;
@@ -32,6 +33,7 @@ class AdminStakeController extends Controller{
     } else {
       $data = $request->all();
       $data['kickoff'] = new Carbon($request->get('kickoff'));
+      $data['mode'] = 'single';
       $match = new Match();
       $match->fill($data);
       if($match->save()){
@@ -54,6 +56,7 @@ class AdminStakeController extends Controller{
     //     return redirect()->back()->withErrors($validate)->withInput();
     // } else {
       $data = $request->all();
+      $data['mode'] = 'group';
       // dd($data);
       try {
         $data['kickoff'] = new Carbon($request->get('kickoff'));
@@ -64,13 +67,13 @@ class AdminStakeController extends Controller{
         for($i=0; $i <$val; $i++) {
           $match_group = new GroupMatch();
           $match_group->match_id = $match->id;
-          $match_group->league = $data['league' . $i+1];
-          $match_group->home_team = $data['home_team' . $i+1];
-          $match_group->away_team = $data['away_team' . $i+1];
-          $match_group->selected_market = $data['selected_market' . $i+1];
+          $match_group->league = $data['league' . ($i+1)];
+          $match_group->home_team = $data['home_team' . ($i+1)];
+          $match_group->away_team = $data['away_team' . ($i+1)];
+          $match_group->selected_market = $data['selected_market' . ($i+1)];
           $match_group->save();
-          return  redirect()->back()->withSuccess('You have successfully created a match');
         }
+        return  redirect()->back()->withSuccess('You have successfully created a match');
       } catch(Exception $e) {
           return  redirect()->back()->withFail('an error occured while trying to create a match')->withInput();  
         }
