@@ -8,7 +8,8 @@
           <h1> Bonus Calculator</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{url('user/dashboard')}}">Dashboard</a></li>
           <li class="breadcrumb-item"><a href="#">Bonus Calculator</a></li>
         </ul>
       </div>
@@ -27,39 +28,40 @@
                     </div>
                   <div class="card-body">
                 <div class="alert alert-light border-secondary shadow" role="alert">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="tile bg-success">
-              <h5>Amount Deposited</h5>
-            <div class="tile-body">
-             <p class="card-text">{{Auth::user()->account ? Auth::user()->account->deposited_amount . ' ' .Auth::user()->accountType->short_name :  'account inactive, please deposit to activate'}}</p>
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-md-4">
+                  <div class="tile border">
+                      <h5 style="color:#343a40;">Amount Deposited</h5>
+                      <div class="tile-body" style="color:#343a40;">
+                    <p class="card-text">{{Auth::user()->account ? Auth::user()->account->deposited_amount . ' ' .Auth::user()->accountType->short_name :  'Account inactive, please deposit to activate'}}</p>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="col-md-4">
+                <div class="tile border">
+                    <h5 style="color:#343a40;">Bonus Rewarded</h5>
+                  <div class="tile-body" style="color:#343a40;">
+                  <p class="card-text">{{Auth::user()->account ? Auth::user()->account->shield_amount . ' ' .Auth::user()->accountType->short_name :  'Account inactive, please deposit to activate your'}} <span class="text-danger">50% bonus</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="tile border">
+                    <h5 style="color:#343a40;">Balance Remaining After Trade</h5>
+                  <div class="tile-body" style="color:#343a40;">
+                  <p class="card-text">{{Auth::user()->account ? Auth::user()->account->total_amount . ' ' .Auth::user()->accountType->short_name :  'Account inactive, please deposit to activate'}}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="tile bg-info">
-              <h5 class="title">Bonus Rewarded</h5>
-            <div class="tile-body">
-            <p class="card-text">{{Auth::user()->account ? Auth::user()->account->shield_amount . ' ' .Auth::user()->accountType->short_name :  'account inactive, please deposit to activate your'}} <span class="text-danger">50% bonus</span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="tile bg-warning">
-              <h5 class="title">Balance Remaining After Trade</h5>
-            <div class="tile-body">
-            <p class="card-text">{{Auth::user()->account ? Auth::user()->account->total_amount . ' ' .Auth::user()->accountType->short_name :  'account inactive, please deposit to activate'}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   
-</div>  
-</div>
-  </div>
- </div>   
-</main>
+        </div>  
+        </div>
+          </div>
+        </div>   
+        </main>
     <!-- Essential javascripts for application to work-->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

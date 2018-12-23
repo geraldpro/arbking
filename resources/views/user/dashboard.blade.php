@@ -8,8 +8,8 @@
           <h1> Dashboard</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-          <li class="breadcrumb-item"></li>
-          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{url('user/dashboard')}}">Dashboard</a></li>
         </ul>
       </div>   
   <!-- Navs-->

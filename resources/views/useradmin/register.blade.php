@@ -4,9 +4,9 @@
 
 <!-- Main -->
 				<section id="main" class="container 50%">
-					<header>
-	          <h2></h2>
-			</header>
+					<section>
+					<img class="mb-4" src="/img/dashboard_logo.png" alt="Logo" width="100%" height="150px" />	
+			</section>
 				@if (Session::has('success'))
 				<div class="">
 					<div class="alert alert-success text-center"> {{ Session::get('success') }}</div>
@@ -19,8 +19,9 @@
 					<div class="box">
 					  <form method="post" action="{{ route('register') }}">
 						{{ csrf_field() }}
+						<h3 style="text-align:center;margin-bottom:30px;color:#17a2b8;">Sign up for free on Arbking</h3>							
+
 						<div class="row uniform 50%">
-						<h3 style="text-align:center;margin-bottom:30px;color:#17a2b8;">Register on Arbking</h3>							
 
 								</div>
 							<div class="row uniform 50% {{ ($errors->has('first_name')) ? 'has-error' : ''}}">
@@ -73,6 +74,8 @@
 								</div>
 							</div>
 						</form>
+						<section style="text-align:center;margin-top:30px;"><strong>Already have an account? </strong> <a href="{{url('login')}}">Log in</a></section>
+
 					</div>
 				</section>
 @stop

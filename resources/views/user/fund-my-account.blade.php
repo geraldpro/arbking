@@ -8,7 +8,8 @@
             <h1><i class="fa fa-user-"></i> Fund My Account</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-              <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+             <li class="breadcrumb-item"><a href="{{url('user/dashboard')}}">Dashboard</a></li>
               <li class="breadcrumb-item"><a href="#">Profile</a></li>
         </ul>
       </div>
@@ -72,7 +73,7 @@
                                                 <label for="firstname">Amount (USD)</label>
                                                        <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
                                                                 <br>
-                                                                      <button class="btn btn-success" type="submit">Fund my account</button>
+                                                                      <button class="btn btn-info" type="submit">Fund my account</button>
                                           </div>
                                   </form>
                               </div> 

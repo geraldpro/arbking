@@ -5,10 +5,11 @@
        <main class="app-content">
             <div class="app-title">
                 <div class="div">
-                       <h1><i class="fa fa-user-circle-o"></i> Trade History</h1>
+                       <h1> Trade History</h1>
                 </div>
                   <ul class="app-breadcrumb breadcrumb">
-                    <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                  <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+                   <li class="breadcrumb-item"><a href="{{url('user/dashboard')}}">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="#">Trade History</a></li>
                   </u>
            </div>
@@ -29,7 +30,7 @@
                 <h5 class="section-title text-muted mb-2"></h5>
                    <div class="row">
                      <div class="col-md-4">
-                         <div class="tile bg-success">
+                         <div class="tile bg-info">
                              <h4>Total matches Played:</h4>
                                   <div class="tile-body">
                                </div>
@@ -43,7 +44,7 @@
                         </div>
                       </div>
                     <div class="col-md-4">
-                      <div class="tile bg-warning">
+                      <div class="tile bg-info">
                           <h4 class="title">Matches Won:</h4>
                              <div class="tile-body">
                         </div>
@@ -65,7 +66,7 @@
                                                     </div>
                                                 <div class="form-group col-md-2">
                                                      <div class="input-group">
-                                                          <button class="btn btn-success" type="button">Search Record</button>
+                                                          <button class="btn btn-info" type="button">Search Record</button>
                                                </div>
                                         </div>
                                  </form>

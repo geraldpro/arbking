@@ -3329,7 +3329,7 @@ body.landing #page-wrapper {
  */
 
 #main {
-	padding: 4em 0;
+	padding: 3em 0;
 }
 
 #main>header {
@@ -3991,12 +3991,7 @@ body.landing #main {
 
 	/* Box */
 
-	.box {
-		border-radius: 0;
-		box-shadow: none;
-		margin: 1em 0 0 0;
-		padding: 3em 1em !important;
-	}
+
 
 	.box.features .features-row section {
 		margin: 3em 0 0 0 !important;
