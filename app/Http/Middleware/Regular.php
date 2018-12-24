@@ -5,24 +5,21 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Config;
-
-class RedirectIfAuthenticated
+class Regular
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->check()) {
-            $role = Auth::user()->role->id;
-            return redirect(Config::get('constants.role_name.' . $role) . '/dashboard');
+        $role = Auth::user()->role->id;       
+        if($role != Config::get('constants.roles.user')){
+            return redirect(Config::get('constants.role_name.' . $role) . '/dashboard'); 
         }
-
         return $next($request);
     }
 }

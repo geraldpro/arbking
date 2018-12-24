@@ -31,8 +31,8 @@
           </ul>
         </div>
       <div class="card-body">
-      @if (Session::has('success'))
-        <div class="card-body">
+    @if (Session::has('success'))
+          <div class="card-body">
        <div class="col-lg-12" style="padding: 0px;">
           <div class="bs-component">
             <div class="alert alert-dismissible alert-success">
