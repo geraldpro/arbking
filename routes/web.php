@@ -33,6 +33,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('admin/creatematch','AdminStakeController@createMatch')->name('createMatch');
     Route::post('admin/create-group-match','AdminStakeController@createGroupMatch')->name('createGroupMatch');
     Route::get('admin/edit-match/{id}','adminDashboardController@edit_match')->name('edit-match');
+    Route::get('admin/update-livepool','adminDashboardController@update_livepool')->name('update-livepool');
+
 
     Route::get('admin/confirm-match','adminDashboardController@confirm_match')->name('confirm-match');
     Route::get('admin/user-profits','adminDashboardController@user_profits')->name('user-profits');

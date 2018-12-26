@@ -17,6 +17,7 @@
         <li><a class="app-menu__item" href="{{url('admin/user-activities')}}"><i class="app-menu__icon fa fa-hourglass-half" aria-hidden="true"></i><span class="app-menu__label">User Activities</span></a></li>
         <li><a class="app-menu__item" href="{{url('admin/user-fund-deposit')}}"><i class="app-menu__icon fa fa-credit-card" aria-hidden="true"></i><span class="app-menu__label">User Fund Deposit</span></a></li>  
         <li><a class="app-menu__item" href="{{url('admin/user-profits')}}"><i class="app-menu__icon fa fa-money" aria-hidden="true"></i><span class="app-menu__label">User Profits</span></a></li>  
+        <li><a class="app-menu__item" href="{{url('admin/update-livepool')}}"><i class="app-menu__icon fa fa-check-square" aria-hidden="true"></i><span class="app-menu__label">Update Live pool </span></a></li>  
 
       </ul>
     </aside>
