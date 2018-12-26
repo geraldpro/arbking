@@ -2,12 +2,10 @@
 
 @section('body')
 
-
 <!-- Main -->
-				<section id="main" class="container 50%">
-				<section style="text-align:center;margin-bottom:50px;">
-					<h1 id="logo"><a href="{{url('/')}}"><img src="/img/dashboard_logo.png" alt="Logo" /></a></h1>
-					
+			<section id="main" class="container 50%" >
+			 <section>
+			  <img class="mb-4" src="/img/dashboard_logo.png" alt="Logo" width="100%" height="150px" />	
 				</section>
 					<div class="box">			
 					  <form method="post" action="{{ route('login') }}">
@@ -36,7 +34,7 @@
 								</div>
 							</div>
 							<section style="text-align:center;margin-top:30px;"><strong>New to ArbKing? </strong> <a href="{{url('register')}}">Sign Up</a></section>
-							<section style="text-align:center;margin-top:30px;"><a href="{{url('request-password-reset')}}">Forgot Your Password?</a></section>
+							<section style="text-align:center;margin-top:30px;"><a href="{{url('passwordReset')}}">Forgot Your Password?</a></section>
 
 
 						</form>

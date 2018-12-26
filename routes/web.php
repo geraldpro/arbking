@@ -14,13 +14,17 @@
 Route::get('/', 'HomeController@Viewindex');
 
 /**** User Authentication routes******/
-Route::middleware(['guest'])->group(function () {
-    Route::get('login','UserController@login')->name('login');
-    Route::get('logout','UserController@logout')->name('logout');
-    Route::post('login','UserController@postLogin')->name('postLogin');
-    Route::get('register','UserController@register')->name('register');
-    Route::post('register','UserController@postSignup')->name('postRegister');
-});
+Route::get('login','UserController@login')->name('login');
+Route::get('logout','UserController@logout')->name('logout');
+Route::post('login','UserController@postLogin')->name('postLogin');
+Route::get('register','UserController@register')->name('register');
+Route::post('register','UserController@postSignup')->name('postRegister');
+Route::get('passwordReset','UserController@passwordReset')->name('passReset');
+Route::get('changePassword','UserController@changePassword')->name('changePass');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
+Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showresetForm');
+
 
 /**** Admin Dashboard routes******/
 Route::middleware(['auth', 'admin'])->group(function () {

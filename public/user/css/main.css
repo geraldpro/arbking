@@ -87,6 +87,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #FFF;
+  overflow: hidden;
 }
 
 [tabindex="-1"]:focus {
@@ -11152,10 +11153,9 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus {
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   vertical-align: middle;
-  background-color: #28a745;
-  border: solid #cccccc;
+  background-color: #07acc9;
+  border: solid #07acc9;
   border-width: 2px 0;
-  border-color: #28a745;
   margin-left: -5px;
   border-radius: 3px;
   margin-right: -5px;

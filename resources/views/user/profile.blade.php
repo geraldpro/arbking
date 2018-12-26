@@ -5,11 +5,12 @@
   <main class="app-content">
       <div class="app-title">
          <div class="div">
-              <h1>My Profile</h1>
+              <h1>Profile</h1>
          </div>
           <ul class="app-breadcrumb breadcrumb">
-              <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-              <li class="breadcrumb-item"><a href="#">Profile</a></li>
+          <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{url('user/dashboard')}}">Dashboard</a></li>
+            <li class="breadcrumb-item">Profile</li>
         </ul>
       </div>
      
@@ -116,6 +117,8 @@
                   <a href="{{url('user/upload-photo')}}" class="list-group-item list-group-item-action">Upload Photo</a>
                   <a href="{{url('user/change-password')}}" class="list-group-item list-group-item-action">Change Password</a>
                   <a href="{{url('user/profile')}}" class="list-group-item list-group-item-action">Update Profile</a>
+                  <a href="{{url('user/logout')}}" class="list-group-item list-group-item-action">Log out</a>
+
             </div>
           </div>
   </div> 

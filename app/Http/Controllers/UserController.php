@@ -37,6 +37,17 @@ public function logout()
     public function register(){
         return view('useradmin.register')->with(compact('roles'));
     }
+
+    //Get user password reset page
+    public function passwordReset(){
+        return view('password.passwordReset');
+    }
+
+     //Get user change  password page
+     public function changePassword(){
+        return view('password.changePassword');
+    }
+
     public function roleApplication(){
         $roles = Role::where('id', '!=', Config::get('constants.roles.user'))->get();
         return view('useradmin.apply_role')->with(compact('roles'));
