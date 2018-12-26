@@ -84,4 +84,11 @@ public function user_profits(){
   return view('admin.user-profits');
 
 }
+
+//Get update livepool page
+public function update_livepool(){
+
+  return view('admin.update-livepool');
+
+}
 }
