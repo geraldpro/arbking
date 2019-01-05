@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Main CSS-->
-    {{ Html::style("admin/css/main.css")}}
+    {{ Html::style("admin/css/main.css", array(), true)}}
     <!-- Font-icon css-->
     {{ Html::style("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")}}
   </head>

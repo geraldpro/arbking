@@ -1,3 +1,4 @@
+
 <!--    Header starts     -->
 <head>
     <meta charset="utf-8" />
@@ -8,14 +9,14 @@
     <title>Arbking | Matchedbetting </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
    
-    {{ Html::style("css/main.css")}}
-    {{ Html::style("css/login-register.css")}}
+    {{ Html::style("css/main.css", array(), true)}}
+    {{ Html::style("css/login-register.css", array(), true)}}
     
     <!--     Fonts and icons     -->
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     
-    {{ Html::style("public/css/fonts/pe-icon-7-stroke.css")}}
+    {{ Html::style("public/css/fonts/pe-icon-7-stroke.css", array(), true)}}
 </head>
 <!--   Header Ends     -->
 
