@@ -22,6 +22,26 @@
                       </ul>
                     </div>
                   <div class="card-body">
+                      @if (Session::has('success'))
+                      <div class="card-body">
+                   <div class="col-lg-12" style="padding: 0px;">
+                      <div class="bs-component">
+                        <div class="alert alert-dismissible alert-success">
+                          <button class="close" type="button" data-dismiss="alert">×</button>
+                          <strong>{{ Session::get('success') }}</strong>
+                        </div>
+                      </div>
+                    </div>
+                  @elseif (Session::has('fail'))
+                            <div class="col-lg-12" style="padding: 0px;">
+                           <div class="bs-component">
+                                <div class="alert alert-dismissible alert-danger">
+                                     <button class="close" type="button" data-dismiss="alert">×</button>
+                                       <strong> <?php echo Session::get('fail') ?></strong>
+                                </div>
+                        </div>
+                    </div>
+                  @endif
                 <div class="alert alert-light border-secondary shadow" role="alert">
                
                 <div class="row" style="margin-top: 30px;">

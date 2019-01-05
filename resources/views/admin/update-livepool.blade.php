@@ -26,27 +26,57 @@
                       </ul>
                     </div>
                   <div class="card-body">
+          @if (Session::has('success'))
+          <div class="card-body">
+          <div class="col-lg-12" style="padding: 0px;">
+            <div class="bs-component">
+              <div class="alert alert-dismissible alert-success">
+                <button class="close" type="button" data-dismiss="alert">×</button>
+                <strong>{{ Session::get('success') }}</strong>
+                <!-- <a class="alert-link" href="#">this important alert message</a>. -->
+              </div>
+            </div>
+          </div>
+          @elseif (Session::has('fail'))
+                  <div class="col-lg-12" style="padding: 0px;">
+                  <div class="bs-component">
+                      <div class="alert alert-dismissible alert-danger">
+                            <button class="close" type="button" data-dismiss="alert">×</button>
+                              <strong> {{ Session::get('fail') }}</strong>
+                                    <!-- <a class="alert-link" href="#">Change a few things up</a> and try submitting again. -->
+                      </div>
+              </div>
+          </div>
+        @endif
          <div class="alert alert-light border-secondary shadow" role="alert">
-         <form class="row" style="margin-top: 10px;">
+         <form class="row" style="margin-top: 10px;" method="POST" action="{{ route('closeTrade') }}">
             <div class="col-md-12">
-                  <div class="form-group">
-                           <input type="text" name="amount" class="form-control" aria-describedby="emailHelp" placeholder="Enter percentage">       
+                  <div class="form-group {{ ($errors->has('margin')) ? 'has-error' : ''}}">
+                           <input type="text" name="margin" class="form-control" aria-describedby="emailHelp" placeholder="Enter percentage">       
                   </div>
+                  @if ($errors->has('margin'))
+									<span style="color: palevioletred;">{{ $errors->first('margin') }}</span>
+								@endif
             </div> 
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-12 {{ ($errors->has('closure')) ? 'has-error' : ''}}">
             <label for="gender">Next pool starts(hrs)</label>
-               <select class="form-control" name="gender" id="exampleSelect1">
+               <select class="form-control" name="closure" id="exampleSelect1">
                   <option value="none">Select next pool</option>
-                  <option>30</option>
-                  <option>36</option>     
-                  <option>40</option>     
-                  <option>46</option>
-                  <option>52</option>
-                  <option>58</option>         
-                  <option>64</option> 
-                  <option>72</option>         
+                  <option value="24">24</option>
+                  <option value="30">30</option>
+                  <option value="36">36</option>     
+                  <option value="40">40</option>     
+                  <option value="46">46</option>
+                  <option value="52">52</option>
+                  <option value="58">58</option>         
+                  <option value="64">64</option> 
+                  <option value="72">72</option>         
                </select>
+               @if ($errors->has('closure'))
+               <span style="color: palevioletred;">{{ $errors->first('closure') }}</span>
+             @endif
       </div>
+      <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
          <div class="col-md-3"> <button class="btn btn-success" type="submit">Submit</button></div>
        </div>
     </div>

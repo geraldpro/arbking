@@ -34,6 +34,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('admin/create-group-match','AdminStakeController@createGroupMatch')->name('createGroupMatch');
     Route::get('admin/edit-match/{id}','adminDashboardController@edit_match')->name('edit-match');
     Route::get('admin/update-livepool','adminDashboardController@update_livepool')->name('update-livepool');
+    Route::post('user/arbitrage/close','ArbitrageController@closeTrade')->name('closeTrade');
 
 
     Route::get('admin/confirm-match','adminDashboardController@confirm_match')->name('confirm-match');
