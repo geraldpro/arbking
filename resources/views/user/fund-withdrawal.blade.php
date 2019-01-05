@@ -56,12 +56,18 @@
                             <form class="row" method="post" action="{{ route('initiatePayment') }}">
                                  {{ csrf_field() }}
                                          <div class="form-group col-md-6">
-                                                <label for="firstname">Amount (usd)</label>
-                                                       <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
+                                                <label for="amount">Amount (usd)</label>
+                                                       <input type="text" name="amount" class="form-control" aria-describedby="emailHelp" value="{{ old('amount') }}">
                                                        @if ($errors->has('amount'))
 									                                          <span style="color: palevioletred;">{{ $errors->first('amount') }}</span>
-								                                        @endif
+                                                        @endif
+                                              <label for="amount">Wallet  Address to withdraw into</label>
+                                                  <input type="text" name="address" class="form-control" aria-describedby="emailHelp" value="{{ old('address') }}">
+                                              @if ($errors->has('address'))
+                                                    <span style="color: palevioletred;">{{ $errors->first('address') }}</span>
+                                                @endif
                                                                 <br>
+                                         <input type="hidden" value="{{Auth::user()->accountType->short_name}}" name="payment_method">
                                                                       <button class="btn btn-success" type="submit">Submit</button>
                                           </div>
                                   </form>

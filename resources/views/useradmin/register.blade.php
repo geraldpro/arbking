@@ -27,7 +27,7 @@
 							<div class="row uniform 50% {{ ($errors->has('first_name')) ? 'has-error' : ''}}">
 
 								<div class="12u 12u(mobilep)">
-									<input type="text" name="first_name" id="fname" value="" placeholder="Firstname" />
+									<input type="text" name="first_name" id="fname" value="{{ old('first_name') }}" placeholder="Firstname" />
 								</div>
 								@if ($errors->has('first_name'))
 									<span style="color: palevioletred;">{{ $errors->first('first_name') }}</span>
@@ -36,7 +36,7 @@
 							<div class="row uniform 50% {{ ($errors->has('last_name')) ? 'has-error' : ''}}">
 
 								<div class="12u 12u(mobilep)">
-									<input type="text" name="last_name" id="lname" value="" placeholder="Lastname" />
+									<input type="text" name="last_name" id="lname" value="{{ old('last_name') }}" placeholder="Lastname" />
 								</div>
 								@if ($errors->has('last_name'))
                     				<span style="color: palevioletred;">{{ $errors->first('last_name') }}</span>
@@ -45,7 +45,7 @@
 							<div class="row uniform 50% {{ ($errors->has('email')) ? 'has-error' : ''}}">
 
 								<div class="12u 12u(mobilep)">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
+									<input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email" />
 								</div>
 								@if ($errors->has('email'))
                     				<span style="color: palevioletred;">{{ $errors->first('email') }}</span>

@@ -13,7 +13,7 @@
 							<h3 style="text-align:center;margin-bottom:30px;color:#17a2b8;">Log in to your account</h3>							
 							<div class="row uniform 50% {{ ($errors->has('email')) ? 'has-error' : ''}}">
 								<div class="12u 12u(mobilep) ">
-									<input type="email" name="email" id="email" value="" placeholder="Email address" />
+									<input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email address" />
 								</div>
 								@if ($errors->has('email'))
                     				<span style="color: palevioletred;">{{ $errors->first('email') }}</span>
