@@ -68,7 +68,7 @@
                               </div>
                         <div class="form-group col-md-6">
                             <label for="gender">Gender</label>
-                                <select class="form-control" name="gender" id="exampleSelect1">
+                                <select class="form-control" name="gender">
                                     <option value="none">Select Gender</option>
                                     <option>Male</option>
                                     <option>Female</option>         

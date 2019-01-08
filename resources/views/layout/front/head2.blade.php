@@ -2,8 +2,13 @@
 <!--    Header starts     -->
 <head>
     <meta charset="utf-8" />
+<<<<<<< HEAD
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon.JPG">
+=======
     <link rel="apple-touch-icon" sizes="76x76" href="//assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="//img/Arbking_fav.png">
+>>>>>>> 95dd697e76650ec3ac0f03b3c9b858d5aaee9783
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Arbking | Matchedbetting </title>
