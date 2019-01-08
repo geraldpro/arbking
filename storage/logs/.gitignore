@@ -1,2 +1,12 @@
-*
-!.gitignore
+npm-debug.log
+.env
+composer.lock
+storage/logs/laravel.log
+resources/views/admin/layouts/head.blade.php
+resources/views/user/layouts/head.blade.php
+resources/views/layout/front/head.blade.php
+resources/views/layout/front/head2.blade.php
+resources/views/layout/front/head3.blade.php
+resources/views/layout/front/footer.blade.php
+resources/views/layout/front/footer2.blade.php
+resources/views/layout/front/footer3.blade.php
