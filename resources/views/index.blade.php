@@ -1,7 +1,7 @@
 @extends('layout.front.master')
 @section('body')
 <body>
-		<nav class=" " colour="">
+		<nav>
 					<div class="nav-wrapper"><a class="logo" href="/"><img src="img/logos/transparenttt-logo.png" alt="ARBKING logo"></a>
 						<ul>
 							<li><a href="#about">Matchbet</a></li>
@@ -19,7 +19,7 @@
 		<section id="hero">
 			<div id="numbers"></div>
 			<header>
-				<h1 style="font-family: Acumin Pro,sans-serif;">Matchbet with Arbking... Lock-in Profit</h1>
+				<h1 style="font-family: Acumin Pro,sans-serif;">Matchbet with Arbking, lock-in profit</h1>
 				<h2>Place our A.I generated Lay bets, back the bets up   <br>with your favorite bookie and lock-in profit with our  <br> shield  bonus. That Simple!</h2>
 				<ul>
 					<li><a class="btn sign-up-now" href="#" >Sign Up Now</a></li>
