@@ -71,7 +71,10 @@
                                               </div>
                                               <br>
                                                 <label for="firstname">Amount (USD)</label>
-                                                       <input type="text" name="amount" class="form-control" aria-describedby="emailHelp">
+                                                       <input type="text" name="amount" class="form-control {{ ($errors->has('amount')) ? 'has-error' : ''}}" aria-describedby="emailHelp" value="{{ old('amount') }}">
+                                                       @if ($errors->has('amount'))
+                                                        <span style="color: palevioletred;">{{ $errors->first('amount') }}</span>
+                                                       @endif
                                                                 <br>
                                                                       <button class="btn btn-info" type="submit">Fund my account</button>
                                           </div>

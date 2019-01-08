@@ -56,15 +56,15 @@
                      <form class="row" method="post" action="{{url('user/profile/update')}}">
                          <div class="form-group col-md-6">
                              <label for="firstname">Firstname</label>
-                                 <input type="text" name='first_name' class="form-control" aria-describedby="emailHelp" value="{{Auth::user() ? Auth::user()->first_name : '' }}">
+                                 <input type="text" name='first_name' class="form-control" aria-describedby="emailHelp" value="{{Auth::user()  && Auth::user()->first_name ? Auth::user()->first_name : '' }}">
                          </div>
                    <div class="form-group col-md-6">
                        <label for="lastname">Lastname</label>
-                          <input type="text" name="last_name" class="form-control" value="{{Auth::user() ? Auth::user()->last_name : ''}}">
+                          <input type="text" name="last_name" class="form-control" value="{{Auth::user() &&  Auth::user()->last_name ? Auth::user()->last_name : ''}}">
                        </div>
                             <div class="form-group col-md-6">
                                <label for="firstname">Phone Number</label>
-                                  <input type="test" name="phone_number" class="form-control" aria-describedby="emailHelp" value="{{Auth::user() ? Auth::user()->phone_number :  '' }}">
+                                  <input type="test" name="phone_number" class="form-control" aria-describedby="emailHelp" value="{{Auth::user() && Auth::user()->phone_number ? Auth::user()->phone_number :  '' }}">
                               </div>
                         <div class="form-group col-md-6">
                             <label for="gender">Gender</label>
@@ -94,7 +94,7 @@
                <form class="row" method="post" action="{{url('user/profile/update')}}">
                   <div class="form-group col-md-6">
                      <label for="crypto Name">Crypto Name</label>
-                        <input  type="text" class="form-control" aria-describedby="emailHelp" value="{{Auth::user() ? Auth::user()->accountType->name : '' }}"  readonly>
+                        <input  type="text" class="form-control" aria-describedby="emailHelp" value="{{Auth::user()  && Auth::user()->accountTypes  ? Auth::user()->accountType->name : '' }}"  readonly>
                   </div>
                  <div class="form-group col-md-6">
                      <label for="wallet address">Wallet Address</label>

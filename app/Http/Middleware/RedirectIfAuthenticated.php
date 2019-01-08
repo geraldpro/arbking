@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Config;
 
 class RedirectIfAuthenticated
 {
@@ -18,7 +19,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            $role = Auth::user()->role->id;
+            return redirect(Config::get('constants.role_name.' . $role) . '/dashboard');
         }
 
         return $next($request);

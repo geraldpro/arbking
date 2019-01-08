@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// URL::forceScheme('https');
 Route::get('/', 'HomeController@Viewindex');
 
 /**** User Authentication routes******/
@@ -21,16 +21,20 @@ Route::get('register','UserController@register')->name('register');
 Route::post('register','UserController@postSignup')->name('postRegister');
 Route::get('passwordReset','UserController@passwordReset')->name('passReset');
 Route::get('changePassword','UserController@changePassword')->name('changePass');
-Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('makeTransaction');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.reset');
+Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showresetForm');
 
 
 /**** Admin Dashboard routes******/
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/dashboard','adminDashboardController@dashboard')->name('dashboard');
     Route::get('admin/create-match','adminDashboardController@creatmatch')->name('create-match');
     Route::post('admin/creatematch','AdminStakeController@createMatch')->name('createMatch');
     Route::post('admin/create-group-match','AdminStakeController@createGroupMatch')->name('createGroupMatch');
     Route::get('admin/edit-match/{id}','adminDashboardController@edit_match')->name('edit-match');
     Route::get('admin/update-livepool','adminDashboardController@update_livepool')->name('update-livepool');
+    Route::post('user/arbitrage/close','ArbitrageController@closeTrade')->name('closeTrade');
 
 
     Route::get('admin/confirm-match','adminDashboardController@confirm_match')->name('confirm-match');
@@ -45,9 +49,10 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('admin/resolve/won/{id}','AdminStakeController@resolveWon');
     Route::get('admin/resolve/lost/{id}','AdminStakeController@resolveLost');
     Route::get('admin/resolve/cancelled/{id}','AdminStakeController@resolveCancelled');
-
+});
 
 /**** User Dashboard routes******/
+Route::middleware(['auth',  'regular'])->group(function () {
     Route::get('user/dashboard','UserDashboardController@dashboard')->name('dashboard');
     Route::get('user/profile','UserDashboardController@profile')->name('profile');
     Route::get('user/fund-my-account','UserDashboardController@fund_account')->name('fund-my-account');
@@ -57,8 +62,6 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     Route::get('user/request-payout','UserDashboardController@request_payout')->name('request-payout');
     Route::get('user/bonus-calculator','UserDashboardController@bonus_calculator')->name('bonus-calculator');
     Route::get('user/my-verified-earning','UserDashboardController@verified_earning')->name('my-verified-earning');
-    Route::get('user/livepool-status','UserDashboardController@livepool')->name('livepool');
-    Route::get('user/auto-arbitrage','UserDashboardController@arbitrage')->name('arbitrage');
     Route::post('user/initiate_payment', 'PaymentController@initiatePayment')->name('initiatePayment');
     Route::post('user/create_withdrawal', 'PaymentController@create_withdrawal')->name('create_withdrawal');
     Route::get('user/upload-photo','UserDashboardController@upload_pic')->name('upload_pic');
@@ -66,11 +69,18 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
     // Route::get('user/trade','UserDashboardController@trade')->name('trade');
     Route::get('user/fund-withdrawal','UserDashboardController@fund_withdrawal')->name('fund-withdrawal');
     // Route::get('user/trade','UserDashboardController@trade')->name('trade');
-
-    // trade routes
-    Route::get('user/trade','StakeController@trade')->name('trade');
-    Route::get('user/resolve/{lay}/{back}/{total}', 'StakeController@resolveStake'); 
-    Route::post('user/stake', 'StakeController@addStake')->name('addStake');
+    Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('makeTransaction');
+    
+    //  trade/arbitrage routes
+    Route::middleware([ 'confirmed'])->group(function () {
+        Route::get('user/trade','StakeController@trade')->name('trade');
+        Route::get('user/resolve/{lay}/{back}/{total}', 'StakeController@resolveStake'); 
+        Route::post('user/stake', 'StakeController@addStake')->name('addStake');
+        Route::get('user/arbitrage/activate/{id}','ArbitrageController@activateArbitrage');
+        Route::get('user/arbitrage/deactivate/{id}','ArbitrageController@deactivateArbitrage');
+        Route::get('user/auto-arbitrage','UserDashboardController@arbitrage')->name('arbitrage');
+        Route::get('user/livepool-status','UserDashboardController@livepool')->name('livepool');
+    });
 
 
     //User Profile routes
@@ -81,9 +91,12 @@ Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('make
 
 
     //arbitrage routes
-    Route::get('user/arbitrage/activate/{id}','ArbitrageController@activateArbitrage');
-    Route::get('user/arbitrage/deactivate/{id}','ArbitrageController@deactivateArbitrage');
 
+    // password reset and email confirmation
+    Route::get('register/verify/{confirmationCode}', 'UserController@getConfirmation')->name('confirmation_path');
+    Route::get('user/reconfirm', 'UserController@reconfirm')->name('reconfirm');
+    Route::post('register/verify/again', 'UserController@confirmAgain')->name('confirmAgain');
+});
 
 
 

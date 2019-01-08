@@ -93,10 +93,11 @@ class PaymentController extends Controller{
 
         $validate = Validator::make($req->all(), array(
 			'amount' => 'required|numeric',
-			'payment_method' => 'required|min:3|max:3'
+            'payment_method' => 'required|min:3|max:3',
+            'address' => 'required|min:50|max:150'
 		));
 		if ($validate->fails()) {
-			return response()->json($validate);
+            return redirect()->back()->withErrors($validate)->withInput();
 		} else {
   
         $params = [

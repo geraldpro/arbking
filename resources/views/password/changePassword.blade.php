@@ -12,7 +12,7 @@
 						{{ csrf_field() }}
 							<div class="row uniform 50% {{ ($errors->has('email')) ? 'has-error' : ''}}">
 								<div class="12u 12u(mobilep) ">
-									<input type="email" name="email" id="email" value="" placeholder="Email address" />
+									<input type="email" name="email" id="email" value="{{ old('email') }} placeholder="Email address" />
 								</div>
 								@if ($errors->has('email'))
                     				<span style="color: palevioletred;">{{ $errors->first('email') }}</span>
