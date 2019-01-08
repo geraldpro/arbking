@@ -19,7 +19,7 @@ class UserController extends Controller{
 
 //Get user login page
 public function login(){
-  return view('useradmin.login')->with(compact('roles'));
+  return view('useradmin.login2')->with(compact('roles'));
 } 
 public function email(){
   return view('email.verify');
@@ -35,7 +35,7 @@ public function logout()
   }
 //Get user register page
     public function register(){
-        return view('useradmin.register')->with(compact('roles'));
+        return view('useradmin.register2')->with(compact('roles'));
     }
 
     //Get user password reset page

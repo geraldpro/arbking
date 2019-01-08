@@ -51,6 +51,18 @@
                     				<span style="color: palevioletred;">{{ $errors->first('email') }}</span>
                 				@endif
 							</div>
+
+						<div class="row uniform 50%">
+						   	<div class="12u 12u(mobilep)">
+								<select name="category" id="category">
+										<option value="">Select your currency type</option>
+										<option>USD</option>
+										<option>EURO</option>     
+										<option>YEN</option>     
+										<option>NGN</option>        
+							</select>
+							</div>
+						</div>
 							<div class="row uniform 50% {{ ($errors->has('password')) ? 'has-error' : ''}}">
 								<div class="12u">
 									<input type="password" name="password" id="subject" value="" placeholder="Password" />
