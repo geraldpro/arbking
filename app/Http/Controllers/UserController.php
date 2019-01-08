@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\ConfirmAccount;
 use App\Role;
 use App\User;
+use App\AccountType;
 use App\RoleApplication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +36,8 @@ public function logout()
   }
 //Get user register page
     public function register(){
-        return view('useradmin.register2')->with(compact('roles'));
+        $account_types = AccountType::all();
+        return view('useradmin.register2')->with(compact('account_types'));
     }
 
     //Get user password reset page
@@ -62,6 +64,7 @@ public function logout()
             'password' => 'required|min:6',
             'first_name' => 'required|min:3',
             'last_name' => 'required|min:3',
+            'account_type' => 'required',
             'confirm_password' => 'required|same:password',
         );
 
@@ -74,6 +77,7 @@ public function logout()
             $data['confirmation_code'] = $confirmation_code;
             $data['password'] = Hash::make($request->get('password'));
             $data['role_id'] = Config::get('constants.roles.user');
+            $data['account_type_id'] = $request->account_type;
             $user = new User();
             // dd($data);
             $user->fill($data);
@@ -168,6 +172,7 @@ public function logout()
         }
     }
     	public function postLogin(Request $request){
+        // dd($request->all());
 		$validate = Validator::make($request->all(), array(
 			'email' => 'required|min:4',
 			'password' => 'required|min:6',

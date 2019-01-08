@@ -11,13 +11,13 @@
         {{ csrf_field() }}
           <h3 class="login-head">Log in to your account</h3>
           <div class="form-group {{ ($errors->has('email')) ? 'has-error' : ''}}">
-            <input class="form-control" type="text" placeholder="Email" autofocus>
+            <input class="form-control" name="email" type="text"  value="{{ old('email') }}"  placeholder="Email" autofocus>
           </div>
           @if ($errors->has('email'))
                     				<span style="color: palevioletred;">{{ $errors->first('email') }}</span>
                 				@endif
           <div class="form-group {{ ($errors->has('password')) ? 'has-error' : ''}}">
-            <input class="form-control" type="password" placeholder="Password">
+            <input class="form-control" name="password" type="password" placeholder="Password">
           </div>
         	@if ($errors->has('password'))
 									<span style="color: palevioletred;">{{ $errors->first('password') }}</span>

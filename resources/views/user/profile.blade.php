@@ -94,7 +94,7 @@
                <form class="row" method="post" action="{{url('user/profile/update')}}">
                   <div class="form-group col-md-6">
                      <label for="crypto Name">Crypto Name</label>
-                        <input  type="text" class="form-control" aria-describedby="emailHelp" value="{{Auth::user()  && Auth::user()->accountTypes  ? Auth::user()->accountType->name : '' }}"  readonly>
+                        <input  type="text" class="form-control" aria-describedby="emailHelp" value="{{Auth::user()  && Auth::user()->accountType  ? Auth::user()->accountType->short_name : '' }}"  readonly>
                   </div>
                  <div class="form-group col-md-6">
                      <label for="wallet address">Wallet Address</label>
