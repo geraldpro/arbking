@@ -199,14 +199,14 @@ h6 {
 }
 
 .blue {
-    color: yellow
+    color: #ffffff;
 }
 
 .btn {
     font-family: "Acumin Pro", sans-serif;
     font-size: 14px;
     color: white;
-    background: #FFD700;
+    background: #17a2b8;
     border-radius: 5px;
     height: 40px;
     line-height: 40px;
@@ -223,7 +223,7 @@ h6 {
 
 .btn:hover {
     background: white;
-    color: #FFD700
+    color: #17a2b8;
 }
 
 body.modal-open {
@@ -325,7 +325,8 @@ nav.static {
 nav .nav-wrapper {
     max-width: 1170px;
     margin: auto;
-    height: 55px
+    height: 55px;
+    text-decoration: none;
 }
 
 nav .nav-wrapper .lang {
@@ -333,7 +334,8 @@ nav .nav-wrapper .lang {
 }
 
 nav .nav-wrapper .lang:hover {
-    opacity: 1
+    opacity: 1;
+    text-decoration: none;
 }
 
 nav .nav-wrapper .lang img {
@@ -403,7 +405,7 @@ nav #login-nav .btn {
 
 nav #login-nav .btn:hover {
     color: white;
-    background: #FFD700
+    background: #17a2b8;
 }
 
 @media (max-width:600px) {
@@ -416,7 +418,8 @@ nav #login-nav .btn:hover {
     nav img,
     nav ul li {
         height: 40px;
-        line-height: 40px
+        line-height: 40px;
+        text-decoration: none;
     }
 
     nav ul li {
@@ -470,7 +473,7 @@ nav #login-nav .btn:hover {
 #hero header h1 {
     font-size: 60px;
     font-weight: 300;
-    color: #FFD700;
+    color: #17a2b8;
     clear: both
 }
 
@@ -505,7 +508,7 @@ nav #login-nav .btn:hover {
 
 #hero #numbers .num {
     font-size: 40px;
-    color: #FFD700;
+    color: #17a2b8;
     display: inline-block;
     position: absolute;
     top: 0;
@@ -786,6 +789,7 @@ nav #login-nav .btn:hover {
         display: flex;
         -webkit-flex-wrap: nowrap;
         flex-wrap: nowrap;
+        text-decoration: none;
         width: 100%;
         max-width: 320px;
         padding: 0;
@@ -812,7 +816,9 @@ nav #login-nav .btn:hover {
         width: 100%;
         height: auto;
         margin: 0;
-        padding: 10px 0
+        padding: 10px 0;
+        text-decoration: none;
+
     }
 
     #about ul li .blurb {
@@ -838,7 +844,7 @@ nav #login-nav .btn:hover {
         /*url("../img/logos/ui-devices.PNG") no-repeat bottom right*/
         #f6f6f6;
     text-align: center;
-    width: 100% !important ;
+    width: 100% !important;
     background-size: auto auto;
     color: #737373;
     padding-top: 80px;
@@ -960,7 +966,9 @@ nav #login-nav .btn:hover {
     position: relative;
     color: #616161;
     margin-bottom: 34px;
-    text-align: left
+    text-align: left;
+    text-decoration: none;
+
 }
 
 #ui ul li .img {
@@ -1376,7 +1384,7 @@ nav #login-nav .btn:hover {
     font-family: "Acumin Pro", sans-serif;
     font-size: 14px;
     color: white;
-    background: #FFD700;
+    background: #17a2b8;
     border-radius: 5px;
     height: 40px;
     line-height: 40px;
