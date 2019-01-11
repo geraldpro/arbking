@@ -6,6 +6,7 @@
 
     <!-- Main CSS-->
     {{ Html::style("user/css/main.css",  array(), true)}}
+    
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Arbking | Matched Betting </title>
