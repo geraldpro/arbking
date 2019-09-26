@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-URL::forceScheme('https');
+//URL::forceScheme('https');
 Route::get('/', 'HomeController@Viewindex');
 
 /**** User Authentication routes******/
@@ -70,11 +70,11 @@ Route::middleware(['auth',  'regular'])->group(function () {
     Route::get('user/fund-withdrawal','UserDashboardController@fund_withdrawal')->name('fund-withdrawal');
     // Route::get('user/trade','UserDashboardController@trade')->name('trade');
     Route::get('coinpayment/{payload}', 'PaymentController@makePayment')->name('makeTransaction');
-    
+
     //  trade/arbitrage routes
     Route::middleware([ 'confirmed'])->group(function () {
         Route::get('user/trade','StakeController@trade')->name('trade');
-        Route::get('user/resolve/{lay}/{back}/{total}', 'StakeController@resolveStake'); 
+        Route::get('user/resolve/{lay}/{back}/{total}', 'StakeController@resolveStake');
         Route::post('user/stake', 'StakeController@addStake')->name('addStake');
         Route::get('user/arbitrage/activate/{id}','ArbitrageController@activateArbitrage');
         Route::get('user/arbitrage/deactivate/{id}','ArbitrageController@deactivateArbitrage');
@@ -102,5 +102,5 @@ Route::middleware(['auth',  'regular'])->group(function () {
 
 
 
-  
-    
+
+
